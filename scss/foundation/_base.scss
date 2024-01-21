@@ -1,0 +1,52 @@
+@use "../foundation/color" as c;
+
+:root {
+ --breakpoint-xs: 393;
+ --breakpoint-s: 834;
+ --breakpoint-m: 1194;
+ --breakpoint-l: 1440;
+ 
+  --font-size: min(calc(100vw * 1 / var(--breakpoint-xs)), 6.25%);
+   @media (min-width: 834px) {
+   --font-size: min(calc(100vw * 1 /var(--breakpoint-s)), 6.25%);
+   }
+   @media (min-width: 1194px) {
+   --font-size: min(calc(100vw * 1 / var(--breakpoint-m)), 6.25%);
+   }
+   @media (min-width: 1440px) {
+   --font-size: min(calc(100vw * 1 / var(--breakpoint-l)), 6.25%);
+   }
+ }
+
+ html {
+  font-size: var(--font-size);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  font-size: 16rem;
+  line-height: 1.5;
+  font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial, helvetica, sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  text-align: left;
+  background-color: #eaeaea;
+  color: c.$color-font-dark;
+  //background-image: url(/image/japanese-paper_00480.jpg);
+  //background-repeat: repeat;
+  //background-color: rgba(0, 0, 0, 0.14);
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  &:link {
+  color: c.$color-font-dark;
+  }
+  &:visited {
+  color: c.$color-font-dark;
+  }
+}

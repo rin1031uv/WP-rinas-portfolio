@@ -1,0 +1,109 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+/*
+==================
+archive blog
+==================
+*/
+.c-main {
+  &__primary-container {
+    margin-top: 60px;
+    margin-bottom: 45px;
+  }
+}
+
+/*
+==================
+single blog
+==================
+*/
+.c-profile {
+  &__primary-container {
+    @include m.breakpoint(tablet) {
+      display: flex;
+    }
+  }
+}
+
+/*
+==================
+about
+==================
+*/
+.c-about {
+  //self-introduction
+  &__self-introduction {
+    position: relative;
+    height: 778px;
+    @include m.breakpoint(tablet) {
+      height: 613px;
+    }
+  }
+  &__primary-container-self-introduction {
+    min-width: 325px;
+    display: inline-block;
+    position: absolute;
+    top: 91px;
+    left: 0;
+    padding: 15px;
+    //margin-top: 15px;
+    border: 0.5px solid #122736;
+    @include m.breakpoint(tablet) {
+      position: absolute;
+      top: 80px;
+      //right: 20px;
+      left: 40px;
+      //margin-top: 30px;
+    }
+  }
+  &__carrer-primary-container {
+    margin-bottom: 36px;
+  }
+  //history of my life
+
+  //carrer
+  display: flex;
+  align-items: flex-start;
+  &::before {
+    display: inline-block;
+    content: "";
+    width: 19px;
+    height: 45px;
+    background-image: url(/image/jinoyokobou.png);
+    background-size: contain;
+    padding-right: 6px;
+    margin-top: 6px;
+  }
+  //reason
+  &__reason-primary-container {
+    width: 340px;
+    @include m.breakpoint(tablet) {
+      width: 520px;
+    }
+    @include m.breakpoint(pc) {
+      width: 680px;
+    }
+  }
+  //help
+  &__help-primary-container {
+    width: 340px;
+    @include m.breakpoint(tablet) {
+      width: 520px;
+      margin-left: auto;
+      margin-right: 0;
+    }
+    @include m.breakpoint(pc) {
+      width: 680px;
+    }
+  }
+  //strongth
+  &__strength-primary-container {
+    width: 100%;
+  }
+}
+
+
+

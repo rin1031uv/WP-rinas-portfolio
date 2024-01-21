@@ -1,0 +1,16 @@
+@use "../foundation/base" as b;
+@use "../foundation/color" as c;
+@use "../foundation/font-family" as f;
+@use "../foundation/mixin" as m;
+
+/*
+==================
+archive blog
+==================
+*/
+.l-pagenation {
+  &__wrapper {
+    margin-top: 180px;
+    margin-bottom: 180px;
+  }
+}

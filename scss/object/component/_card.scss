@@ -1,0 +1,103 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+/*
+==================
+archive blog
+==================
+*/
+.c-card {
+  &__wrapper-masonry {
+    //display: inline-block;
+    //width: 283px;
+    //max-width: 920px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+    //width: 100%;
+  }
+  //カード１枚分
+  &__primary-container {
+    width: 250px;
+    border: 0.5px solid rgba(18, 39, 54, 0.5);
+    //margin: 7.5px 7.5px;
+    box-sizing: content-box;
+    margin-bottom: 15px;
+  @include m.breakpoint(pc) {
+    //width: calc((920px - 45px)/3);
+    //width: 27%;
+  }
+  }
+  &__secondary-container {
+    width: 100%;
+  }
+}
+
+/*
+==================
+archive works
+==================
+*/
+.c-card-works {
+  &__primary-container {
+    //カード１枚
+  width: 266px;
+  box-sizing: border-box;
+  //all: inherit;
+  //height: 100%;
+  //display: flex;
+  //flex-direction: column;
+  padding: 15px;
+  //margin: 12px 12px;
+  //gap: 0; //gridで使用しているけどflexに変更したら削除する
+  //ガラスにするための装飾
+  //background-color: c.$color-font-light;
+  background-color: rgba(234, 244, 252, 0.1); //背景色
+  backdrop-filter: blur(20px); //ぼかし
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(18, 39, 54, 0.25) ; //薄い影
+  }
+  &__secandary-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-color: c.$color-base;
+  }
+}
+.c-card {
+  &__wrapper-masonry-works {
+    margin-bottom: 120px;
+  }
+}
+
+
+
+
+/*
+==================
+front-page
+==================
+*/
+.c-card {
+  &__top-wrapper {
+    margin-bottom: 0;
+  }
+}
+.p-card {
+  &__front-wrapper {
+    margin-bottom: 0;
+    >div:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+

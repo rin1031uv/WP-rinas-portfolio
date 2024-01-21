@@ -1,0 +1,202 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+/*
+==================
+archive blog
+==================
+*/
+.p-main {
+  &__text {
+    font-size: 16rem;
+    font-family: f.$main-font;
+  }
+}
+
+.p-card {
+  &__text {
+    display: none;
+    @include m.breakpoint(pc) {
+      display: block;
+      font-size: 12rem;
+      font-family: f.$main-font;
+      color: c.$color-font-dark;
+      padding: 0px 15px 18px 15px;
+    }
+  }
+}
+
+/*
+==================
+single blog
+==================
+*/
+.p-main {
+  &__single-blog-text {
+    margin-top: 30px;
+    font-size: 14rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    @include m.breakpoint(tablet) {
+      font-size: 16rem;
+    }
+  }
+}
+
+.p-profile {
+  &__name {
+    font-size: 16rem;
+    font-family: f.$eiji-font;
+    color: c.$color-font-dark;
+    margin-top: 9px;
+    text-align: center;
+  }
+  &__text {
+    font-size: 14rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    margin-top: 24px;
+    padding: 15px;
+  }
+}
+
+/*
+==================
+front-page
+==================
+*/
+.p-top {
+  &__text {
+    display: inline-block;
+    font-size: 14rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    text-align: left;
+    //margin-bottom: 60px;
+    @include m.breakpoint(pc) {
+      font-size: 16rem;
+    }
+  }
+}
+.c-top__blog-wrapper {
+  >p {
+    margin-bottom: 60px;
+  }
+}
+.p-top {
+  &__text-contact {
+    font-size: 14rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    text-align: center;
+    margin-bottom: 42px;
+    @include m.breakpoint(pc) {
+      font-size: 16rem;
+    }
+  }
+}
+
+/*
+==================
+about
+==================
+*/
+.p-about {
+  &__text-self-introduction {
+    p {
+      font-size: 14rem;
+      font-family: f.$main-font;
+      font-weight: 400;
+      color: c.$color-font-dark;
+      @include m.breakpoint(pc) {
+        font-size: 16rem;
+      }
+    }
+  }
+}
+//history of my life
+.c-about {
+  &__history-third-sub-container {
+    >p {
+      font-size: 14rem;
+      font-family: f.$main-font;
+    }
+  }
+  &__history-sixth-sub-container {
+    >p {
+      font-size: 14rem;
+      font-family: f.$main-font;
+    }
+  }
+}
+
+
+//carrer
+.p-about {
+  &__carrer-text {
+    font-size: 14rem;
+    font-family: f.$main-font;
+    font-weight: 400;
+    color: c.$color-font-dark;
+    width: 320px;
+    @include m.breakpoint(tablet) {
+      width: 528px;
+    }
+    @include m.breakpoint(pc) {
+      font-size: 16rem;
+      width: 680px;
+    }
+  }
+}
+//reason
+.c-about {
+  &__reason-third-container {
+    p {
+      font-size: 14rem;
+      font-family: f.$main-font;
+      @include m.breakpoint(pc) {
+        font-size: 16rem;
+      }
+    }
+  }
+}
+//help
+.c-about {
+  &__help-third-container {
+    p {
+      font-size: 14rem;
+      font-family: f.$main-font;
+      @include m.breakpoint(pc) {
+        font-size: 16rem;
+      }
+    }
+  }
+}
+//comment
+.c-about {
+  &__comment-third-container {
+    p {
+      font-size: 14rem;
+      font-family: f.$main-font;
+      @include m.breakpoint(pc) {
+        font-size: 16rem;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

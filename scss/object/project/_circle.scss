@@ -1,0 +1,368 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+/*
+==================
+about
+==================
+*/
+.p-about {
+  &__circle-wrapper {
+    width: 100%;
+    height: 886px;
+    //display: flex;
+    position: relative;
+    @include m.breakpoint(tablet) {
+      height: 660px;
+    }
+    @include m.breakpoint(pc) {
+      width: 100%;
+      height: 439px;
+      //display: flex;
+      //justify-content: center;
+      //align-items: center;
+    } 
+  >p {
+    //タイトル（strength）
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
+    font-family: f.$main-font;
+    font-weight: 400;
+    font-size: 42px;
+    text-align: center;
+    @include m.breakpoint(tablet) {
+      position: absolute;
+      top: 100px;
+    }
+    @include m.breakpoint(pc) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 53rem;
+      line-height: 439px;
+    }
+  }
+  >h5 {
+    font-size: 20rem;
+    font-family: f.$main-font;
+    font-weight: 400;
+    opacity: 0;
+    @include m.breakpoint(pc) {
+      font-size: 24rem;
+    }
+    //粘り強さ(左上)
+    &:nth-of-type(1) {
+      position: absolute;
+      top: 80px;
+      left: 45px;
+      @include m.breakpoint(tablet) {
+        position: absolute;
+        top: 40px;
+        left: 190px;
+      }
+      @include m.breakpoint(pc) {
+        position: absolute;
+        top: 120px;
+        left: 335px;
+      }
+      @include m.breakpoint(pcl) {
+        position: absolute;
+        top: 100px;
+        left: 310px;
+      }
+    }
+    //向上心(右上)
+    &:nth-of-type(2) {
+      position: absolute;
+      top: 80px;
+      right: 50px;
+      @include m.breakpoint(tablet) {
+        position: absolute;
+        top: 40px;
+        right: 195px;
+      }
+      @include m.breakpoint(pc) {
+        position: absolute;
+        top: 120px;
+        right: 340px;
+      }
+      @include m.breakpoint(pcl) {
+        position: absolute;
+        top: 100px;
+        right: 320px;
+      }
+    }
+    //感受性豊か(左下)
+    &:nth-of-type(3) {
+      position: absolute;
+      top: 240px;
+      left: 35px;
+      @include m.breakpoint(tablet) {
+        position: absolute;
+        top: 200px;
+        left: 175px;
+      }
+      @include m.breakpoint(pc) {
+        position: absolute;
+        top: inherit;
+        bottom: 120px;
+        left: 320px;
+      }
+      @include m.breakpoint(pcl) {
+        position: absolute;
+        top: inherit;
+        bottom: 100px;
+        left: 300px;
+      }
+    }
+    //探究心(右下)
+    &:nth-of-type(4) {
+      position: absolute;
+      top: 240px;
+      right: 50px;
+      @include m.breakpoint(tablet) {
+        position: absolute;
+        top: 200px;
+        right: 195px;
+      }
+      @include m.breakpoint(pc) {
+        top: inherit;
+        position: absolute;
+        bottom: 120px;
+        right: 340px;
+      }
+      @include m.breakpoint(pcl) {
+        top: inherit;
+        position: absolute;
+        bottom: 100px;
+        right: 320px;
+      }
+    }
+  }
+  }
+  &__circle-primary-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include m.breakpoint(pc) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+  &__circle-secondary-container {
+    position: relative;
+    >img {
+      opacity: 0.5;
+    }
+  }
+}
+.p-about {
+  &__circle-first {
+    width: 336px;
+    height: 336px;
+    animation: leftshape 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //rotate: 360deg;
+  }
+  &__circle-second {
+    width: 277px;
+    height: 277px;
+    animation: rightshape 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //rotate: 360deg;
+  }
+  &__circle-third {
+    width: 216px;
+    height: 216px;
+    animation: leftshape 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__circle-fourth {
+    width: 150px;
+    height: 150px;
+    animation: rightshape 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //rotate: 360deg;
+  }
+}
+
+.p-about {
+  &__circle-content-wrapper {
+    //width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    //bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include m.breakpoint(tablet) {
+      width: 100%;
+    }
+    @include m.breakpoint(pc) {
+      position: absolute;
+      top: inherit;
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+  &__circle-content-container {
+    opacity: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include m.breakpoint(tablet) {
+      height: auto;
+      display: inline-block;
+    }
+    @include m.breakpoint(pc) {
+      height: 100%;
+      display: block;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 18px;
+      width: 260px;
+      @include m.breakpoint(pc) {
+        width: 220px;
+      }
+      //粘り強さ(左上)
+      &:nth-of-type(1) {
+        @include m.breakpoint(tablet) {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        h4 {
+          text-align: center;
+          margin-bottom: 3px;
+          @include m.breakpoint(pc) {
+            margin-bottom: 15px;
+            text-align: left;
+          }
+        }
+      }
+      //向上心(右上)
+      &:nth-of-type(2) {
+        @include m.breakpoint(tablet) {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+        h4 {
+          text-align: center;
+          margin-bottom: 3px;
+          @include m.breakpoint(pc) {
+            text-align: right;
+            margin-bottom: 15px;
+          }
+        }
+      }
+      //感受性豊か(左下)
+      &:nth-of-type(3) {
+        @include m.breakpoint(tablet) {
+          position: absolute;
+          top: 160px;
+          left: 0;
+        }
+        @include m.breakpoint(pc) {
+          position: absolute;
+          top: inherit;
+          bottom: 0;
+          left: 0;
+        }
+        h4 {
+          display: inline-block;
+          text-align: center;
+          margin-bottom: 3px;
+          @include m.breakpoint(pc) {
+            order: 1; //h4とpの順番入れ替え
+            margin-top: 15px;
+            text-align: left;
+          }
+        }
+      }
+      //探究心(右下)
+      &:nth-of-type(4) {
+        @include m.breakpoint(tablet) {
+          position: absolute;
+          top: 160px;
+          right: 0;
+        }
+        @include m.breakpoint(pc) {
+          position: absolute;
+          top: inherit;
+          bottom: 0;
+          right: 0;
+        }
+        h4 {
+          text-align: center;
+          margin-bottom: 3px;
+          @include m.breakpoint(pc) {
+            order: 1; //h4とpの順番入れ替え
+            text-align: right;
+            margin-top: 15px;
+          }
+        }
+      }
+      >h4 {
+        font-size: 21rem;
+        font-family: f.$main-font;
+        font-weight: 400;
+        @include m.breakpoint(pc) {
+          font-size: 24rem;
+        }
+        &::before {
+          content: "";
+          width: 45px;
+          height: 17px;
+          background-image: url(/image/sen.hoso.png);
+          background-size: cover;
+          @include m.breakpoint(tablet) {
+            display: none;
+          }
+        }
+        &::after {
+          content: "";
+          width: 45px;
+          height: 17px;
+          background-image: url(/image/sen.hoso.png);
+          background-size: cover;
+          @include m.breakpoint(tablet) {
+            display: none;
+          }
+        }
+      }
+      >p {
+        font-size: 16rem;
+        font-family: f.$main-font;
+        font-weight: 400;
+      }
+    }
+  }
+
+}
+
+

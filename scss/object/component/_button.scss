@@ -1,0 +1,21 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+/*
+==================
+front-page
+==================
+*/
+.c-top {
+  &__button-container {
+    position: relative; //蝶のイメージ調整用（親）
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+
+  }
+}
+
+

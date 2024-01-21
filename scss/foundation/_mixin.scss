@@ -1,0 +1,30 @@
+/*$breakpoints: (
+screen01: 'screen and (max-width:393px)',
+screen02: 'screen and (max-width:834px)',
+screen03: 'screen and (max-width:1194px)',
+screen04: 'screen and (max-width:1440px)',
+);*/
+
+//mixin
+@mixin breakpoint($point) {
+   @if $point==phone {
+   @media (min-width: 393px) {
+    @content ;
+   }
+  }
+   @if $point==tablet {
+   @media (min-width: 834px) {
+    @content ;
+   }
+  }
+  @if $point==pc {
+   @media (min-width: 1194px) {
+    @content ;
+   }
+  }
+  @if $point==pcl {
+   @media (min-width: 1440px) {
+    @content ;
+   }
+  }
+}

@@ -1,0 +1,440 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+/*
+==================
+archive blog
+==================
+*/
+.p-main {
+  &__title {
+    font-size: 32rem;
+    font-family: f.$eiji-font;
+    color: c.$color-font-dark;
+    margin-bottom: 30px;
+  }
+}
+
+.p-card {
+  &__title {
+    font-size: 14rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    padding: 10px;
+    @include m.breakpoint(tablet) {
+      font-size: 16rem;
+      padding: 15px 15px 18px 15px;
+    }
+  }
+}
+
+/*
+==================
+single blog
+==================
+*/
+.p-main {
+  &__single-blog-title {
+    font-size: 24rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    margin-bottom: 30px;
+  }
+}
+
+.p-main {
+  &__single-blog-archive-title {
+    font-size: 20rem;
+    font-family: f.$eiji-font;
+    font-weight: 400;
+    color: c.$color-font-dark;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+}
+
+.p-profile {
+  &__title  {
+    font-size: 20rem;
+    font-family: f.$eiji-font;
+    color: c.$color-font-dark;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+/*
+==================
+archive works
+==================
+*/
+.p-card-works {
+  &__title {
+    font-size: 16px;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    padding: 6px 15px 16px 15px;
+  }
+}
+
+/*
+==================
+front-page
+==================
+*/
+.p-header {
+  > h1 {
+    position: absolute;
+    top: 80%;
+    right: 5%;
+
+  }
+}
+.p-top {
+  &__title-background {
+    font-size: 30rem;
+    font-family: f.$background-font;
+    font-weight: 400;
+    color: rgba(135, 150, 169, 0.6);
+    //text-align: center;
+    @include m.breakpoint(tablet) {
+      font-size: 45rem;
+    }
+    @include m.breakpoint(pc) {
+      font-size: 60rem;
+    }
+  }
+  &__title {
+    font-size: 32rem;
+    font-family: f.$eiji-font;
+    color: c.$color-font-dark;
+    font-weight: 400;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+}
+//タイトル上の背景文字装飾
+.p-top {
+  &__title-background-work-container {
+    max-width: 340px;
+    //text-align: left;
+    @include m.breakpoint(tablet) {
+      //position: relative;
+      max-width: 500px;
+      >div:nth-of-type(2) {
+        text-align: right;
+      }
+    }
+    @include m.breakpoint(pc) {
+      max-width: 650px;
+      >div:nth-of-type(2) {
+        text-align: right;
+      }
+    }
+  }
+}
+.p-top__title-background-work-primary,
+.p-top__title-background-work-secondary {
+  //position: absolute;
+  //display: inline-block;
+  font-size: 30rem;
+  font-family: f.$background-font;
+  font-weight: 400;
+  color: rgba(135, 150, 169, 0.6);
+  line-height: 0.8;
+  @include m.breakpoint(tablet) {
+    font-size: 45rem;
+  }
+  @include m.breakpoint(pc) {
+    font-size: 60rem;
+  }
+}
+.p-top__title-background-work-primary {
+  text-align: left;
+}
+//.p-top__title-background-work-secondary {
+  //margin-left: 30%;
+//}
+
+.p-top {
+  &__title-background-work {
+    &-primary {
+      text-align: left;
+      //top: -88px
+    }
+    &-secondary {
+      text-align: right;
+      top: -45px;
+      //left: 215px;
+    }
+  }
+}
+//.c-top {
+  //&__blog-wrapper {
+    //>div {
+      //text-align: left;
+    //}
+  //}
+//}
+
+.p-top {
+  //comtact
+  &__contact-title-background {
+    //display: inline-block;
+    font-size: 30rem;
+    font-family: f.$background-font;
+    font-weight: 400;
+    color: rgba(135, 150, 169, 0.6);
+    line-height: 0.8;
+    @include m.breakpoint(tablet) {
+      font-size: 45rem;
+    }
+    @include m.breakpoint(pc) {
+      font-size: 60rem;
+    }
+    text-align: center;
+  }
+  &__title-contact {
+    font-size: 32rem;
+    font-family: f.$eiji-font;
+    color: c.$color-font-dark;
+    font-weight: 400;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+/*
+==================
+about
+==================
+*/
+//introduction
+.p-about {
+  &__title-self-introduction {
+    font-size: 24rem;
+    font-family: f.$eiji-font;
+    font-weight: 400;
+    position: absolute;
+    top: 40px;
+    margin-bottom: 15px;
+    @include m.breakpoint(tablet) {
+      position: absolute;
+      top: 22px;
+      left: 40px;
+      font-size: 32rem;
+    }
+  }
+}
+//history of my life
+.p-about {
+  &__history-title-container {
+    margin-bottom: 30px;
+    display: inline-block;
+    >p {
+      text-align: right;
+    }
+  }
+  &__history-title {
+    font-size: 32rem;
+    font-family: f.$eiji-font;
+    font-weight: 400;
+    color: c.$color-font-dark;
+  }
+  &__history-sub-title {
+    font-size: 20rem;
+    font-family: f.$main-font;
+  }
+  &__history-second-title {
+    font-size: 21rem;
+    font-family: f.$main-font;
+    margin-bottom: 30px;
+  }
+}
+.c-about {
+  &__history-third-sub-container {
+    >h4 {
+      font-size: 16rem;
+      font-family: f.$main-font;
+      margin-bottom: 6px;
+    }
+  }
+}
+.c-about {
+  &__history-fifth-container {
+    >h3 {
+      font-size: 18rem;
+      font-family: f.$main-font;
+      margin-bottom: 21px;
+    }
+  }
+  &__history-sixth-sub-container {
+    >h4 {
+      font-size: 16rem;
+      font-family: f.$main-font;
+      margin-bottom: 6px;
+    }
+  }
+}
+
+
+
+
+//carrer
+.p-about {
+  &__carrer-title-container {
+    margin-bottom: 30px;
+    display: inline-block;
+    >p {
+      text-align: right;
+    }
+  }
+  &__carrer-title {
+    font-size: 32rem;
+    font-family: f.$eiji-font;
+    font-weight: 400;
+    color: c.$color-font-dark;
+  }
+  &__carrer-second-title {
+    font-size: 18rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    @include m.breakpoint(pc) {
+      font-size: 20rem;
+    }
+  }
+  &__carrer-sub-title {
+    font-size: 20rem;
+    font-family: f.$main-font;
+  }
+  &__carrer-text-title {
+    font-size: 16rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    @include m.breakpoint(pc) {
+      font-size: 18rem;
+    }
+  }
+}
+//reason
+.p-about {
+  &__reason-title {
+    font-size: 24rem;
+    font-family: f.$eiji-font;
+    font-weight: 400;
+    @include m.breakpoint(pc) {
+      font-size: 32rem;
+    }
+  }
+  &__reason-sub-title {
+    font-size: 18rem;
+    font-family: f.$main-font;
+    margin-bottom: 30px;
+    @include m.breakpoint(pc) {
+      font-size: 20rem;
+    }
+  }
+}
+.c-about {
+  &__reason-secondary-container {
+    >p {
+      text-align: right;
+    }
+  }
+}
+.c-about {
+  &__reason-third-container {
+    h4 {
+      font-size: 16rem;
+      font-family: f.$main-font;
+      margin-bottom: 9px;
+      @include m.breakpoint(pc) {
+        font-size: 20rem;
+      }
+    }
+  }
+}
+//help
+.p-about {
+  &__help-title {
+    font-size: 24rem;
+    font-family: f.$eiji-font;
+    font-weight: 400;
+    @include m.breakpoint(pc) {
+      font-size: 32rem;
+    }
+  }
+  &__help-sub-title {
+    font-size: 18rem;
+    font-family: f.$main-font;
+    margin-bottom: 30px;
+    @include m.breakpoint(pc) {
+      font-size: 20rem;
+    }
+  }
+}
+.c-about {
+  &__help-secondary-container {
+    >p {
+      text-align: right;
+    }
+  }
+}
+.c-about {
+  &__help-third-container {
+    h4 {
+      font-size: 20rem;
+      font-family: f.$main-font;
+      margin-bottom: 9px;
+    }
+  }
+}
+//strength
+.p-about {
+  &__strength-title {
+    font-size: 24rem;
+    font-family: f.$eiji-font;
+    font-weight: 400;
+    @include m.breakpoint(pc) {
+      font-size: 32rem;
+    }
+  }
+  &__strength-sub-title {
+    font-size: 18rem;
+    font-family: f.$main-font;
+    margin-bottom: 30px;
+    @include m.breakpoint(pc) {
+      font-size: 20rem;
+    }
+
+
+  }
+}
+//comment
+.p-about {
+  &__comment-title {
+    font-size: 24rem;
+    font-family: f.$eiji-font;
+    font-weight: 400;
+    margin-bottom: 3px;
+    @include m.breakpoint(pc) {
+      font-size: 32rem;
+    }
+  }
+  &__comment-sub-title {
+    font-size: 18rem;
+    font-family: f.$main-font;
+    margin-bottom: 30px;
+    @include m.breakpoint(pc) {
+      font-size: 20rem;
+    }
+  }
+}
+
+
+

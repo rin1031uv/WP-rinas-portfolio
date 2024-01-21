@@ -1,0 +1,38 @@
+@use "../foundation/base" as b;
+@use "../foundation/color" as c;
+@use "../foundation/font-family" as f;
+@use "../foundation/mixin" as m;
+
+/*
+==================
+archive blog
+==================
+*/
+.l-card {
+  margin: 0 auto;
+}
+
+/*
+==================
+single blog
+==================
+*/
+.l-card {
+  &__related-posts {
+    display: flex;
+    margin-bottom: 180px;
+    justify-content: center;
+  }
+}
+/*
+==================
+single works
+==================
+*/
+.l-card {
+  &__other-works {
+    display: flex;
+    margin-bottom: 180px;
+    justify-content: space-around;
+  }
+}

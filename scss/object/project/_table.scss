@@ -1,0 +1,21 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+.p-table {
+ &__container {
+  margin-top: 60px;
+   th {
+    width: 40%;
+    vertical-align: top;
+   }
+   th, td {
+    font-size: 16rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    font-weight: 400;
+    padding-bottom: 30px;
+   }
+ }
+}

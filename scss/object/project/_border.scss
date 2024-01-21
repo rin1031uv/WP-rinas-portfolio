@@ -1,0 +1,22 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+//archive blog
+.p-main {
+  &__border {
+    background-image: url(/image/sen.hoso.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    width: 340px;
+    height: 12px;
+    @include m.breakpoint(tablet) {
+      width: 600px;
+    }
+    @include m.breakpoint(pc) {
+      width: 920px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+//archive blog
+.c-pagenation {
+ &__container {
+  display: flex;
+  justify-content: center;
+ }
+}

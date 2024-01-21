@@ -1,0 +1,49 @@
+@use "../foundation/base" as b;
+@use "../foundation/color" as c;
+@use "../foundation/font-family" as f;
+@use "../foundation/mixin" as m;
+
+/*
+==================
+archive blog
+==================
+*/
+.l-header {
+  z-index: 100;
+  margin-top: 75px;
+  @include m.breakpoint(tablet) {
+    margin-top: initial;
+  }
+  &__container-primary {
+    display: flex;
+    flex-direction: column-reverse;
+    h1 {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    @include m.breakpoint(tablet) {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__logo {
+    width: 280px;
+    @include m.breakpoint(tablet) {
+      width: 600px;
+      padding-right: 40px;
+    }
+  }
+  &__nav {
+    ul {
+      display: flex;
+      li {
+        padding: 0 35px;
+      }
+    }
+    >ul>li>a {
+      color: c.$color-font-dark;
+      font-family: f.$eiji-font;
+      font-size: 20rem;
+    }
+  }
+}

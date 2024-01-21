@@ -1,0 +1,135 @@
+
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+/*
+==================
+front-page
+==================
+*/
+.c-top {
+  //hero
+  &__hero-wrapper {
+    height: 244px;
+    position: absolute;
+    top: -244px;
+    //left: 50%;
+    width: 100%;
+    @include m.breakpoint(tablet) {
+      height: 468px;
+      top: -468px;
+    }
+    @include m.breakpoint(pc) {
+      height: 758px;
+      top: -758px;
+    }
+  }
+ //about
+  &__about-wrapper {
+    display: inline-block;
+    margin-top: 120px;
+    margin-bottom: 180px;
+    @include m.breakpoint(pc) {
+    width: 560px;
+    height: 100%;
+    }
+  }
+ //works
+  &__works-wrapper {
+    margin-bottom: 180px;
+    @include m.breakpoint(tablet) {
+      max-width: 500px;
+      height: 100%;
+      margin-left: auto; //右寄せ
+      margin-right: 0; //右寄せ
+      >div {
+        max-width: 500px;
+      }
+      @include m.breakpoint(pc) {
+        max-width: 650px;
+        margin-left: auto; //右寄せ
+        margin-right: 0; //右寄せ
+        >div {
+          max-width: 650px;
+        }
+      }
+    }
+
+  }
+ //blog
+  &__blog-wrapper {
+    margin-bottom: 180px;
+  }
+ //contact
+  &__contact-wrapper {
+    margin-bottom: 180px;
+    @include m.breakpoint(pc) {
+      width: 400px;
+      height: 100%;
+      margin-left: auto; //中央寄せ
+      margin-right: auto; //中央寄せ
+      //margin-bottom: 180px;
+    }
+  }
+}
+
+/*
+==================
+about
+==================
+*/
+.c-about {
+ //introduction
+  &__self-introduction-wrapper {
+    margin-bottom: 180px;
+  }
+//history of my life
+  &__history-wrapper {
+    margin-bottom: 180px;
+  }
+  &__history-content-wrapper {
+    display: flex;
+    width: 500%;
+    //width: calc(500% + 600px); //横スクロールコンテンツ分幅をとっている
+    >div:not(:last-of-type) {
+      padding-right: 120px;
+    }
+    >div:last-of-type {
+      margin-right: 120px;
+      padding-right: 120px;
+    }
+  }
+  &__history-secondary-wrapper {
+    display: flex;
+  }
+  
+ //carrer
+  &__carrer-wrapper {
+  margin-bottom: 180px;
+  }
+ //reason
+  &__reason-wrapper {
+  margin-bottom: 180px;
+  }
+ //help
+  &__help-wrapper {
+  margin-bottom: 180px;
+  }
+  //strength
+  &__strength-wrapper {
+    margin-bottom: 180px;
+    height: 100%;
+  }
+  //comment
+  &__comment-wrapper {
+    margin-bottom: 180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/*
+==================
+single blog
+==================
+*/

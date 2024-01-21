@@ -1,0 +1,34 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+.p-search-form{
+  &__container {
+   display: inline-block;
+   border: 0.5px solid rgba(110, 117, 164, 0.5);
+   @include m.breakpoint(tablet) {
+    margin-right: 30px;
+   }
+  }
+  &__field {
+   height: 40px;
+   width: 250px;
+   //虫眼鏡エリア
+   font-family: "Font Awesome 6 Free";
+   font-weight: 700;
+   font-size: 18rem;
+   padding-left: 9px;
+   vertical-align: middle;
+   color: c.$color-base;
+  }
+  &__button {
+   font-size: 14rem;
+   font-family: f.$main-font;
+   color: c.$color-font-light;
+   background-color: c.$color-base;
+   height: 40px;
+   width: 65px;
+   vertical-align: middle;
+  }
+}

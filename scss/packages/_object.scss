@@ -1,0 +1,22 @@
+//component
+@use "../object/component/primary-container";
+@use "../object/component/nav";
+@use "../object/component/card" as a;
+@use "../object/component/pagenation" as z;
+@use "../object/component/button" as y;
+@use "../object/component/secondary-container";
+@use "../object/component/wrapper";
+@use "../object/component/third-container";
+
+//project
+@use "../object/project/button";
+@use "../object/project/text";
+@use "../object/project/title";
+@use "../object/project/pagenation";
+@use "../object/project/border";
+@use "../object/project/list";
+@use "../object/project/search-form";
+@use "../object/project/image";
+@use "../object/project/table";
+@use "../object/project/container";
+@use "../object/project/circle";

@@ -1,0 +1,84 @@
+@use "../foundation/base" as b;
+@use "../foundation/color" as c;
+@use "../foundation/font-family" as f;
+@use "../foundation/mixin" as m;
+
+/*
+==================
+archive blog
+==================
+*/
+.l-main {
+  &__wrapper {
+    width: 325px;
+    margin: 0px auto;
+    @include m.breakpoint(tablet) {
+      width: 615px;
+    }
+    @include m.breakpoint(pc) {
+      width: 920px;
+    }
+  }
+  &__list-category {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 30px;
+    margin-bottom: 180px;
+    @include m.breakpoint(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+/*
+==================
+single blog
+==================
+*/
+.l-main {
+  &__single-blog-container {
+    margin-bottom: 180px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 325px;
+    @include m.breakpoint(tablet) {
+      max-width: 615px;
+    }
+    @include m.breakpoint(pc) {
+      max-width: 700px;
+    }
+  }
+}
+
+.l-main {
+  &__profile-container {
+    margin-left: 30px;
+    margin-bottom: 180px;
+  }
+}
+
+/*
+==================
+front-page
+==================
+*/
+.l-main {
+  &__front-page {
+    position: relative;
+  }
+  &__wrapper-frontpage {
+    position: relative;
+    width: 100%;
+    max-width: 310px;
+    margin: 0 auto;
+    @include m.breakpoint(tablet) {
+      max-width: 620px;
+      //margin: 0 12.5%;
+    }
+    @include m.breakpoint(pc) {
+      max-width: 920px;
+      //margin: 0 18%;
+    }
+  }
+}

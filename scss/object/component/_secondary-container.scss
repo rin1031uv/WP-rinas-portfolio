@@ -1,0 +1,102 @@
+@use "../../foundation/base" as b;
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+/*
+==================
+single blog
+==================
+*/
+.c-profile {
+  &__secndary-container {
+    text-align: center;
+    @include m.breakpoint(tablet) {
+      text-align: inherit;
+    }
+  }
+}
+
+
+
+/*
+==================
+about
+==================
+*/
+.c-about {
+  &__secondary-container-self-introduction {
+    width: 100%;
+    position: absolute;
+    //top: 347.33px;
+    top: 248.33px;
+    left: 0;
+    display: inline-block;
+    padding: 15px;
+    margin-top: 15px;
+    border: solid 0.5px #122736; //内側の線
+    outline: solid 0.5px #122736; //外側の線
+    outline-offset: 3px; //内側と外側の線の間
+    @include m.breakpoint(tablet) {
+      width: 400px;
+      position: absolute;
+      top: 200px;
+      right: 0;
+      margin-top: 30px;
+      left: inherit;
+    }
+    @include m.breakpoint(pc) {
+      width: 560px;
+      position: absolute;
+      top: 215px;
+      left: 76px;  
+    }
+  }
+}
+
+.c-about {
+  //history of my life
+  &__history-secondary-container {
+    display: flex;
+  }
+  //carrer
+  &__carrer-secondary-container {
+    display: inline-block;
+    margin-bottom: 9px;
+  }
+  //reason
+  &__reason-secondary-container {
+    @include m.breakpoint(tablet) {
+      display: inline-block;
+    }
+  }
+  //help
+  &__help-secondary-container {
+    display: inline-block;
+  }
+  //strength
+  &__strength-secondary-container {
+  width: 100%;
+  margin-bottom: 60px;
+  }
+  //comment
+  &__comment-secondary-container {
+    width: 340px;
+    margin-left: auto; //中央寄せ
+    margin-right: auto; //中央寄せ
+    margin-bottom: 60px;
+    text-align: center;
+    @include m.breakpoint(tablet) {
+      width: 378px;
+    }
+    @include m.breakpoint(pc) {
+      width: 420px;
+    }
+  }
+}
+
+
+
+
+
+

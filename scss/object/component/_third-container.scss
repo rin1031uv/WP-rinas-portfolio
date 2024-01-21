@@ -1,0 +1,49 @@
+@use "../../foundation/color" as c;
+@use "../../foundation/font-family" as f;
+@use "../../foundation/mixin" as m;
+
+/*
+==================
+about
+==================
+*/
+.c-about {
+  //history of my life
+  &__history-third-container {
+    min-width: 325px;
+    margin-top: 30px;
+    margin-right: 30px;
+    >section:not(:last-of-type) {
+      margin-bottom: 15px;
+    }
+    @include m.breakpoint(tablet) {
+      width: 480px;
+      margin-right: 80px;
+      >section:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &__history-sixth-container {
+    width: 240px;
+  }
+  //help
+  &__help-third-container {
+    margin-bottom: 21px;
+  }
+  //about {
+  &__comment-third-container {
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    @include m.breakpoint(tablet) {
+      width: 440px;
+    }
+    @include m.breakpoint(pc) {
+      width: 768px;
+    }
+  }
+  &__history-sixth-sub-container {
+    margin-bottom: 30px;
+  }
+}
