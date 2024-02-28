@@ -1,19 +1,75 @@
-//archive-blog
-$('.c-card__wrapper-masonry').masonry({
-  columnWidth: 250, //必須
-  itemSelector: '.c-card__primary-container', //必須
-  gutter: 24,
-  //percentPosition: true,
-  fitWidth: true,
-  resize: true,
+
+//スライドメニュー
+const btn = document.querySelector('#c-header__hamburger-btn');
+
+$(function() {
+  //ハンバーガーメニューのクリックイベント
+  //クリックしたら
+  $('.js-nc-int-icon').click(function() {
+  //クラスが付いていたら
+  if($('.c-header__nav').hasClass('c-header__hamburger-background-action')) {
+    //ナビ非表示
+    $('.c-header__nav').removeClass('c-header__hamburger-background-action');
+    //背景色
+    $('.c-header__nav-background-sp').removeClass('open');
+    $('.c-header__nav-background-sp').addClass('close');
+    //menuに戻す
+    $(this).removeClass('c-header__hamburger-background-action');
+  }else {
+    //ナビを表示
+    $('.c-header__nav').addClass('c-header__hamburger-background-action');
+    //背景色
+    $('.c-header__nav-background-sp').addClass('open');
+    $('.c-header__nav-background-sp').removeClass('close');
+    //ハンバーガーメニューをバツに変更
+    $(this).addClass('c-header__hamburger-background-action');
+  }
+  });
 });
+
+//動作確認用
+$(function(){
+  alert('動いてます。');
+});
+
+//===英字タイトルが左から右に表示されるアニメーション
+//監視対象が範囲内に現れたら実行する動作
+const showtitle = (entries) => {
+ //左から右に出現するタイトル
+  //ふわっと出現
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+    entry.target.animate (
+      {
+        opacity: [0, 1],
+        filter: ['blur(.4rem)', 'blur(0)'],
+        translate: ['0 4rem', 0],
+      },
+      {
+        duration: 2000,
+        easing: 'ease',
+        fill: 'forwards',
+      }
+    );
+  }
+  });
+};
+//監視ロボットの設定
+const titleobserver = new IntersectionObserver (showtitle);
+//p-top__slide-in-titleを監視するように指示
+const titleElememts = document.querySelectorAll('.js__slide-in');
+titleElememts.forEach((titleElement) => {
+  titleobserver.observe(titleElement);
+});
+
+
 
 //動作確認用
 $(function(){
   alert('動作しています。');
 });
-
 //archive-works
+
 //imagesLoadedの読み込み
 $('.c-card__wrapper-masonry-works').imagesLoaded(function(){
   //$('親要素')を指定
@@ -26,6 +82,21 @@ $('.c-card__wrapper-masonry-works').imagesLoaded(function(){
     //isFitWidth: true
   });
 });
+//archive-blog
+$('.c-card__wrapper-masonry').masonry({
+  columnWidth: 250, //必須
+  itemSelector: '.c-card__primary-container', //必須
+  gutter: 24,
+  //percentPosition: true,
+  fitWidth: true,
+  resize: true,
+});
+
+//動作確認用
+$(function(){
+  alert('カード並びです');
+});
+
 
 //GSAP
 //強みエリアのアニメーション
@@ -196,6 +267,11 @@ mm.add("(min-width: 1440px)", () => {
   });
 });
 
+//動作確認用
+$(function(){
+  alert('くるくるします。');
+});
+
 //横スクロール
 const wrapper = document.querySelector(".c-about__history-content-wrapper");
 const slides = gsap.utils.toArray(".p-about__history-js-wrapper");
@@ -215,12 +291,8 @@ gsap.to(slides, {
     anticipatePin: 1,
     invalidateOnRefresh: true,
   },
-
 });
 
 
-//動作確認用
-$(function(){
-  alert('動作しています。');
-});
+
 

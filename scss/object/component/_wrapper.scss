@@ -25,6 +25,28 @@ front-page
       top: -758px;
     }
   }
+  &__hero-container {
+    position: relative;
+    height: 244px;
+    @include m.breakpoint(tablet) {
+      height: 468px;
+      }
+      @include m.breakpoint(pc) {
+      height: 758px;
+      }
+  }
+  &__hero-background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    //backdrop-filter: blur(1px);
+    background-color: rgba(18, 39, 54, 0.35); /* 背景色 */
+    //border: 0.8px rgba(255,255,255,0.4) solid; /*ボーダー*/
+    //border-bottom: 2px rgba(18, 39, 54, 0.35) solid;
+    //border-right: 2px rgba(18, 39, 54, 0.35) solid;
+    //box-shadow: rgba(18, 39, 54, 0.3) 2px 8px 8px;; /*薄い影*/
+  }
  //about
   &__about-wrapper {
     display: inline-block;

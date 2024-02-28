@@ -115,6 +115,52 @@ front-page
     margin-top: 3px;
     margin-bottom: 15px;
     text-align: left;
+    //opacity: 0;
+  }
+}
+
+
+//左からスライドしてくるタイトル
+.slide-in {
+  overflow: hidden;
+  display: inline-block;
+}
+.slide-in_inner {
+  display: inline-block;
+}
+.leftAnime {
+  opacity: 0; //透過０にして消しておく
+}
+.slideAnimeLeftRight {
+  animation-name: slideTextX100; //アニメーション名
+  animation-duration: 0.8s; //速さを指定
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%); //要素を左側へ隠す
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); //要素をもとの位置に戻す
+    opacity: 1;
+  }
+}
+.slideAnimeRightLeft {
+  animation-name: slideTextX-100;
+  animation-duration: 0.8s; //速さを指定
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes slideTextX-100 {
+  from {
+    transform: translateX(100%); //要素を右側へ隠す
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); //要素をもとの位置に戻す
+    opacity: 1;
   }
 }
 //タイトル上の背景文字装飾
@@ -214,6 +260,16 @@ front-page
 about
 ==================
 */
+//site title
+.p-header-about {
+  >h1 {
+    position: inherit;
+    >a {
+      line-height: 1rem;
+      display: inline-block;
+    }
+  }
+}
 //introduction
 .p-about {
   &__title-self-introduction {
@@ -281,10 +337,6 @@ about
     }
   }
 }
-
-
-
-
 //carrer
 .p-about {
   &__carrer-title-container {
@@ -327,8 +379,23 @@ about
     font-size: 24rem;
     font-family: f.$eiji-font;
     font-weight: 400;
+    @include m.breakpoint(tablet) {
+      display: flex;
+    }
     @include m.breakpoint(pc) {
       font-size: 32rem;
+    }
+    >div:nth-of-type(2) {
+      text-align: center;
+      @include m.breakpoint(tablet) {
+        text-align: inherit;
+      }
+    }
+    >div:nth-of-type(3) {
+      text-align: right;
+      @include m.breakpoint(tablet) {
+        text-align: inherit;
+      }
     }
   }
   &__reason-sub-title {

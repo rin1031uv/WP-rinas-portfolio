@@ -20,6 +20,7 @@ hamburger-menu(共通)
     top: 0;
     right: 0;
     transition: all 0.5s ease-in-out 0s; //開く速度を設定
+    pointer-events: auto; //クリック・タッチできるように
     @include m.breakpoint(tablet) {
       all: initial;
       height: 90px;
@@ -45,23 +46,35 @@ hamburger-menu(共通)
       font-size: 20rem;
       color: c.$color-font-light;
       position: relative;
+      @include m.breakpoint(tablet) {
+        color: c.$color-font-dark;
+        }
       &::after {
         content: "";
         display: block;
         position: absolute;
-        bottom: 39px;
+        top: 20px;
         left: 0;
         height: 0.5px;
         width: 0;
         transition: .5s all;
         background-color: c.$color-font-dark;
+        @include m.breakpoint(tablet) {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          top: 50px;
+          height: 0.5px;
+          width: 0;
+          transition: .5s all;
+          background-color: c.$color-font-dark;
+        }
       }
       &:hover::after {
         width: 100%;
       }
-      @include m.breakpoint(tablet) {
-      color: c.$color-font-dark;
-      }
+
     }
   }
   //hamburger-menu
@@ -91,6 +104,7 @@ hamburger-menu(共通)
     }
   }
   &__hamburger-button-svg {
+    z-index: 500;
     width: 45px;
     height: 45px;
     position: absolute;
@@ -101,19 +115,209 @@ hamburger-menu(共通)
     }
   }
 }
-
-//チェックボックスを押すとメニューが出てくる
-.c-header__hamburger-checkbox:checked ~ .c-header__nav {
-  transform: translateX(0);
+//front-page
+.l-front-page {
+  .c-header { 
+    &__nav {
+      transform: translateX(100%); //スマホの時隠す
+      z-index: 200; //上に来るように
+      width: 70%;
+      height: 100%;
+      padding-left: 60px;
+      background-color: rgba(110, 117, 164, 0.95);
+      position: fixed;
+      top: 0;
+      right: 0;
+      transition: all 0.5s ease-in-out 0s; //開く速度を設定
+      pointer-events: auto; //クリック・タッチできるように
+      @include m.breakpoint(tablet) {
+        all: initial;
+        height: 90px;
+        line-height: 90px; //縦中央揃え
+    }
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 120px;
+        @include m.breakpoint(tablet) {
+          margin-top: 0px;
+          flex-direction: row;
+        }
+        li {
+          padding: 35px 0;
+          @include m.breakpoint(tablet) {
+            padding: 0 35px;
+          }
+        }
+      }
+      >ul>li>a {
+        font-family: f.$eiji-font;
+        font-size: 20rem;
+        color: c.$color-font-light;
+        position: relative;
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 20px;
+          left: 0;
+          height: 0.5px;
+          width: 0;
+          transition: .5s all;
+          background-color: c.$color-font-light;
+          @include m.breakpoint(tablet) {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            top: 50px;
+            height: 0.5px;
+            width: 0;
+            transition: .5s all;
+            background-color: c.$color-font-light;
+          }
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
-//チェックボックスを押すと背景が出てくる
-.c-header__hamburger-checkbox:checked ~ .c-header__hamburger-background {
-  background: rgba(135, 150, 169, 0.75); //薄い黒色に変化
+.c-header__hamburger-background-action {
+  transform: translateX(0);
+  //background: rgba(135, 150, 169, 0.75); //薄い黒色に変化
+  pointer-events: auto; //クリック・タッチできるように
+  transition: all 0.5s ease-in-out 0s;
+  //z-index: 100; //上にもってくるため
+}
+.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: all 0.5s ease-in-out 0s;
+  background-color: rgba(135, 150, 169, 0.75);
   pointer-events: auto; //クリック・タッチできるように
   z-index: 100; //上にもってくるため
+  @include m.breakpoint(tablet) {
+    all: inherit;
+  }
+}
+.close {
+  opacity: 0;
+  pointer-events: auto;
 }
 
+//チェックボックスを押すとメニューが出てくる
+//.c-header__hamburger-checkbox:checked ~ .c-header__nav {
+ // transform: translateX(0);
+//}
+//チェックボックスを押すと背景が出てくる
+//.c-header__hamburger-checkbox:checked ~ .c-header__hamburger-background {
+  //background: rgba(135, 150, 169, 0.75); //薄い黒色に変化
+  //pointer-events: auto; //クリック・タッチできるように
+  //z-index: 100; //上にもってくるため
+//}
+
 //チェックボックスを押すとボタンがバッテンになる？
-.c-header__hamburger-checkbox:checked ~ .c-header__hamburger-button-svg>g>.c-header__hamburger-button-sen {
-    transform: rotate(45deg);
+//.c-header__hamburger-checkbox:checked ~ .c-header__hamburger-button-svg>g>.c-header__hamburger-button-sen {
+    //transform: rotate(45deg);
+//}
+
+//ハンバーガーメニュー
+//g {
+  //.cls-2 {
+    //fill: #EAF4FC;
+  //}
+//}
+//g {
+  //.cls-3 {
+    //fill: #EAF4FC;
+  //}
+//}
+//g {
+  //.cls-1 {
+    //fill: #EAF4FC;
+  //}
+//}
+.js-nc-int-icon {
+  pointer-events: auto; //クリック・タッチできるように
+}
+
+  g {
+    .cls-2 {
+      fill: c.$color-base;
+    }
+  }
+  g {
+    .cls-3 {
+      fill: c.$color-base;
+    }
+  }
+  g {
+    .cls-1 {
+      fill: c.$color-base;
+    }
+  }
+
+.c-header__hamburger-button-svg {
+  //position: initial;
+  svg:has(.nc-int-icon-state-b) {
+    .cls-1 {
+      fill: c.$color-font-light;
+      }
+    .cls-2 {
+      fill: c.$color-font-light;
+      }
+    }
+  }
+  .js-nc-int-icon:has(.c-header__hamburger-background-action) {
+    .cls-2 {
+      fill: c.$color-font-light;
+    }
+    
+  }
+/*
+==================
+front-page以外
+==================
+*/
+//about
+.l-front-page {
+  .c-header__hamburger-button-svg {
+    //position: initial;
+    g {
+      .cls-2 {
+        fill: c.$color-font-light;
+      }
+    }
+    g {
+      .cls-3 {
+        fill: c.$color-font-light;
+      }
+    }
+    g {
+      .cls-1 {
+        fill: c.$color-font-light;
+      }
+    }
+    svg:has(.nc-int-icon-state-b) {
+      .cls-1 {
+        fill: c.$color-font-light;
+      }
+      .cls-2 {
+        fill: c.$color-font-light;
+      }
+    }
+  }
+}
+.l-about {
+  .js-nc-int-icon:has(.c-header__hamburger-background-action) {
+    .cls-2 {
+      fill: c.$color-font-light;
+    }
+    
+  }
 }
