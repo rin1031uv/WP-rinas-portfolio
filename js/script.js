@@ -28,9 +28,9 @@ $(function() {
 });
 
 //動作確認用
-$(function(){
-  alert('動いてます。');
-});
+//$(function(){
+  //alert('動いてます。');
+//});
 
 //===英字タイトルが左から右に表示されるアニメーション
 //監視対象が範囲内に現れたら実行する動作
@@ -65,9 +65,9 @@ titleElememts.forEach((titleElement) => {
 
 
 //動作確認用
-$(function(){
-  alert('動作しています。');
-});
+//$(function(){
+  //alert('動作しています。');
+//});
 
 //===masonry(カード並び)===
 //imagesLoadedの読み込み
@@ -93,9 +93,9 @@ $('.c-card__wrapper-masonry').masonry({
 });
 
 //動作確認用
-$(function(){
-  alert('カード並びです');
-});
+//$(function(){
+  //alert('カード並びです');
+//});
 
 
 //GSAP
@@ -268,9 +268,9 @@ mm.add("(min-width: 1440px)", () => {
 });
 
 //動作確認用
-$(function(){
-  alert('くるくるします。');
-});
+//$(function(){
+  //alert('くるくるします。');
+//});
 
 //横スクロール
 const wrapper = document.querySelector(".c-about__history-content-wrapper");
