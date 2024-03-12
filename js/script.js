@@ -68,8 +68,8 @@ titleElememts.forEach((titleElement) => {
 $(function(){
   alert('動作しています。');
 });
-//archive-works
 
+//===masonry(カード並び)===
 //imagesLoadedの読み込み
 $('.c-card__wrapper-masonry-works').imagesLoaded(function(){
   //$('親要素')を指定
@@ -184,7 +184,7 @@ let mm = gsap.matchMedia();
       scale: 1.253
   });
 });
-//PC 1440px以上の時
+//===PC 1440px以上の時===
 mm.add("(min-width: 1440px)", () => {
   gsap.to(".p-about__circle-title", {
     scrollTrigger: {
@@ -283,10 +283,10 @@ gsap.to(slides, {
   xPercent: -100 * (slides.length - 1), //-x軸方向に移動
   ease: "none",
   scrollTrigger: {
-    trigger: ".c-about__history-wrapper",
+    trigger: ".c-about__history-content-wrapper",
     pin: true,
     scrub: 3,
-    start: "top top",
+    start: "top 5%",
     end: () => "+=" + wrapperWidth,
     anticipatePin: 1,
     invalidateOnRefresh: true,

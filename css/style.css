@@ -339,6 +339,15 @@ screen03: 'screen and (max-width:1194px)',
 screen04: 'screen and (max-width:1440px)',
 );*/ /*
 ==================
+共通
+==================
+*/
+.l-footer {
+  margin-bottom: 60px;
+}
+
+/*
+==================
 archive blog
 ==================
 */
@@ -381,7 +390,7 @@ archive blog
   content: "";
   display: block;
   position: absolute;
-  bottom: 8px;
+  bottom: 9px;
   left: 0;
   height: 0.5px;
   width: 0;
@@ -405,7 +414,7 @@ archive blog
 */
 .l-header {
   z-index: 100;
-  margin-top: 75px;
+  margin-top: 135px;
 }
 @media (min-width: 834px) {
   .l-header {
@@ -681,7 +690,7 @@ hamburger-menu(共通)
 .c-header__nav {
   transform: translateX(100%);
   z-index: 200;
-  width: 70%;
+  width: 80%;
   height: 100%;
   padding-left: 60px;
   background-color: rgba(110, 117, 164, 0.95);
@@ -737,7 +746,7 @@ hamburger-menu(共通)
   height: 0.5px;
   width: 0;
   transition: 0.5s all;
-  background-color: #122736;
+  background-color: #EAF4FC;
 }
 @media (min-width: 834px) {
   .c-header__nav > ul > li > a::after {
@@ -799,7 +808,7 @@ hamburger-menu(共通)
 .l-front-page .c-header__nav {
   transform: translateX(100%);
   z-index: 200;
-  width: 70%;
+  width: 85%;
   height: 100%;
   padding-left: 60px;
   background-color: rgba(110, 117, 164, 0.95);
@@ -869,7 +878,7 @@ hamburger-menu(共通)
   width: 100%;
 }
 
-.c-header__hamburger-background-action {
+.p-header__container .c-header__hamburger-background-action {
   transform: translateX(0);
   pointer-events: auto;
   transition: all 0.5s ease-in-out 0s;
@@ -2098,6 +2107,8 @@ about
 .p-pagenation__container li {
   margin-left: 15px;
   margin-right: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
   text-align: center;
   display: inline-block;
 }
@@ -2109,7 +2120,7 @@ about
 }
 .p-pagenation__container li:first-of-type > a > img,
 .p-pagenation__container li:last-of-type > a > img {
-  width: 50px;
+  width: 100%;
 }
 @media (min-width: 834px) {
   .p-pagenation__container li:first-of-type > a > img,
@@ -2119,12 +2130,21 @@ about
 }
 .p-pagenation__container li:not(:first-of-type) > a,
 .p-pagenation__container li:not(:last-of-type) > a {
-  width: 50px;
-  height: 50px;
+  font-size: 25rem;
+  width: 30px;
+  height: 30px;
   display: inline-block;
-  font-size: 32rem;
   font-family: delaney, sans-serif;
   color: #122736;
+  line-height: 30rem;
+}
+@media (min-width: 834px) {
+  .p-pagenation__container li:not(:first-of-type) > a,
+.p-pagenation__container li:not(:last-of-type) > a {
+    font-size: 32rem;
+    width: 50px;
+    height: 50px;
+  }
 }
 .p-pagenation__container li:nth-of-type(5),
 .p-pagenation__container li:nth-of-type(6) {
@@ -2135,6 +2155,11 @@ about
 .p-pagenation__container li:nth-of-type(6) {
     display: inline-block;
   }
+}
+.p-pagenation__container li > a.is-Active {
+  background-image: url(/image/flower-2.png);
+  background-size: contain;
+  color: #EAF4FC;
 }
 
 .p-main__border {
@@ -2503,13 +2528,13 @@ about
 }
 
 .c-about__history-secondary-container > img {
-  width: 120px;
-  height: 80px;
+  width: 160px;
+  height: 160px;
 }
 @media (min-width: 834px) {
   .c-about__history-secondary-container > img {
     width: 240px;
-    height: 80px;
+    height: 240px;
   }
 }
 

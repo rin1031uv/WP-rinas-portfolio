@@ -10,7 +10,7 @@ archive blog
 */
 .l-header {
   z-index: 100;
-  margin-top: 75px;
+  margin-top: 135px;
   @include m.breakpoint(tablet) {
     margin-top: initial;
   }

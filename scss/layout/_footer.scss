@@ -5,6 +5,14 @@
 
 /*
 ==================
+共通
+==================
+*/
+.l-footer {
+  margin-bottom: 60px;
+}
+/*
+==================
 archive blog
 ==================
 */
@@ -36,17 +44,19 @@ archive blog
     font-family: f.$eiji-font;
     font-size: 20rem;
     position: relative;
+    //アンダーバー
     &::after {
       content: "";
       display: block;
       position: absolute;
-      bottom: 8px;
+      bottom: 9px;
       left: 0;
       height: 0.5px;
       width: 0;
       transition: .5s all;
       background-color: c.$color-font-dark;
     }
+    //アンダーバー表示
     &:hover::after {
       width: 100%;
     }

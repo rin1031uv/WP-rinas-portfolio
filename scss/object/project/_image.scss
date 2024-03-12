@@ -151,11 +151,11 @@ about
 .c-about {
   &__history-secondary-container {
     >img {
-      width: 120px;
-      height: 80px;
+      width: 160px;
+      height: 160px;
       @include m.breakpoint(tablet) {
         width: 240px;
-        height: 80px;
+        height: 240px;
       }
 
     }

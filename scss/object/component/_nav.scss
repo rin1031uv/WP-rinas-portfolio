@@ -12,7 +12,7 @@ hamburger-menu(共通)
   &__nav {
     transform: translateX(100%); //スマホの時隠す
     z-index: 200; //上に来るように
-    width: 70%;
+    width: 80%;
     height: 100%;
     padding-left: 60px;
     background-color: rgba(110, 117, 164, 0.95);
@@ -49,6 +49,7 @@ hamburger-menu(共通)
       @include m.breakpoint(tablet) {
         color: c.$color-font-dark;
         }
+      //アンダーバー
       &::after {
         content: "";
         display: block;
@@ -58,7 +59,7 @@ hamburger-menu(共通)
         height: 0.5px;
         width: 0;
         transition: .5s all;
-        background-color: c.$color-font-dark;
+        background-color: c.$color-font-light;
         @include m.breakpoint(tablet) {
           content: "";
           display: block;
@@ -71,6 +72,7 @@ hamburger-menu(共通)
           background-color: c.$color-font-dark;
         }
       }
+      //アンダーバー表示
       &:hover::after {
         width: 100%;
       }
@@ -121,7 +123,7 @@ hamburger-menu(共通)
     &__nav {
       transform: translateX(100%); //スマホの時隠す
       z-index: 200; //上に来るように
-      width: 70%;
+      width: 85%;
       height: 100%;
       padding-left: 60px;
       background-color: rgba(110, 117, 164, 0.95);
@@ -155,6 +157,7 @@ hamburger-menu(共通)
         font-size: 20rem;
         color: c.$color-font-light;
         position: relative;
+        //アンダーバー
         &::after {
           content: "";
           display: block;
@@ -177,6 +180,7 @@ hamburger-menu(共通)
             background-color: c.$color-font-light;
           }
         }
+        //アンダーバー表示
         &:hover::after {
           width: 100%;
         }
@@ -184,13 +188,16 @@ hamburger-menu(共通)
     }
   }
 }
-.c-header__hamburger-background-action {
-  transform: translateX(0);
-  //background: rgba(135, 150, 169, 0.75); //薄い黒色に変化
-  pointer-events: auto; //クリック・タッチできるように
-  transition: all 0.5s ease-in-out 0s;
-  //z-index: 100; //上にもってくるため
+.p-header__container {
+  .c-header__hamburger-background-action {
+    transform: translateX(0);
+    //background: rgba(135, 150, 169, 0.75); //薄い黒色に変化
+    pointer-events: auto; //クリック・タッチできるように
+    transition: all 0.5s ease-in-out 0s;
+    //z-index: 100; //上にもってくるため
+  }
 }
+
 .open {
   position: fixed;
   top: 0;
