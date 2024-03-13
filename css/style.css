@@ -1356,6 +1356,9 @@ archive blog
     padding-right: 0;
   }
 }
+.p-card__button > a:hover {
+  opacity: 0.8;
+}
 
 /*
 ==================
@@ -1392,7 +1395,7 @@ front-page
   border-radius: 10px;
   box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45), 5px 5px 9px rgba(18, 39, 54, 0.15);
 }
-.p-top__button:active {
+.p-top__button:hover {
   box-shadow: -5px -5px 10px inset rgb(255, 255, 255), 5px 5px 10px inset rgba(18, 39, 54, 0.23);
 }
 .p-top__button a {
@@ -1418,6 +1421,9 @@ front-page
 .p-top__button-icon > i {
   font-size: 20px;
   line-height: 50px;
+}
+.p-top__button-icon:hover {
+  box-shadow: -5px -5px 10px inset rgb(255, 255, 255), 5px 5px 10px inset rgba(18, 39, 54, 0.23);
 }
 .p-top__button-title {
   font-size: 12rem;
@@ -2163,7 +2169,7 @@ about
 }
 
 .p-main__border {
-  background-image: url(/image/sen.hoso.png);
+  background-image: url(/image/sen-kugiri.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0 auto;

@@ -40,6 +40,9 @@ archive blog
       padding-right: 0;
     
     }
+    &:hover {
+      opacity: 0.8;
+    }
   }
   }
 }
@@ -81,10 +84,9 @@ front-page
     border-radius: 10px;
     box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
                 5px 5px 9px rgba(18, 39, 54, 0.15);
-      &:active {
+      &:hover {
         box-shadow: -5px -5px 10px inset rgba(255,255,255,1),
                     5px 5px 10px inset rgba(18, 39, 54, 0.23);
-
       }
     a {
       font-size: 20rem;
@@ -114,6 +116,10 @@ front-page
     >i {
       font-size: 20px;
       line-height: 50px;
+    }
+    &:hover {
+      box-shadow: -5px -5px 10px inset rgba(255,255,255,1),
+                  5px 5px 10px inset rgba(18, 39, 54, 0.23);
     }
   }
   &__button-title {
