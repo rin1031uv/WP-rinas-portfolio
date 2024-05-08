@@ -338,7 +338,7 @@ about
           content: "";
           width: 45px;
           height: 17px;
-          background-image: url(/image/sen.hoso.png);
+          background-image: url(../image/sen.hoso.png);
           background-size: cover;
           @include m.breakpoint(tablet) {
             display: none;
@@ -348,7 +348,7 @@ about
           content: "";
           width: 45px;
           height: 17px;
-          background-image: url(/image/sen.hoso.png);
+          background-image: url(../image/sen.hoso.png);
           background-size: cover;
           @include m.breakpoint(tablet) {
             display: none;

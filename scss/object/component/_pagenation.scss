@@ -10,3 +10,8 @@
   justify-content: center;
  }
 }
+//上記をWordPress化時に書き換え
+.wp-pagenavi {
+ display: flex;
+ justify-content: center;
+}

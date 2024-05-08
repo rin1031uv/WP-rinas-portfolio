@@ -14,7 +14,7 @@ archive blog
     font-family: f.$main-font;
   }
 }
-
+//カード内抜粋
 .p-card {
   &__text {
     display: none;
@@ -24,6 +24,21 @@ archive blog
       font-family: f.$main-font;
       color: c.$color-font-dark;
       padding: 0px 15px 18px 15px;
+    }
+  }
+}
+//上記をWordPress化時に書き換え
+.c-card__secondary-container {
+  p {
+    &:first-of-type {
+      display: none;
+      @include m.breakpoint(pc) {
+        display: block;
+        font-size: 12rem;
+        font-family: f.$main-font;
+        color: c.$color-font-dark;
+        padding: 0px 15px 18px 15px;
+      }
     }
   }
 }
@@ -57,8 +72,9 @@ single blog
     font-size: 14rem;
     font-family: f.$main-font;
     color: c.$color-font-dark;
-    margin-top: 24px;
+    //margin-top: 24px;
     padding: 15px;
+    margin-left: 15px;
   }
 }
 

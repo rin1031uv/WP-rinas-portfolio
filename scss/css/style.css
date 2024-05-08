@@ -41,6 +41,7 @@ hr {
 
 details,
 main {
+  
   display: block; /* Render the `main` element consistently in IE. */
 }
 
@@ -413,18 +414,21 @@ archive blog
 ==================
 */
 .l-header {
-  position: relative;
   z-index: 100;
-  margin-top: 245px;
+  margin-top: 135px;
+}
+@media (min-width: 834px) {
+  .l-header {
+    margin-top: initial;
+  }
 }
 .l-header__container-primary {
-  position: relative;
-  bottom: 30px;
   display: flex;
   flex-direction: column-reverse;
 }
 .l-header__container-primary h1 {
   text-align: center;
+  margin-bottom: 60px;
 }
 @media (min-width: 834px) {
   .l-header__container-primary {
@@ -438,6 +442,7 @@ archive blog
 @media (min-width: 834px) {
   .l-header__logo {
     width: 600px;
+    padding-right: 40px;
   }
 }
 .l-header__nav ul {
@@ -450,23 +455,6 @@ archive blog
   color: #122736;
   font-family: delaney, sans-serif;
   font-size: 20rem;
-}
-
-/*
-==============================
-WordPress化 front-page
-==============================
-*/
-.page .l-header__container-primary h1 {
-  text-align: center;
-}
-
-.post-type-archive-works .l-header__container-primary h1 {
-  text-align: center;
-}
-
-.post-type-archive-post .l-header__container-primary h1 {
-  text-align: center;
 }
 
 /*
@@ -658,7 +646,7 @@ about
   content: "";
   width: 19px;
   height: 45px;
-  background-image: url(../image/jinoyokobou.png);
+  background-image: url(/image/jinoyokobou.png);
   background-size: contain;
   padding-right: 6px;
   margin-top: 6px;
@@ -718,8 +706,6 @@ hamburger-menu(共通)
     all: initial;
     height: 90px;
     line-height: 90px;
-    position: relative;
-    top: -150px;
   }
 }
 .c-header__nav ul {
@@ -741,19 +727,18 @@ hamburger-menu(共通)
     padding: 0 35px;
   }
 }
-.c-header__nav .p-header__nav-front-page.menu-gmenu-container > ul > li > a {
+.c-header__nav > ul > li > a {
   font-family: delaney, sans-serif;
   font-size: 20rem;
   color: #EAF4FC;
   position: relative;
 }
-.c-header__nav .menu-gmenu-container > ul > li > a {
-  font-family: delaney, sans-serif;
-  font-size: 20rem;
-  color: #EAF4FC;
-  position: relative;
+@media (min-width: 834px) {
+  .c-header__nav > ul > li > a {
+    color: #122736;
+  }
 }
-.c-header__nav .menu-gmenu-container > ul > li > a::after {
+.c-header__nav > ul > li > a::after {
   content: "";
   display: block;
   position: absolute;
@@ -765,7 +750,7 @@ hamburger-menu(共通)
   background-color: #EAF4FC;
 }
 @media (min-width: 834px) {
-  .c-header__nav .menu-gmenu-container > ul > li > a::after {
+  .c-header__nav > ul > li > a::after {
     content: "";
     display: block;
     position: absolute;
@@ -777,7 +762,7 @@ hamburger-menu(共通)
     background-color: #122736;
   }
 }
-.c-header__nav .menu-gmenu-container > ul > li > a:hover::after {
+.c-header__nav > ul > li > a:hover::after {
   width: 100%;
 }
 .c-header__hamburger-checkbox {
@@ -812,47 +797,13 @@ hamburger-menu(共通)
   width: 45px;
   height: 45px;
   position: absolute;
-  top: -180px;
+  top: 25px;
   right: 25px;
 }
 @media (min-width: 834px) {
   .c-header__hamburger-button-svg {
     display: none;
   }
-}
-
-@media (min-width: 834px) {
-  .l-header__container-primary.p-header__container.p-header__nav-front-page {
-    position: relative;
-    top: -360px;
-  }
-}
-
-.p-header__nav-front-page .menu-gmenu-container > ul > li > a::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 20px;
-  left: 0;
-  height: 0.5px;
-  width: 0;
-  transition: 0.5s all;
-  background-color: #EAF4FC;
-}
-@media (min-width: 834px) {
-  .p-header__nav-front-page .menu-gmenu-container > ul > li > a::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    top: 50px;
-    height: 0.5px;
-    width: 0;
-    transition: 0.5s all;
-  }
-}
-.p-header__nav-front-page .menu-gmenu-container > ul > li > a:hover::after {
-  width: 100%;
 }
 
 .l-front-page .c-header__nav {
@@ -984,9 +935,9 @@ g .cls-1 {
 }
 
 /*
-=========================
-front-page（以外と記載があったけど恐らく誤り）
-=========================
+==================
+front-page以外
+==================
 */
 .l-front-page .c-header__hamburger-button-svg g .cls-2 {
   fill: #EAF4FC;
@@ -1006,101 +957,6 @@ front-page（以外と記載があったけど恐らく誤り）
 
 .l-about .js-nc-int-icon:has(.c-header__hamburger-background-action) .cls-2 {
   fill: #EAF4FC;
-}
-
-/*2024/04/27整理し直し
-==============================
-WordPress化 front-page
-==============================
-*/
-.home .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
-  color: #EAF4FC;
-}
-
-.js-nc-int-icon {
-  pointer-events: auto;
-}
-
-.home g .cls-2 {
-  fill: #EAF4FC;
-}
-.home g .cls-3 {
-  fill: #EAF4FC;
-}
-.home g .cls-1 {
-  fill: #EAF4FC;
-}
-.home svg:has(.nc-int-icon-state-b) .cls-1 {
-  fill: #EAF4FC;
-}
-.home svg:has(.nc-int-icon-state-b) .cls-2 {
-  fill: #EAF4FC;
-}
-
-/*
-==============================
-WordPress化 front-page以外
-==============================
-*/
-.page .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
-  color: #EAF4FC;
-}
-@media (min-width: 834px) {
-  .page .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
-    color: #122736;
-  }
-}
-
-.page svg:has(.nc-int-icon-state-b) .menu-gmenu-container > ul > li > a {
-  color: #EAF4FC;
-}
-@media (min-width: 834px) {
-  .page svg:has(.nc-int-icon-state-b) .menu-gmenu-container > ul > li > a {
-    color: #122736;
-  }
-}
-
-.post-type-archive-works .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
-  color: #EAF4FC;
-}
-@media (min-width: 834px) {
-  .post-type-archive-works .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
-    color: #122736;
-  }
-}
-
-.post-type-archive-post .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
-  color: #EAF4FC;
-}
-@media (min-width: 834px) {
-  .post-type-archive-post .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
-    color: #122736;
-  }
-}
-
-.single .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
-  color: #EAF4FC;
-}
-@media (min-width: 834px) {
-  .single .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
-    color: #122736;
-  }
-}
-
-.js-nc-int-icon {
-  pointer-events: auto;
-}
-
-g .cls-2 {
-  fill: #8796A9;
-}
-
-g .cls-3 {
-  fill: #8796A9;
-}
-
-g .cls-1 {
-  fill: #8796A9;
 }
 
 /*
@@ -1170,11 +1026,6 @@ front-page
 }
 
 .c-pagenation__container {
-  display: flex;
-  justify-content: center;
-}
-
-.wp-pagenavi {
   display: flex;
   justify-content: center;
 }
@@ -1284,9 +1135,9 @@ front-page
 ==================
 */
 .c-top__hero-wrapper {
-  height: 293px;
+  height: 244px;
   position: absolute;
-  top: -293px;
+  top: -244px;
   width: 100%;
 }
 @media (min-width: 834px) {
@@ -1303,7 +1154,7 @@ front-page
 }
 .c-top__hero-container {
   position: relative;
-  height: 293px;
+  height: 244px;
 }
 @media (min-width: 834px) {
   .c-top__hero-container {
@@ -1619,19 +1470,6 @@ archive blog
   }
 }
 
-.c-card__secondary-container p:first-of-type {
-  display: none;
-}
-@media (min-width: 1194px) {
-  .c-card__secondary-container p:first-of-type {
-    display: block;
-    font-size: 12rem;
-    font-family: Shippori Mincho B1, serif;
-    color: #122736;
-    padding: 0px 15px 18px 15px;
-  }
-}
-
 /*
 ==================
 single blog
@@ -1660,8 +1498,8 @@ single blog
   font-size: 14rem;
   font-family: Shippori Mincho B1, serif;
   color: #122736;
+  margin-top: 24px;
   padding: 15px;
-  margin-left: 15px;
 }
 
 /*
@@ -2331,59 +2169,13 @@ about
   color: #EAF4FC;
 }
 
-.wp-pagenavi span, .wp-pagenavi a {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: auto;
-  margin-bottom: auto;
-  text-align: center;
-  display: inline-block;
-  font-size: 25rem;
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  font-family: delaney, sans-serif;
-  color: #122736;
-  line-height: 30px;
-}
-@media (min-width: 834px) {
-  .wp-pagenavi span, .wp-pagenavi a {
-    margin-left: 30px;
-    margin-right: 30px;
-    font-size: 32rem;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-  }
-}
-
-span.current {
-  background-image: url(../image/flower-2.png);
-  background-size: contain;
-  color: #EAF4FC;
-  line-height: 30px;
-}
-@media (min-width: 834px) {
-  span.current {
-    line-height: 50px;
-  }
-}
-
-span.pages {
-  width: 11%;
-}
-
 .p-main__border {
-  background-image: url(../image/sen-kugiri.png);
+  background-image: url(/image/sen-kugiri.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0 auto;
   width: 340px;
   height: 12px;
-}
-.p-main__border:last-of-type {
-  margin-top: 180px;
-  margin-bottom: 30px;
 }
 @media (min-width: 834px) {
   .p-main__border {
@@ -2428,70 +2220,6 @@ archive blog
   .p-main__list-category dd > a {
     font-size: 18rem;
   }
-}
-
-.l-main__list-category .p-main__list-category {
-  margin-top: 30px;
-  margin-left: 15px;
-}
-@media (min-width: 834px) {
-  .l-main__list-category .p-main__list-category {
-    margin-top: 0px;
-    margin-left: 30px;
-  }
-}
-.l-main__list-category .p-main__list-category h3 {
-  font-size: 23rem;
-  font-family: delaney, sans-serif;
-  color: #122736;
-  padding-bottom: 15px;
-}
-.l-main__list-category > article > ul > li > a {
-  font-size: 16rem;
-  font-family: Shippori Mincho B1, serif;
-  color: #122736;
-  padding-left: 9px;
-  padding-bottom: 15px;
-}
-@media (min-width: 1194px) {
-  .l-main__list-category > article > ul > li > a {
-    font-size: 18rem;
-  }
-}
-
-.p-card__list-container-blog {
-  position: absolute;
-  top: 9px;
-  left: 15px;
-}
-.p-card__list-container-blog > ul {
-  display: flex;
-}
-.p-card__list-container-blog > ul > li {
-  width: 100%;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  display: inline-block;
-}
-.p-card__list-container-blog > ul > li > a {
-  padding: 5px;
-  font-size: 12rem;
-  font-family: Shippori Mincho B1, serif;
-  color: #122736;
-  background-color: #EAF4FC;
-  opacity: 0.8;
-}
-.p-card__list-container-blog > ul.p-card__tag-blog > li > a {
-  display: inline-block;
-  padding: 5px;
-  font-size: 10rem;
-  font-family: Shippori Mincho B1, serif;
-  color: #122736;
-  background-color: #EAF4FC;
-  opacity: 0.8;
-}
-.p-card__list-container-blog > ul.p-card__tag-blog > li > a::before {
-  content: "# ";
 }
 
 /*
@@ -2553,7 +2281,7 @@ single blog
 }
 .p-card__tag-blog > li > a {
   padding: 5px;
-  font-size: 10rem;
+  font-size: 12rem;
   font-family: Shippori Mincho B1, serif;
   color: #122736;
   background-color: #EAF4FC;
@@ -2566,13 +2294,6 @@ archive works
 ==================
 */
 .p-card-works__cotegory-list a {
-  font-size: 12px;
-  font-family: Shippori Mincho B1, serif;
-  color: #122736;
-  padding: 0 15px 6px 15px;
-}
-
-.c-card-works__third-container ul > li > a {
   font-size: 12px;
   font-family: Shippori Mincho B1, serif;
   color: #122736;
@@ -3261,7 +2982,7 @@ about
   content: "";
   width: 45px;
   height: 17px;
-  background-image: url(../image/sen.hoso.png);
+  background-image: url(/image/sen.hoso.png);
   background-size: cover;
 }
 @media (min-width: 834px) {
@@ -3273,7 +2994,7 @@ about
   content: "";
   width: 45px;
   height: 17px;
-  background-image: url(../image/sen.hoso.png);
+  background-image: url(/image/sen.hoso.png);
   background-size: cover;
 }
 @media (min-width: 834px) {

@@ -1,24 +1,24 @@
 @use "../foundation/color" as c;
 
 :root {
- --breakpoint-xs: 393;
- --breakpoint-s: 834;
- --breakpoint-m: 1194;
- --breakpoint-l: 1440;
- 
-  --font-size: min(calc(100vw * 1 / var(--breakpoint-xs)), 6.25%);
-   @media (min-width: 834px) {
-   --font-size: min(calc(100vw * 1 /var(--breakpoint-s)), 6.25%);
-   }
-   @media (min-width: 1194px) {
-   --font-size: min(calc(100vw * 1 / var(--breakpoint-m)), 6.25%);
-   }
-   @media (min-width: 1440px) {
-   --font-size: min(calc(100vw * 1 / var(--breakpoint-l)), 6.25%);
-   }
- }
+  --breakpoint-xs: 393;
+  --breakpoint-s: 834;
+  --breakpoint-m: 1194;
+  --breakpoint-l: 1440;
 
- html {
+  --font-size: min(calc(100vw * 1 / var(--breakpoint-xs)), 6.25%);
+    @media (min-width: 834px) {
+   --font-size: min(calc(100vw * 1 /var(--breakpoint-s)), 6.25%);
+  }
+    @media (min-width: 1194px) {
+   --font-size: min(calc(100vw * 1 / var(--breakpoint-m)), 6.25%);
+  }
+    @media (min-width: 1440px) {
+   --font-size: min(calc(100vw * 1 / var(--breakpoint-l)), 6.25%);
+  }
+}
+
+html {
   font-size: var(--font-size);
 }
 

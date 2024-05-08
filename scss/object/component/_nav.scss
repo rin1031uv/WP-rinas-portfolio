@@ -3,6 +3,8 @@
 @use "../../foundation/font-family" as f;
 @use "../../foundation/mixin" as m;
 
+//navはheader用とfooter用２種
+//front-pageとそれ以外のページでheader用ナビメニューの色が違う
 /*
 ==================
 hamburger-menu(共通)
@@ -25,6 +27,8 @@ hamburger-menu(共通)
       all: initial;
       height: 90px;
       line-height: 90px; //縦中央揃え
+      position: relative;
+      top: -150px;
   }
     ul {
       display: flex;
@@ -41,14 +45,21 @@ hamburger-menu(共通)
         }
       }
     }
-    >ul>li>a {
+    //WordPress化時に付与されたクラスを追記(.menu-gmenu-container)
+    .p-header__nav-front-page.menu-gmenu-container>ul>li>a {
+        font-family: f.$eiji-font;
+        font-size: 20rem;
+        color: c.$color-font-light;
+        position: relative;
+    }
+    .menu-gmenu-container>ul>li>a {
       font-family: f.$eiji-font;
       font-size: 20rem;
       color: c.$color-font-light;
       position: relative;
-      @include m.breakpoint(tablet) {
-        color: c.$color-font-dark;
-        }
+      //@include m.breakpoint(tablet) {
+      //color: c.$color-font-dark;
+        //}
       //アンダーバー
       &::after {
         content: "";
@@ -110,13 +121,53 @@ hamburger-menu(共通)
     width: 45px;
     height: 45px;
     position: absolute;
-    top: 25px;
+    top: -180px; //WordPress化時ナビメニューの高さ変更に伴い変更 25px→-180px
     right: 25px;
     @include m.breakpoint(tablet) {
       display: none;
     }
   }
 }
+//WordPress化時front-page上部のナビ
+.l-header__container-primary.p-header__container.p-header__nav-front-page {
+  @include m.breakpoint(tablet) {
+    position: relative;
+    top: -360px;
+  }
+}
+.p-header__nav-front-page {
+  .menu-gmenu-container>ul>li>a {
+    //アンダーバー
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      height: 0.5px;
+      width: 0;
+      transition: .5s all;
+      background-color: c.$color-font-light;
+      @include m.breakpoint(tablet) {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        top: 50px;
+        height: 0.5px;
+        width: 0;
+        transition: .5s all;
+        //background-color: c.$color-font-dark;
+      }
+    }
+    //アンダーバー表示
+    &:hover::after {
+      width: 100%;
+    }
+
+  }
+}
+
 //front-page
 .l-front-page {
   .c-header { 
@@ -249,6 +300,8 @@ hamburger-menu(共通)
     //fill: #EAF4FC;
   //}
 //}
+//スライド時のハンバーガーメニューfront-page以外
+//open時
 .js-nc-int-icon {
   pointer-events: auto; //クリック・タッチできるように
 }
@@ -271,6 +324,7 @@ hamburger-menu(共通)
 
 .c-header__hamburger-button-svg {
   //position: initial;
+  //Close表示時
   svg:has(.nc-int-icon-state-b) {
     .cls-1 {
       fill: c.$color-font-light;
@@ -287,11 +341,11 @@ hamburger-menu(共通)
     
   }
 /*
-==================
-front-page以外
-==================
+=========================
+front-page（以外と記載があったけど恐らく誤り）
+=========================
 */
-//about
+//open時もclose時も白っぽい色にする
 .l-front-page {
   .c-header__hamburger-button-svg {
     //position: initial;
@@ -328,3 +382,121 @@ front-page以外
     
   }
 }
+
+/*2024/04/27整理し直し
+==============================
+WordPress化 front-page
+==============================
+*/
+//▼▼header用nav▼▼
+.home .l-header .l-header__container-primary .menu-gmenu-container {
+  >ul >li >a {
+    color: c.$color-font-light;
+  }
+}
+//▲▲header用nav▲▲
+//▼▼header用nav(スマホ時のsvg)▼▼
+.js-nc-int-icon {
+  pointer-events: auto; //クリック・タッチできるように
+}
+.home {
+  g {
+    .cls-2 {
+      fill: c.$color-font-light;
+    }
+  }
+  g {
+    .cls-3 {
+      fill: c.$color-font-light;
+    }
+  }
+  g {
+    .cls-1 {
+      fill: c.$color-font-light;
+    }
+  }
+  //▼▼closeの時▼▼
+  svg:has(.nc-int-icon-state-b) {
+    .cls-1 {
+      fill: c.$color-font-light;
+    }
+    .cls-2 {
+      fill: c.$color-font-light;
+    }
+  }
+  //▲▲closeの時▲▲
+}
+//▲▲header用nav(スマホ時のsvg)▲▲
+/*
+==============================
+WordPress化 front-page以外
+==============================
+*/
+//▼▼header用nav▼▼
+//aboutページ
+.page .l-header .l-header__container-primary .menu-gmenu-container {
+  >ul >li >a {
+    color: c.$color-font-light;
+    @include m.breakpoint(tablet) {
+      color: c.$color-font-dark;
+    }
+  }
+}
+.page svg:has(.nc-int-icon-state-b) {
+  .menu-gmenu-container {
+    >ul >li >a {
+      color: c.$color-font-light;
+      @include m.breakpoint(tablet) {
+        color: c.$color-font-dark;
+      }
+    }
+  }
+}
+//worksページ
+.post-type-archive-works .l-header .l-header__container-primary .menu-gmenu-container {
+  >ul >li >a {
+    color: c.$color-font-light;
+    @include m.breakpoint(tablet) {
+      color: c.$color-font-dark;
+    }
+  }
+}
+//blogページ
+.post-type-archive-post .l-header .l-header__container-primary .menu-gmenu-container {
+  >ul >li >a {
+    color: c.$color-font-light;
+    @include m.breakpoint(tablet) {
+      color: c.$color-font-dark;
+    }
+  }
+}
+//singleページ
+.single .l-header .l-header__container-primary .menu-gmenu-container {
+  >ul >li >a {
+    color: c.$color-font-light;
+    @include m.breakpoint(tablet) {
+      color: c.$color-font-dark;
+    }
+  }
+}
+//▲▲header用nav▲▲
+//▼▼header用nav(スマホ時のsvg)▼▼
+.js-nc-int-icon {
+  pointer-events: auto; //クリック・タッチできるように
+}
+g {
+  .cls-2 {
+    fill: c.$color-base;
+  }
+}
+g {
+  .cls-3 {
+    fill: c.$color-base;
+  }
+}
+g {
+  .cls-1 {
+    fill: c.$color-base;
+  }
+}
+//▲▲header用nav(スマホ時のsvg)▲▲

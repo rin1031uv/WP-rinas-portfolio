@@ -11,9 +11,9 @@ front-page
 .c-top {
   //hero
   &__hero-wrapper {
-    height: 244px;
+    height: 293px; //WordPress化時変更244px→293px
     position: absolute;
-    top: -244px;
+    top: -293px; //WordPress化時変更-244px→-293px
     //left: 50%;
     width: 100%;
     @include m.breakpoint(tablet) {
@@ -27,7 +27,7 @@ front-page
   }
   &__hero-container {
     position: relative;
-    height: 244px;
+    height: 293px; //WordPress化時変更244px→293px
     @include m.breakpoint(tablet) {
       height: 468px;
       }

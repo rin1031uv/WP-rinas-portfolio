@@ -2,7 +2,7 @@
 //スライドメニュー
 const btn = document.querySelector('#c-header__hamburger-btn');
 
-$(function() {
+jQuery(document).ready(function() {
   //ハンバーガーメニューのクリックイベント
   //クリックしたら
   $('.js-nc-int-icon').click(function() {
@@ -71,26 +71,29 @@ titleElememts.forEach((titleElement) => {
 
 //===masonry(カード並び)===
 //imagesLoadedの読み込み
-$('.c-card__wrapper-masonry-works').imagesLoaded(function(){
-  //$('親要素')を指定
-  $('.c-card__wrapper-masonry-works').masonry({
-    itemSelector: '.c-card-works__primary-container',
-    columnWidth:266,
-    fitWidth: true,
+jQuery(function($){
+  $('.c-card__wrapper-masonry-works').imagesLoaded(function(){
+    //$('親要素')を指定
+    $('.c-card__wrapper-masonry-works').masonry({
+      itemSelector: '.c-card-works__primary-container',
+      columnWidth:266,
+      fitWidth: true,
+      gutter: 24,
+      //percentPosition: true,
+      //isFitWidth: true
+    });
+  });
+  //archive-blog
+  $('.c-card__wrapper-masonry').masonry({
+    columnWidth: 250, //必須
+    itemSelector: '.c-card__primary-container', //必須
     gutter: 24,
     //percentPosition: true,
-    //isFitWidth: true
+    fitWidth: true,
+    resize: true,
   });
-});
-//archive-blog
-$('.c-card__wrapper-masonry').masonry({
-  columnWidth: 250, //必須
-  itemSelector: '.c-card__primary-container', //必須
-  gutter: 24,
-  //percentPosition: true,
-  fitWidth: true,
-  resize: true,
-});
+})
+
 
 //動作確認用
 //$(function(){

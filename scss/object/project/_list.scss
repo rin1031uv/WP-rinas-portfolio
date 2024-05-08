@@ -35,6 +35,78 @@ archive blog
     }
   }
 }
+//WordPress化の時変更した
+.l-main__list-category {
+  .p-main__list-category {
+    margin-top: 30px;
+    margin-left: 15px;
+    @include m.breakpoint(tablet) {
+      margin-top: 0px;
+      margin-left: 30px;
+    }
+    h3 {
+      font-size: 23rem;
+      font-family: f.$eiji-font;
+      color: c.$color-font-dark;
+      padding-bottom: 15px;
+    }
+  }
+  >article >ul >li >a {
+    font-size: 16rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    padding-left: 9px;
+    padding-bottom: 15px;
+    @include m.breakpoint(pc) {
+      font-size: 18rem;
+    }
+  }
+}
+//カード内カテゴリの表示
+.p-card {
+  &__list-container-blog {
+    position: absolute;
+    top: 9px;
+    left: 15px;
+    //WPにしたときに変更した
+    //.post_categories
+    //タグも同じでいける？
+    >ul {
+      display: flex;
+      > li {
+        width: 100%;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+      }
+      > li > a {
+        padding: 5px;
+        font-size: 12rem;
+        font-family: f.$main-font;
+        color: c.$color-font-dark;
+        background-color: c.$color-font-light;
+        opacity: 0.8;
+      }
+    }
+    //WordPress化時タグの装飾追加したく詳細度を上げるため記述し直し
+    >ul.p-card__tag-blog {
+      > li > a {
+        display: inline-block;
+        padding: 5px;
+        font-size: 10rem; //カテゴリと区別するためWordPress化時変更
+        font-family: f.$main-font;
+        color: c.$color-font-dark;
+        background-color: c.$color-font-light;
+        opacity: 0.8;
+        &::before {
+          content: "# ";
+        }
+        //border-radius: 20%; //カテゴリと区別するためWordPress化時追加
+      }
+    }
+  }
+}
+
 
 /*
 ==================
@@ -98,7 +170,7 @@ single blog
     }
     > li > a {
       padding: 5px;
-      font-size: 12rem;
+      font-size: 10rem; //カテゴリと区別するためWordPress化時変更
       font-family: f.$main-font;
       color: c.$color-font-dark;
       background-color: c.$color-font-light;
@@ -115,6 +187,18 @@ archive works
 .p-card-works {
   &__cotegory-list {
     a {
+      font-size: 12px;
+      font-family: f.$main-font;
+      color: c.$color-font-dark;
+      padding: 0 15px 6px 15px;
+    }
+  }
+}
+//WPにしたときに変更した
+//<p>→自動生成で<ul><li>になるため
+.c-card-works {
+  &__third-container {
+    ul > li > a{
       font-size: 12px;
       font-family: f.$main-font;
       color: c.$color-font-dark;

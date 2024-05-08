@@ -9,17 +9,25 @@ archive blog
 ==================
 */
 .l-header {
+  position: relative;
   z-index: 100;
-  margin-top: 135px;
-  @include m.breakpoint(tablet) {
-    margin-top: initial;
-  }
+  margin-top: 245px; //450px→245pxに変更
+  //@include m.breakpoint(tablet) {
+    //margin-top: initial;
+  //}
   &__container-primary {
+    //position: absolute;
+    position: relative;
+    //top: -280px;
+    bottom: 30px;
     display: flex;
     flex-direction: column-reverse;
     h1 {
       text-align: center;
-      margin-bottom: 60px;
+      //margin-bottom: 60px;
+      @include m.breakpoint(tablet) {
+       // margin-left: 150px;
+      }
     }
     @include m.breakpoint(tablet) {
       justify-content: center;
@@ -30,7 +38,7 @@ archive blog
     width: 280px;
     @include m.breakpoint(tablet) {
       width: 600px;
-      padding-right: 40px;
+      //padding-right: 40px;
     }
   }
   &__nav {
@@ -44,6 +52,38 @@ archive blog
       color: c.$color-font-dark;
       font-family: f.$eiji-font;
       font-size: 20rem;
+    }
+  }
+}
+/*
+==============================
+WordPress化 front-page
+==============================
+*/
+.page {
+  .l-header {
+    &__container-primary {
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+}
+.post-type-archive-works {
+  .l-header {
+    &__container-primary {
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+}
+.post-type-archive-post {
+  .l-header {
+    &__container-primary {
+      h1 {
+        text-align: center;
+      }
     }
   }
 }
