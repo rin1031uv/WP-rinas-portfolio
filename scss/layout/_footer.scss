@@ -39,7 +39,46 @@ archive blog
     @include m.breakpoint(tablet) {
       display: initial;
     }
-    >ul>li>a {
+    &.menu-footer-menu-container {
+      >ul>li>a {
+        color: c.$color-font-dark;
+        font-family: f.$eiji-font;
+        font-size: 20rem;
+        position: relative;
+        //アンダーバー
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 9px;
+          left: 0;
+          height: 0.5px;
+          width: 0;
+          transition: .5s all;
+          background-color: c.$color-font-dark;
+        }
+    }
+    //アンダーバー表示
+    &:hover::after {
+      width: 100%;
+    }
+  }
+    ul {
+    display: flex;
+      li {
+        padding: 0 35px;
+      }
+    }
+  }
+}
+
+/*
+==============================
+WordPress化 front-page
+==============================
+*/
+.menu-footer-menu-container .menu {
+  >li >a {
     color: c.$color-font-dark;
     font-family: f.$eiji-font;
     font-size: 20rem;
@@ -61,11 +100,9 @@ archive blog
       width: 100%;
     }
   }
-    ul {
-    display: flex;
-      li {
-        padding: 0 35px;
-      }
-    }
-  }
 }
+/*
+==============================
+WordPress化 front-page以外
+==============================
+*/

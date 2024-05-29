@@ -82,3 +82,21 @@ front-page
     }
   }
 }
+
+/*
+==============================
+WordPress化 front-page以外
+==============================
+*/
+.single .l-main {
+  &__single-blog-container {
+    p {
+      color: c.$color-font-dark;
+      font-family: f.$main-font;
+      font-size: 14rem;
+      @include m.breakpoint(pc) {
+        font-size: 16rem;
+      }
+    }
+  }
+}

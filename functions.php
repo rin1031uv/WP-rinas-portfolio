@@ -13,6 +13,7 @@ function custom_theme_support() {
   register_nav_menus(
     array (
       'main-menu' => 'メインメニュー',
+      'footer' => 'フッターメニュー'
     )
   );
   add_theme_support( 'post-thumbnails' );
@@ -113,6 +114,11 @@ add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
 
 remove_filter('pre_user_description', 'wp_filter_kses');
 
+/*
+============================
+works / カスタム投稿
+============================
+*/
 //以下に子テーマ用の関数を書く
 //カスタム投稿用管理画面のダッシュボードに表示する
 add_action('init', 'create_post_type');
@@ -143,28 +149,50 @@ function create_post_type() {
     'rewrite' => array('width_front'=>false), //パーマリンクの設定
     )
   );
+  //カスタムタクソノミー(カテゴリ)を追加
   register_taxonomy(
-    'works-cat',
-    'works',
+    'works-cat', //カテゴリのスラッグ
+    'works', //カテゴリーを追加したいカスタム投稿タイプのスラッグ
     array(
-      'label' => 'カテゴリー',
-      'hierarchical' => true,
-      'public' => true,
-      'show_in_rest' => true,
-    )
+      'label' => 'カテゴリー', //管理画面での表示名
+      'hierarchical' => true, //階層構造
+      'public' => true, //管理画面に表示するか
+      'show_in_rest' => true, //ブロックエディタ―ON
+      //'rewrite' => array('slug' => 'works'),
+      )
     );
     register_taxonomy(
-      'works-tag',
-      'works',
+      'works-tag', //タグのスラッグ
+      'works', //タグを追加したいカスタム投稿タイプのスラッグ
       array(
-        'label' => 'タグ',
-        'hierarchical' => false,
-        'public' => true,
-        'show_in_rest' => true,
-        'update_count_callback' => '_update_post_term_count',
+        'label' => 'タグ', //管理画面での表示名
+        'hierarchical' => false, //階層構造
+        'public' => true, //管理画面に表示するか
+        'show_in_rest' => true, //ブロックエディタ―ON
+        'update_count_callback' => '_update_post_term_count', //タグのように使いたい場合は追加
       )
       );
 }
+
+//管理画面上にカテゴリを表示する
+function my_custom_column($columns) {
+  $columns['{タクソノミースラッグ}'] = 'カテゴリ';
+  return $columns;
+}
+add_filter('manage_{カスタム投稿タイプスラッグ}_posts_columns', 'my_custom_column');
+
+function my_custom_column_id($column_name, $id) {
+  $terms = get_the_terms($id, $column_name);
+  if($terms && !is_wp_error($terms)) {
+    $menu_terms = array(); //変数名は任意
+    foreach($terms as $term) {
+      $menu_terms[] = $term->name;
+    }
+    echo join( ", ", $menu_terms);
+  }
+}
+add_action('manage_{カスタム投稿タイプスラッグ}_posts_custom_column', 'my_custom_column_id', 10, 2);
+
 
 /*==========================
 ウィジェットの登録

@@ -6,7 +6,10 @@
   <div class="l-main__wrapper">
     <div class="p-main__border"></div>
     <section class="c-main__primary-container">
+    <div class="p-main__title-container js__slide-in">
       <h2 class="p-main__title js__slide-in">Blog</h2>
+      <p><?php single_cat_title(); ?></p>
+      </div>
       <p class="p-main__text">
         Web制作で学んだことのアウトプットはもちろん。<br>
         日々感じたこと、好きなこと。<br>
@@ -43,7 +46,7 @@
               <!--▼抜粋取得▼-->
               <?php the_excerpt(); ?>
               <!--▲抜粋取得▲-->
-              <p class="p-card__button"><a href="<?php echo esc_url(get_permalink()); ?>">read more</a></p>
+              <p class="p-card__button"><a href="<?php the_permalink(); ?><?php echo get_post_field( 'post_name', get_the_ID()); ?>">read more</a></p>
             </div>
           </div>
           <?php endwhile; else: ?>
@@ -68,11 +71,8 @@
     <div class="l-main__list-category">
       <article class="p-main__list-category">
         <h3>Category</h3>
-        <?php $cats = get_the_category(); ?>
         <ul>
-          <?php foreach($cats as $cat): ?>
-          <li><a href="<?php echo get_category_link($cat->term_id) ?>"><?php echo $cat->name ?></a></li>
-          <?php endforeach; ?>
+        <?php wp_list_categories('title_li='); ?>
         </ul>
       </article>
       <!--▼▼main search▼▼-->

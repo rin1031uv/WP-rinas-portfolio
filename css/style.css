@@ -380,13 +380,13 @@ archive blog
     display: initial;
   }
 }
-.l-footer__nav > ul > li > a {
+.l-footer__nav.menu-footer-menu-container > ul > li > a {
   color: #122736;
   font-family: delaney, sans-serif;
   font-size: 20rem;
   position: relative;
 }
-.l-footer__nav > ul > li > a::after {
+.l-footer__nav.menu-footer-menu-container > ul > li > a::after {
   content: "";
   display: block;
   position: absolute;
@@ -397,7 +397,7 @@ archive blog
   transition: 0.5s all;
   background-color: #122736;
 }
-.l-footer__nav > ul > li > a:hover::after {
+.l-footer__nav.menu-footer-menu-container:hover::after {
   width: 100%;
 }
 .l-footer__nav ul {
@@ -407,6 +407,37 @@ archive blog
   padding: 0 35px;
 }
 
+/*
+==============================
+WordPress化 front-page
+==============================
+*/
+.menu-footer-menu-container .menu > li > a {
+  color: #122736;
+  font-family: delaney, sans-serif;
+  font-size: 20rem;
+  position: relative;
+}
+.menu-footer-menu-container .menu > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  height: 0.5px;
+  width: 0;
+  transition: 0.5s all;
+  background-color: #122736;
+}
+.menu-footer-menu-container .menu > li > a:hover::after {
+  width: 100%;
+}
+
+/*
+==============================
+WordPress化 front-page以外
+==============================
+*/
 /*
 ==================
 archive blog
@@ -424,6 +455,9 @@ archive blog
   flex-direction: column-reverse;
 }
 .l-header__container-primary h1 {
+  background-image: url(../image/portfolio-logo-re.png);
+  background-size: contain;
+  background-position: center;
   text-align: center;
 }
 @media (min-width: 834px) {
@@ -457,16 +491,78 @@ archive blog
 WordPress化 front-page
 ==============================
 */
-.page .l-header__container-primary h1 {
+@media (min-width: 1194px) {
+  .home .l-header {
+    margin-bottom: 200px;
+  }
+}
+.home .l-header__container-primary h1 {
+  background-image: url(../image/toplogo_EAF4FC.png);
+  background-size: contain;
+  background-position: center;
   text-align: center;
+  margin-left: 30px;
+}
+@media (min-width: 834px) {
+  .home .l-header__container-primary h1 {
+    margin-left: 0px;
+  }
+}
+.home .l-header__container-primary h1 a {
+  width: 100%;
+  height: 50px;
 }
 
+/*
+==============================
+WordPress化 front-page以外
+==============================
+*/
+.page .l-header__container-primary {
+  text-align: center;
+}
+.page .l-header__container-primary h1 {
+  margin: 0 auto;
+  text-align: center;
+}
+.page .l-header__container-primary h1 a {
+  width: 100%;
+  height: 50px;
+}
+
+.post-type-archive-works .l-header__container-primary {
+  text-align: center;
+}
 .post-type-archive-works .l-header__container-primary h1 {
   text-align: center;
 }
+.post-type-archive-works .l-header__container-primary h1 a {
+  width: 100%;
+  height: 50px;
+}
 
+.post-type-archive-post .l-header__container-primary {
+  text-align: center;
+}
 .post-type-archive-post .l-header__container-primary h1 {
   text-align: center;
+  margin: 0 auto;
+}
+.post-type-archive-post .l-header__container-primary h1 a {
+  width: 100%;
+  height: 50px;
+}
+
+.single .l-header__container-primary {
+  text-align: center;
+}
+.single .l-header__container-primary h1 {
+  text-align: center;
+  margin: 0 auto;
+}
+.single .l-header__container-primary h1 a {
+  width: 100%;
+  height: 50px;
 }
 
 /*
@@ -586,6 +682,22 @@ front-page
 }
 
 /*
+==============================
+WordPress化 front-page以外
+==============================
+*/
+.single .l-main__single-blog-container p {
+  color: #122736;
+  font-family: Shippori Mincho B1, serif;
+  font-size: 14rem;
+}
+@media (min-width: 1194px) {
+  .single .l-main__single-blog-container p {
+    font-size: 16rem;
+  }
+}
+
+/*
 ==================
 archive blog
 ==================
@@ -593,6 +705,16 @@ archive blog
 .l-pagenation__wrapper {
   margin-top: 180px;
   margin-bottom: 180px;
+}
+
+/*
+==============================
+WordPress化 front-page以外
+==============================
+*/
+.wp-pagenavi {
+  margin-top: 60px;
+  margin-bottom: 120px;
 }
 
 /*
@@ -1050,6 +1172,33 @@ WordPress化 front-page以外
     color: #122736;
   }
 }
+.page .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 0.5px;
+  width: 0;
+  transition: 0.5s all;
+  background-color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .page .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    top: 50px;
+    height: 0.5px;
+    width: 0;
+    transition: 0.5s all;
+    background-color: #122736;
+  }
+}
+.page .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a:hover::after {
+  width: 100%;
+}
 
 .page svg:has(.nc-int-icon-state-b) .menu-gmenu-container > ul > li > a {
   color: #EAF4FC;
@@ -1068,6 +1217,33 @@ WordPress化 front-page以外
     color: #122736;
   }
 }
+.post-type-archive-works .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 0.5px;
+  width: 0;
+  transition: 0.5s all;
+  background-color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .post-type-archive-works .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    top: 50px;
+    height: 0.5px;
+    width: 0;
+    transition: 0.5s all;
+    background-color: #122736;
+  }
+}
+.post-type-archive-works .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a:hover::after {
+  width: 100%;
+}
 
 .post-type-archive-post .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
   color: #EAF4FC;
@@ -1077,6 +1253,33 @@ WordPress化 front-page以外
     color: #122736;
   }
 }
+.post-type-archive-post .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 0.5px;
+  width: 0;
+  transition: 0.5s all;
+  background-color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .post-type-archive-post .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    top: 50px;
+    height: 0.5px;
+    width: 0;
+    transition: 0.5s all;
+    background-color: #122736;
+  }
+}
+.post-type-archive-post .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a:hover::after {
+  width: 100%;
+}
 
 .single .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
   color: #EAF4FC;
@@ -1085,6 +1288,105 @@ WordPress化 front-page以外
   .single .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
     color: #122736;
   }
+}
+.single .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 0.5px;
+  width: 0;
+  transition: 0.5s all;
+  background-color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .single .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    top: 50px;
+    height: 0.5px;
+    width: 0;
+    transition: 0.5s all;
+    background-color: #122736;
+  }
+}
+.single .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a:hover::after {
+  width: 100%;
+}
+
+.category .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
+  color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .category .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
+    color: #122736;
+  }
+}
+.category .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 0.5px;
+  width: 0;
+  transition: 0.5s all;
+  background-color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .category .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    top: 50px;
+    height: 0.5px;
+    width: 0;
+    transition: 0.5s all;
+    background-color: #122736;
+  }
+}
+.category .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a:hover::after {
+  width: 100%;
+}
+
+.tax-works-cat .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
+  color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .tax-works-cat .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
+    color: #122736;
+  }
+}
+.tax-works-cat .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 0.5px;
+  width: 0;
+  transition: 0.5s all;
+  background-color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .tax-works-cat .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    top: 50px;
+    height: 0.5px;
+    width: 0;
+    transition: 0.5s all;
+    background-color: #122736;
+  }
+}
+.tax-works-cat .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a:hover::after {
+  width: 100%;
 }
 
 .js-nc-int-icon {
@@ -1320,7 +1622,7 @@ front-page
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(18, 39, 54, 0.35); /* 背景色 */
+  background-color: rgba(18, 39, 54, 0.65); /* 背景色 */
 }
 .c-top__about-wrapper {
   display: inline-block;
@@ -1775,15 +2077,61 @@ about
 }
 
 /*
+=========================================
+WordPress化 single.php
+=========================================
+*/
+.l-main__single-blog-container > strong {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > address {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > pre {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > table {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > code {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+
+/*
 ==================
 archive blog
 ==================
 */
+.p-main__title-container {
+  display: flex;
+  margin-bottom: 30px;
+}
+.p-main__title-container > p {
+  font-size: 20rem;
+  font-family: delaney, sans-serif;
+  color: #122736;
+  padding-left: 20px;
+  line-height: 48px;
+}
+.p-main__title-container > p::before {
+  content: "*";
+}
+.p-main__title-container > p::after {
+  content: "*";
+}
 .p-main__title {
   font-size: 32rem;
   font-family: delaney, sans-serif;
   color: #122736;
-  margin-bottom: 30px;
+}
+
+.post-type-archive-post .p-main__title-container > p {
+  display: none;
 }
 
 .p-card__title {
@@ -2273,6 +2621,38 @@ about
   }
 }
 
+/*
+=========================================
+WordPress化 single.php
+=========================================
+*/
+.l-main__single-blog-container > h1 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > h2 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  font-size: 20px;
+  padding-left: 0;
+}
+.l-main__single-blog-container > h3 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > h4 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > h5 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > h6 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+
 .p-pagenation__container li {
   margin-left: 15px;
   margin-right: 15px;
@@ -2348,8 +2728,6 @@ about
 }
 @media (min-width: 834px) {
   .wp-pagenavi span, .wp-pagenavi a {
-    margin-left: 30px;
-    margin-right: 30px;
     font-size: 32rem;
     width: 50px;
     height: 50px;
@@ -2394,6 +2772,15 @@ span.pages {
   .p-main__border {
     width: 920px;
   }
+}
+
+/*
+==============================
+WordPress化 front-page以外
+==============================
+*/
+.single .p-main__border {
+  margin-bottom: 120px;
 }
 
 /*
@@ -2651,6 +3038,130 @@ about
   font-family: Shippori Mincho B1, serif;
 }
 
+/*
+=========================================
+WordPress化 single.php / single-works.php
+=========================================
+*/
+.l-main__single-blog-container ul li strong address pre table thead tbody code {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+
+.p-main__category-container {
+  display: flex;
+}
+.p-main__category-container > li {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+.p-main__category-container > li > a {
+  padding: 5px;
+  font-size: 16rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  background-color: #EAF4FC;
+  opacity: 0.8;
+}
+
+.p-main__category-list {
+  display: flex;
+}
+.p-main__category-list > li {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+.p-main__category-list > li > a {
+  padding: 5px;
+  font-size: 16rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  background-color: #EAF4FC;
+  opacity: 0.8;
+}
+
+.p-main__tag-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.p-main__tag-list-container > li {
+  margin-bottom: 9px;
+  margin-right: 15px;
+  background-color: #EAF4FC;
+  opacity: 0.8;
+}
+.p-main__tag-list-container > li > a {
+  font-size: 14rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.p-main__tag-list-container > li::before {
+  content: "#";
+  font-size: 14rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+
+.l-main__list-category .p-main__list-category {
+  margin-top: 30px;
+  margin-left: 15px;
+}
+@media (min-width: 834px) {
+  .l-main__list-category .p-main__list-category {
+    margin-top: 0px;
+    margin-left: 30px;
+  }
+}
+.l-main__list-category .p-main__list-category h3 {
+  font-size: 23rem;
+  font-family: delaney, sans-serif;
+  color: #122736;
+  padding-bottom: 15px;
+}
+.l-main__list-category .p-main__list-category > ul > li > a {
+  font-size: 16rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  padding-left: 9px;
+  padding-bottom: 18px;
+}
+@media (min-width: 1194px) {
+  .l-main__list-category .p-main__list-category > ul > li > a {
+    font-size: 18rem;
+  }
+}
+.l-main__list-category .p-main__list-category > ul > li > ul > li > a {
+  font-size: 14rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+@media (min-width: 1194px) {
+  .l-main__list-category .p-main__list-category > ul > li > ul > li > a {
+    font-size: 16rem;
+  }
+}
+.l-main__list-category .p-main__list-category > ul > li > ul > li > a::before {
+  content: ">";
+  font-size: 14rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__list-category .p-main__list-category > ul > li > ul > li > ul > li > a {
+  font-size: 14rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  padding-left: 30px;
+  padding-bottom: 15px;
+}
+@media (min-width: 1194px) {
+  .l-main__list-category .p-main__list-category > ul > li > ul > li > ul > li > a {
+    font-size: 16rem;
+  }
+}
+
 .p-search-form__container {
   display: inline-block;
   border: 0.5px solid rgba(110, 117, 164, 0.5);
@@ -2836,6 +3347,24 @@ about
   color: #122736;
   font-weight: 400;
   padding-bottom: 30px;
+}
+
+/*
+=========================================
+WordPress化 single.php
+=========================================
+*/
+.l-main__single-blog-container > table {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > thead {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.l-main__single-blog-container > tbody {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
 }
 
 .p-about__history-js-wrapper {

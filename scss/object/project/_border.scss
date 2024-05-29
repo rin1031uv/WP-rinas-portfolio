@@ -24,3 +24,14 @@
     }
   }
 }
+
+/*
+==============================
+WordPress化 front-page以外
+==============================
+*/
+.single .p-main {
+  &__border {
+    margin-bottom: 120px;
+  }
+}

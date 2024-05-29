@@ -15,20 +15,29 @@
       $cats = get_the_category();
       if($cats):
         ?>
-      <ul class="p-card__category-blog">
+      <ul class="p-main__category-container p-card__category-blog">
         <?php foreach($cats as $cat): ?>
         <li><a><?php echo $cat->name; ?></a></a></li>
         <?php endforeach; ?>
       </ul>
-      <ul class="p-card__tag-blog">
-        <li><a href="#">タグ</a></li>
-      </ul>
       <?php endif; ?>
       <!--▲カテゴリの取得▲-->
+      <!--▼タグの取得▼-->
       <ul class="p-main__tag-list-container">
-        <li class="p-main__tag-list"><a href="#">タグ</a></li>
-        <li class="p-main__tag-list"><a href="#">タグ</a></li>
+      <?php
+      $tags = get_the_tags();
+      if($tags) {
+        //echo '<ul>';
+          foreach( $tags as $tag ) {
+            echo '<li>';
+            echo '<a href="' . esc_url( get_tag_link( $tag ) ) . '">' .esc_html( $tag->name ) . '</a>';
+            echo '</li>';
+          }
+          //echo '</ul>';
+      };
+      ?>
       </ul>
+      <!--▲タグの取得▲-->
       <!--▼タイトルの取得▼-->
       <h2 class="p-card__title">
         <?php the_title(); ?>
@@ -108,12 +117,11 @@
     <div class="p-main__border"></div>
 <!--▼▼main category▼▼-->
     <div class="l-main__list-category">
-      <article>
-        <dl class="p-main__list-category">
-          <dt><a href="#">Category</a></dt>
-          <dd><a href="#">Web</a></dd>
-          <dd><a href="#">Books</a></dd>
-        </dl>
+      <article class="p-main__list-category">
+        <h3>Category</h3>
+        <ul>
+        <?php wp_list_categories('title_li='); ?>
+        </ul>
       </article>
       <!--▼▼main search▼▼-->
       <div>

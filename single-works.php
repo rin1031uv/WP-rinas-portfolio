@@ -11,24 +11,21 @@
     <?php while(have_posts()): the_post(); ?>
     <!--▲記事を呼び出すメインループの開始コード▲-->
     <!--▼カテゴリの取得▼-->
-      <?php
-      $cats = get_the_category();
-      if($cats):
-        ?>
+    <?php $terms = get_the_terms( $post->ID, 'works-cat'); ?>
       <ul class="p-main__category-list">
-        <?php foreach($cats as $cat): ?>
-        <li><a><?php echo $cat->name; ?></a></a></li>
-        <?php endforeach; ?>
+        <?php foreach( $terms as $term): ?>
+          <li><a><?php echo $term->name; ?></a></li>
+          <?php endforeach; ?>
       </ul>
-      <ul class="p-card__tag-blog">
-        <li><a href="#">タグ</a></li>
-      </ul>
-      <?php endif; ?>
       <!--▲カテゴリの取得▲-->
+      <!--▼タグの取得▼-->
+      <?php $terms = get_the_terms( $post->ID, 'works-tag'); ?>
       <ul class="p-main__tag-list-container">
-        <li class="p-main__tag-list"><a href="#">タグ</a></li>
-        <li class="p-main__tag-list"><a href="#">タグ</a></li>
+        <?php foreach( $terms as $term): ?>
+          <li><a><?php echo $term->name; ?></a></li>
+          <?php endforeach; ?>
       </ul>
+      <!--▲タグの取得▲-->
       <!--▼タイトルの取得▼-->
       <h2 class="p-main__single-blog-title">
         <?php the_title(); ?>
@@ -96,13 +93,16 @@
 <!--▲▲main related posts▲▲-->
     <div class="p-main__border"></div>
 <!--▼▼main category▼▼-->
-    <div class="l-main__list-category">
-      <article>
-        <dl class="p-main__list-category">
-          <dt><a href="#">Category</a></dt>
-          <dd><a href="#">Web</a></dd>
-          <dd><a href="#">Books</a></dd>
-        </dl>
+<div class="l-main__list-category">
+    <article class="p-main__list-category">
+      <h3>Category</h3>
+      <ul>
+        <?php wp_list_categories(array(
+          'title_li' => '',
+          'taxonomy' => 'works-cat'
+        ));
+        ?>
+      </ul>
       </article>
       <!--▼▼main search▼▼-->
       <div>

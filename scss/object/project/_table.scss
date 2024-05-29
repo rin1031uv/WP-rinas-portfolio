@@ -19,3 +19,23 @@
    }
  }
 }
+
+/*
+=========================================
+WordPress化 single.php
+=========================================
+*/
+.l-main__single-blog-container {
+  >table {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+  }
+  >thead {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+  }
+  >tbody  {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+  }
+}

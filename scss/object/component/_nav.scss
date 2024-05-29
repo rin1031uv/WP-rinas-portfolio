@@ -440,6 +440,33 @@ WordPress化 front-page以外
     @include m.breakpoint(tablet) {
       color: c.$color-font-dark;
     }
+    //アンダーバー
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      height: 0.5px;
+      width: 0;
+      transition: .5s all;
+      background-color: c.$color-font-light;
+      @include m.breakpoint(tablet) {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        top: 50px;
+        height: 0.5px;
+        width: 0;
+        transition: .5s all;
+        background-color: c.$color-font-dark;
+      }
+    }
+    //アンダーバー表示
+    &:hover::after {
+      width: 100%;
+    }
   }
 }
 .page svg:has(.nc-int-icon-state-b) {
@@ -459,6 +486,33 @@ WordPress化 front-page以外
     @include m.breakpoint(tablet) {
       color: c.$color-font-dark;
     }
+    //アンダーバー
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      height: 0.5px;
+      width: 0;
+      transition: .5s all;
+      background-color: c.$color-font-light;
+      @include m.breakpoint(tablet) {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        top: 50px;
+        height: 0.5px;
+        width: 0;
+        transition: .5s all;
+        background-color: c.$color-font-dark;
+      }
+    }
+    //アンダーバー表示
+    &:hover::after {
+      width: 100%;
+    }
   }
 }
 //blogページ
@@ -468,6 +522,33 @@ WordPress化 front-page以外
     @include m.breakpoint(tablet) {
       color: c.$color-font-dark;
     }
+    //アンダーバー
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      height: 0.5px;
+      width: 0;
+      transition: .5s all;
+      background-color: c.$color-font-light;
+      @include m.breakpoint(tablet) {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        top: 50px;
+        height: 0.5px;
+        width: 0;
+        transition: .5s all;
+        background-color: c.$color-font-dark;
+      }
+    }
+    //アンダーバー表示
+    &:hover::after {
+      width: 100%;
+    }
   }
 }
 //singleページ
@@ -476,6 +557,105 @@ WordPress化 front-page以外
     color: c.$color-font-light;
     @include m.breakpoint(tablet) {
       color: c.$color-font-dark;
+    }
+    //アンダーバー
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      height: 0.5px;
+      width: 0;
+      transition: .5s all;
+      background-color: c.$color-font-light;
+      @include m.breakpoint(tablet) {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        top: 50px;
+        height: 0.5px;
+        width: 0;
+        transition: .5s all;
+        background-color: c.$color-font-dark;
+      }
+    }
+    //アンダーバー表示
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+//category
+.category .l-header .l-header__container-primary .menu-gmenu-container {
+  >ul >li >a {
+    color: c.$color-font-light;
+    @include m.breakpoint(tablet) {
+      color: c.$color-font-dark;
+    }
+    //アンダーバー
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      height: 0.5px;
+      width: 0;
+      transition: .5s all;
+      background-color: c.$color-font-light;
+      @include m.breakpoint(tablet) {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        top: 50px;
+        height: 0.5px;
+        width: 0;
+        transition: .5s all;
+        background-color: c.$color-font-dark;
+      }
+    }
+    //アンダーバー表示
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+//taxsonomy
+.tax-works-cat .l-header .l-header__container-primary .menu-gmenu-container {
+  >ul >li >a {
+    color: c.$color-font-light;
+    @include m.breakpoint(tablet) {
+      color: c.$color-font-dark;
+    }
+    //アンダーバー
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      height: 0.5px;
+      width: 0;
+      transition: .5s all;
+      background-color: c.$color-font-light;
+      @include m.breakpoint(tablet) {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        top: 50px;
+        height: 0.5px;
+        width: 0;
+        transition: .5s all;
+        background-color: c.$color-font-dark;
+      }
+    }
+    //アンダーバー表示
+    &:hover::after {
+      width: 100%;
     }
   }
 }

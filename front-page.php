@@ -6,7 +6,7 @@
   <!--▼▼hero image▼▼-->
   <div class="c-top__hero-wrapper">
     <div class="c-top__hero-container">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/front-page.jpg" class="p-top__hero-image">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/hero-3.png" class="p-top__hero-image">
       <div class="c-top__hero-background"></div>
     </div>
   </div>
@@ -158,8 +158,7 @@
       <div class="p-top__contact-title-background js__slide-in">Get in Touch</div>
       <h2 class="p-top__title-contact js__slide-in">Contact</h2>
       <p class="p-top__text-contact js__slide-in">
-        ご相談・お問い合わせ・お仕事のお話等<br>
-        お気軽にお問い合わせください。
+        ご相談等お気軽にお問い合わせください。
       </p>
       <div class="c-top__button-container p-top__button-container-contact">
           <div class="p-top__button-container-secondary">

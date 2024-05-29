@@ -28,10 +28,8 @@
 <body <?php body_class(); ?>>
   <header class="l-header">
     <div class="l-header__container-primary">
-      <h1>
-        <a href="<?php echo esc_url(home_url('/')); ?>">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/header_logo_EAF4FC.png" alt="logo_header" class="l-header__logo">
-        </a>
+      <h1 class="l-header__logo">
+        <a href="<?php echo esc_url(home_url('/')); ?>"></a>
       </h1>
         <!--▼▼svgボタン▼▼-->
         <button class="c-header__hamburger-button-svg" id="c-header__hamburger-btn">

@@ -1,3 +1,4 @@
+
 <!--header.phpを読み込むテンプレートタグ（インクルードタグ）-->
 <?php get_header(); ?>
 
@@ -70,13 +71,15 @@
     <div class="p-main__border"></div>
 <!--▼▼main category▼▼-->
     <div class="l-main__list-category">
-      <article>
-        <dl class="p-main__list-category">
-          <dt><a href="#">Category</a></dt>
-          <dd><a href="#">Web design</a></dd>
-          <dd><a href="#">Logo</a></dd>
-          <dd><a href="#">banner</a></dd>
-        </dl>
+    <article class="p-main__list-category">
+      <h3>Category</h3>
+      <ul>
+        <?php wp_list_categories(array(
+          'title_li' => '',
+          'taxonomy' => 'works-cat'
+        ));
+        ?>
+      </ul>
       </article>
       <!--▼▼main search▼▼-->
       <div>

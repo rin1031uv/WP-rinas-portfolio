@@ -203,8 +203,34 @@ about
   }
 }
 
-
-
+/*
+=========================================
+WordPress化 single.php
+=========================================
+*/
+//文章内の細々した設定にあてるフォント
+.l-main__single-blog-container {
+  >strong {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+  }
+  >address {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+  }
+  >pre {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+  }
+  >table {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+  }
+  >code {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+  }
+}
 
 
 
