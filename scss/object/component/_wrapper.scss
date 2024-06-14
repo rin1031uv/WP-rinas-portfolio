@@ -13,7 +13,7 @@ front-page
   &__hero-wrapper {
     height: 293px; //WordPress化時変更244px→293px
     position: absolute;
-    top: -293px; //WordPress化時変更-244px→-293px
+    top: -309px; //WordPress化時変更-244px→-293px→309px
     //left: 50%;
     width: 100%;
     @include m.breakpoint(tablet) {
@@ -112,7 +112,7 @@ about
   }
   &__history-content-wrapper {
     display: flex;
-    width: 500%;
+    width: 550%; //中身に合わせて幅を設定
     //width: calc(500% + 600px); //横スクロールコンテンツ分幅をとっている
     >div:not(:last-of-type) {
       padding-right: 120px;

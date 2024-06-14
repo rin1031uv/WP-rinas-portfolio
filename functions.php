@@ -23,8 +23,11 @@ function custom_theme_support() {
 //実行
 add_action('after_setup_theme', 'custom_theme_support');
 
-
-//リンク系
+/*
+============================
+リンク系
+============================
+*/
 function wpbeg_script() {
   //googleフォント読み込み
   wp_enqueue_style('delaney', 'fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap', array(), "");
@@ -58,13 +61,13 @@ function my_scripts_method() {
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 
 //FontAwesomeを読み込むための記述
-add_filter('script_loader_tag', 'custom_script_loader_tag', 10, 2);
-function custom_script_loader_tag($tag, $handle) {
-  if($handle !== 'FontAwesome') {
-    return $tag;
-  }
-  return str_replace('></script','crossorigin="anonymous"></script>', $tag);
-}
+//add_filter('script_loader_tag', 'custom_script_loader_tag', 10, 2);
+//function custom_script_loader_tag($tag, $handle) {
+  //if($handle !== 'FontAwesome') {
+    //return $tag;
+  //}
+  //return str_replace('></script','crossorigin="anonymous"></script>', $tag);
+//}
 
 //絶対パス→相対パス
 function make_href_root_relative($input) {
@@ -76,7 +79,11 @@ function root_relative_permalinks($input) {
 }
 add_filter( 'the_permalink', 'root_relative_permalinks');
 
-//archive-blogの設定
+/*
+============================
+archive-blogの設定
+============================
+*/
 //投稿→ブログに変更
 function change_menu_label() {
   global $menu;
@@ -192,6 +199,20 @@ function my_custom_column_id($column_name, $id) {
   }
 }
 add_action('manage_{カスタム投稿タイプスラッグ}_posts_custom_column', 'my_custom_column_id', 10, 2);
+
+/*
+============================
+投稿検索の設定
+============================
+*/
+//投稿だけを検索対象とする（固定ページを除外する）
+function search_filter( $query ) {
+  if ( $query -> is_search ) {
+    $query -> set( 'post_type', 'post' );
+  }
+  return $query;
+}
+add_filter( 'pre_get_posts', 'search_filter' );
 
 
 /*==========================

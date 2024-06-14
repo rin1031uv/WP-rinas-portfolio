@@ -5,7 +5,7 @@
       <nav class="l-footer__nav">
       <?php wp_nav_menu(
         array (
-          'theme_location' => 'footer'
+          'theme_location' => 'footer',
         )
         );
       ?>

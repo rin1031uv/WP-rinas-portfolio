@@ -23,7 +23,7 @@
         <div class="c-card__wrapper-masonry">
           <!--▼card▼-->
           <!--▼繰り返しループ開始▼-->
-          //<!--▼繰り返しループ開始▼-->
+          <!--▼繰り返しループ開始▼-->
           <?php if (have_posts()): while (have_posts()): the_post(); ?>
           <div class="c-card__primary-container">
             <div class="p-card__image-container">

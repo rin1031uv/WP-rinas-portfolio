@@ -302,6 +302,7 @@ progress {
 
 html {
   font-size: var(--font-size);
+  text-transform: none;
 }
 
 body {
@@ -315,6 +316,7 @@ body {
   text-align: left;
   background-color: #eaeaea;
   color: #122736;
+  text-transform: none;
 }
 
 li {
@@ -518,6 +520,22 @@ WordPress化 front-page
 WordPress化 front-page以外
 ==============================
 */
+.archive .l-header {
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
+.archive .l-header__container-primary h1 {
+  margin: 0 auto;
+}
+.archive .l-header__container-primary h1 a {
+  width: 100%;
+  height: 50px;
+}
+
+.page .l-header {
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
 .page .l-header__container-primary {
   text-align: center;
 }
@@ -530,10 +548,15 @@ WordPress化 front-page以外
   height: 50px;
 }
 
+.post-type-archive-works .l-header {
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
 .post-type-archive-works .l-header__container-primary {
   text-align: center;
 }
 .post-type-archive-works .l-header__container-primary h1 {
+  margin: 0 auto;
   text-align: center;
 }
 .post-type-archive-works .l-header__container-primary h1 a {
@@ -541,6 +564,10 @@ WordPress化 front-page以外
   height: 50px;
 }
 
+.post-type-archive-post .l-header {
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
 .post-type-archive-post .l-header__container-primary {
   text-align: center;
 }
@@ -553,6 +580,10 @@ WordPress化 front-page以外
   height: 50px;
 }
 
+.single .l-header {
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
 .single .l-header__container-primary {
   text-align: center;
 }
@@ -1164,6 +1195,24 @@ WordPress化 front-page
 WordPress化 front-page以外
 ==============================
 */
+.page .l-header__container-primary nav {
+  top: 0;
+}
+
+.page .c-header__hamburger-button-svg {
+  z-index: 500;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -70px;
+  right: 25px;
+}
+@media (min-width: 834px) {
+  .page .c-header__hamburger-button-svg {
+    display: none;
+  }
+}
+
 .page .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
   color: #EAF4FC;
 }
@@ -1209,6 +1258,24 @@ WordPress化 front-page以外
   }
 }
 
+.post-type-archive-works .l-header__container-primary nav {
+  top: 0;
+}
+
+.post-type-archive-works .c-header__hamburger-button-svg {
+  z-index: 500;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -70px;
+  right: 25px;
+}
+@media (min-width: 834px) {
+  .post-type-archive-works .c-header__hamburger-button-svg {
+    display: none;
+  }
+}
+
 .post-type-archive-works .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
   color: #EAF4FC;
 }
@@ -1243,6 +1310,24 @@ WordPress化 front-page以外
 }
 .post-type-archive-works .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a:hover::after {
   width: 100%;
+}
+
+.post-type-archive-post .l-header__container-primary nav {
+  top: 0;
+}
+
+.post-type-archive-post .c-header__hamburger-button-svg {
+  z-index: 500;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -70px;
+  right: 25px;
+}
+@media (min-width: 834px) {
+  .post-type-archive-post .c-header__hamburger-button-svg {
+    display: none;
+  }
 }
 
 .post-type-archive-post .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
@@ -1281,6 +1366,24 @@ WordPress化 front-page以外
   width: 100%;
 }
 
+.single .l-header__container-primary nav {
+  top: 0;
+}
+
+.single .c-header__hamburger-button-svg {
+  z-index: 500;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -70px;
+  right: 25px;
+}
+@media (min-width: 834px) {
+  .single .c-header__hamburger-button-svg {
+    display: none;
+  }
+}
+
 .single .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
   color: #EAF4FC;
 }
@@ -1315,6 +1418,24 @@ WordPress化 front-page以外
 }
 .single .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a:hover::after {
   width: 100%;
+}
+
+.category .l-header__container-primary nav {
+  top: 0;
+}
+
+.category .c-header__hamburger-button-svg {
+  z-index: 500;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -70px;
+  right: 25px;
+}
+@media (min-width: 834px) {
+  .category .c-header__hamburger-button-svg {
+    display: none;
+  }
 }
 
 .category .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
@@ -1353,6 +1474,24 @@ WordPress化 front-page以外
   width: 100%;
 }
 
+.tax-works-cat .l-header__container-primary nav {
+  top: 0;
+}
+
+.tax-works-cat .c-header__hamburger-button-svg {
+  z-index: 500;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -70px;
+  right: 25px;
+}
+@media (min-width: 834px) {
+  .tax-works-cat .c-header__hamburger-button-svg {
+    display: none;
+  }
+}
+
 .tax-works-cat .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
   color: #EAF4FC;
 }
@@ -1389,6 +1528,69 @@ WordPress化 front-page以外
   width: 100%;
 }
 
+.search .l-header__container-primary nav {
+  top: 0;
+}
+
+.search .c-header__hamburger-button-svg {
+  z-index: 500;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -70px;
+  right: 25px;
+}
+@media (min-width: 834px) {
+  .search .c-header__hamburger-button-svg {
+    display: none;
+  }
+}
+
+.search .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
+  color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .search .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a {
+    color: #122736;
+  }
+}
+.search .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 0.5px;
+  width: 0;
+  transition: 0.5s all;
+  background-color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .search .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    top: 50px;
+    height: 0.5px;
+    width: 0;
+    transition: 0.5s all;
+    background-color: #122736;
+  }
+}
+.search .l-header .l-header__container-primary .menu-gmenu-container > ul > li > a:hover::after {
+  width: 100%;
+}
+
+.search svg:has(.nc-int-icon-state-b) .menu-gmenu-container > ul > li > a {
+  color: #EAF4FC;
+}
+@media (min-width: 834px) {
+  .search svg:has(.nc-int-icon-state-b) .menu-gmenu-container > ul > li > a {
+    color: #122736;
+  }
+}
+
 .js-nc-int-icon {
   pointer-events: auto;
 }
@@ -1418,7 +1620,7 @@ archive blog
   width: 250px;
   border: 0.5px solid rgba(18, 39, 54, 0.5);
   box-sizing: content-box;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .c-card__secondary-container {
   width: 100%;
@@ -1430,6 +1632,7 @@ archive works
 ==================
 */
 .c-card-works__primary-container {
+  margin-bottom: 20px;
   width: 266px;
   box-sizing: border-box;
   padding: 15px;
@@ -1588,7 +1791,7 @@ front-page
 .c-top__hero-wrapper {
   height: 293px;
   position: absolute;
-  top: -293px;
+  top: -309px;
   width: 100%;
 }
 @media (min-width: 834px) {
@@ -1687,7 +1890,7 @@ about
 }
 .c-about__history-content-wrapper {
   display: flex;
-  width: 500%;
+  width: 550%;
 }
 .c-about__history-content-wrapper > div:not(:last-of-type) {
   padding-right: 120px;
@@ -1822,6 +2025,12 @@ archive works
   text-align: right;
   border-right: 1px solid;
   border-color: #8796A9;
+  font-size: 14rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
 }
 .p-card-works__button a {
   all: inherit;
@@ -1830,7 +2039,7 @@ archive works
   font-family: Shippori Mincho B1, serif;
   color: #122736;
   padding-right: 15px;
-  padding-bottom: 6px;
+  margin-bottom: 6px;
   cursor: pointer;
 }
 
@@ -2756,24 +2965,13 @@ span.pages {
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0 auto;
-  width: 340px;
+  width: 100%;
   height: 12px;
 }
 .p-main__border:last-of-type {
   margin-top: 180px;
   margin-bottom: 30px;
 }
-@media (min-width: 834px) {
-  .p-main__border {
-    width: 600px;
-  }
-}
-@media (min-width: 1194px) {
-  .p-main__border {
-    width: 920px;
-  }
-}
-
 /*
 ==============================
 WordPress化 front-page以外
@@ -3040,6 +3238,20 @@ about
 
 /*
 =========================================
+WordPress化 single.php
+=========================================
+*/
+.p-card__list-container-blog > ul > li > a::before {
+  content: "\e185";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  font-size: 16rem;
+  color: #8796A9;
+  padding-right: 6px;
+}
+
+/*
+=========================================
 WordPress化 single.php / single-works.php
 =========================================
 */
@@ -3063,6 +3275,14 @@ WordPress化 single.php / single-works.php
   background-color: #EAF4FC;
   opacity: 0.8;
 }
+.p-main__category-container > li > a::before {
+  content: "\e185";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  font-size: 16rem;
+  color: #8796A9;
+  padding-right: 6px;
+}
 
 .p-main__category-list {
   display: flex;
@@ -3078,6 +3298,14 @@ WordPress化 single.php / single-works.php
   color: #122736;
   background-color: #EAF4FC;
   opacity: 0.8;
+}
+.p-main__category-list > li > a::before {
+  content: "\e185";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  font-size: 16rem;
+  color: #8796A9;
+  padding-right: 6px;
 }
 
 .p-main__tag-list-container {
@@ -3096,13 +3324,19 @@ WordPress化 single.php / single-works.php
   font-family: Shippori Mincho B1, serif;
   color: #122736;
 }
-.p-main__tag-list-container > li::before {
+.p-main__tag-list-container > li > a::before {
   content: "#";
   font-size: 14rem;
   font-family: Shippori Mincho B1, serif;
   color: #122736;
+  padding-right: 3px;
 }
 
+/*
+=========================================
+WordPress化 archive / single 共通
+=========================================
+*/
 .l-main__list-category .p-main__list-category {
   margin-top: 30px;
   margin-left: 15px;
@@ -3125,6 +3359,21 @@ WordPress化 single.php / single-works.php
   color: #122736;
   padding-left: 9px;
   padding-bottom: 18px;
+  padding-right: 9px;
+  padding-top: 18px;
+}
+.l-main__list-category .p-main__list-category > ul > li > a::before {
+  content: "\e185";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  font-size: 16rem;
+  color: #8796A9;
+  padding-right: 6px;
+}
+.l-main__list-category .p-main__list-category > ul > li > a:hover {
+  background-color: #EAF4FC;
+  opacity: 0.8;
+  transition: 1s;
 }
 @media (min-width: 1194px) {
   .l-main__list-category .p-main__list-category > ul > li > a {

@@ -47,7 +47,7 @@
             </h3>
             <!--▲タイトル取得▲-->
           </div>
-          <p class="p-card__button p-card-works__button"><a href="<?php echo esc_url(get_permalink()); ?>">read more</a></p>
+          <p class="p-card__button p-card-works__button">read more</p>
         </div>
       </div>
           </a>

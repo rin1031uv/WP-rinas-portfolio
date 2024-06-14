@@ -94,7 +94,7 @@
   <nav class="c-header__nav p-header__nav-front-page">
   <?php wp_nav_menu(
       array (
-        'theme_location' => 'main-menu'
+        'theme_location' => 'main-menu',
       )
     );
   ?>

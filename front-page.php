@@ -70,76 +70,40 @@
       <!--▼▼main card▼▼-->
       <article class="l-card" id="l-card">
         <div class="c-card__wrapper-masonry p-card__front-wrapper">
-        <!--▼card▼-->
-        <div class="c-card__primary-container">
-          <div class="p-card__image-container">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/temporary.JPG" alt="仮画像" class="p-card__img-blog">
-            <div class="p-card__list-container-blog">
-              <ul class="p-card__category-blog">
-                <li><a href="#">カテゴリ</a></li>
-                <li><a href="#">カテゴリ</a></li>
-              </ul>
-              <ul class="p-card__tag-blog">
-                <li><a href="#">タグ</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="c-card__secondary-container">
-            <h3 class="p-card__title">
-              タイトルが入ります。タイトルが入ります。タイトルが入ります。
-            </h3>
-            <p class="p-card__text">抜粋が入ります。抜粋が入ります。抜粋が入ります。</p>
-            <p class="p-card__button"><a href="<?php echo esc_url(home_url('/')); ?>single-blog/">read more</a></p>
-          </div>
-      </div>
-        <!--▲card▲-->
-        <!--▼card▼-->
+        <div class="c-card__wrapper-masonry">
+          <!--▼card▼-->
+          <!--▼繰り返しループ開始▼-->
+          <!--▼繰り返しループ開始▼-->
+          <?php if (have_posts()): while (have_posts()): the_post(); ?>
           <div class="c-card__primary-container">
             <div class="p-card__image-container">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/temporary.JPG" alt="仮画像" class="p-card__img-blog">
               <div class="p-card__list-container-blog">
-                <ul class="p-card__category-blog">
-                  <li><a href="#">カテゴリ</a></li>
-                  <li><a href="#">カテゴリ</a></li>
-                </ul>
-                <ul class="p-card__tag-blog">
-                  <li><a href="#">タグ</a></li>
-                </ul>
+                <!--▼カテゴリ取得▼-->
+                <?php the_category(); ?>
+                <!--▲カテゴリ取得▲-->
+                <!--▼タグ取得▼-->
+                <!--<?php the_tags('<ul class="p-card__tag-blog"><li>', '</li><li>', '</ul>'); ?>-->
+                <!--▲タグ取得▲-->
               </div>
             </div>
             <div class="c-card__secondary-container">
+              <!--▼タイトル取得▼-->
               <h3 class="p-card__title">
-                タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                <?php the_title(); ?>
               </h3>
-              <p class="p-card__text">抜粋が入ります。抜粋が入ります。抜粋が入ります。抜粋が入ります。抜粋が入ります。抜粋が入ります。</p>
-              <p class="p-card__button"><a href="<?php echo esc_url(home_url('/')); ?>single-blog/">read more</a></p>
-            </div>
-        </div>
-      <!--▲card▲-->
-      <!--▼card▼-->
-        <div class="c-card__primary-container">
-          <div class="p-card__image-container">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/temporary.JPG" alt="仮画像" class="p-card__img-blog">
-            <div class="p-card__list-container-blog">
-              <ul class="p-card__category-blog">
-                <li><a href="#">カテゴリ</a></li>
-                <li><a href="#">カテゴリ</a></li>
-              </ul>
-              <ul class="p-card__tag-blog">
-                <li><a href="#">タグ</a></li>
-              </ul>
+              <!--▲タイトル取得▲-->
+              <!--▼抜粋取得▼-->
+              <?php the_excerpt(); ?>
+              <!--▲抜粋取得▲-->
+              <p class="p-card__button"><a href="<?php the_permalink(); ?><?php echo get_post_field( 'post_name', get_the_ID()); ?>">read more</a></p>
             </div>
           </div>
-          <div class="c-card__secondary-container">
-            <h3 class="p-card__title">
-              タイトルが入ります。タイトルが入ります。タイトルが入ります。
-              タイトルが入ります。タイトルが入ります。タイトルが入ります。
-            </h3>
-            <p class="p-card__text">抜粋が入ります。抜粋が入ります。抜粋が入ります。</p>
-            <p class="p-card__button"><a href="<?php echo esc_url(home_url('/')); ?>single-blog/">read more</a></p>
-          </div>
-        </div>
-      <!--▲card▲-->
+          <?php endwhile; else: ?>
+            <p>記事はありません</p>
+          <?php endif; ?>
+          <!--▲繰り返しループ終了▲-->
+          <!--▲card▲-->
         </div>
       </article>
   <!--▲▲main card▲▲-->

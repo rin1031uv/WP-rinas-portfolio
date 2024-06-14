@@ -281,16 +281,21 @@ const slides = gsap.utils.toArray(".p-about__history-js-wrapper");
 //コンテントの幅を取得
 const wrapperWidth = wrapper.offsetWidth;
 
+/*
+==============================
+page-about.php
+==============================
+*/
 //横スクロール設定
 gsap.to(slides, {
-  xPercent: -100 * (slides.length - 1), //-x軸方向に移動
-  ease: "none",
+  xPercent: -115 * (slides.length - 1), //-x軸方向に移動
+  ease: "none", //easingの設定
   scrollTrigger: {
-    trigger: ".c-about__history-content-wrapper",
-    pin: true,
-    scrub: 3,
-    start: "top 5%",
-    end: () => "+=" + wrapperWidth,
+    trigger: ".c-about__history-content-wrapper", //アニメーション対象となる要素
+    pin: true, //要素を固定する
+    scrub: 3, //スクロールとアニメーションを同期させる。数値で秒数の設定に
+    start: "top 5%", 
+    end: () => "+=" + wrapperWidth, //アニメーションの終了タイミング
     anticipatePin: 1,
     invalidateOnRefresh: true,
   },

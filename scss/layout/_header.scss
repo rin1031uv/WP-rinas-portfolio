@@ -91,8 +91,27 @@ WordPress化 front-page
 WordPress化 front-page以外
 ==============================
 */
+.archive {
+  .l-header {
+    //frontpage以外はロゴとナビメニューを詰めて上下のマージンを調整
+    margin-top: 120px;
+    margin-bottom: 60px;
+    &__container-primary {
+      h1 {
+        margin: 0 auto;
+        a {
+          width: 100%;
+          height: 50px;
+        }
+      }
+    }
+  }
+}
 .page {
   .l-header {
+    //frontpage以外はロゴとナビメニューを詰めて上下のマージンを調整
+    margin-top: 120px;
+    margin-bottom: 60px;
     &__container-primary {
       text-align: center;
       h1 {
@@ -108,9 +127,13 @@ WordPress化 front-page以外
 }
 .post-type-archive-works {
   .l-header {
+    //frontpage以外はロゴとナビメニューを詰めて上下のマージンを調整
+    margin-top: 120px;
+    margin-bottom: 60px;
     &__container-primary {
       text-align: center;
       h1 {
+        margin: 0 auto;
         text-align: center;
         a {
           width: 100%;
@@ -122,6 +145,9 @@ WordPress化 front-page以外
 }
 .post-type-archive-post {
   .l-header {
+    //frontpage以外はロゴとナビメニューを詰めて上下のマージンを調整
+    margin-top: 120px;
+    margin-bottom: 60px;
     &__container-primary {
       text-align: center;
       h1 {
@@ -137,6 +163,9 @@ WordPress化 front-page以外
 }
 .single {
   .l-header {
+    //frontpage以外はロゴとナビメニューを詰めて上下のマージンを調整
+    margin-top: 120px;
+    margin-bottom: 60px;
     &__container-primary {
       text-align: center;
       h1 {

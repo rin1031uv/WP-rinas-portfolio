@@ -20,6 +20,7 @@
 
 html {
   font-size: var(--font-size);
+  text-transform: none;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
   text-align: left;
   background-color: #eaeaea;
   color: c.$color-font-dark;
+  text-transform: none;
   //background-image: url(/image/japanese-paper_00480.jpg);
   //background-repeat: repeat;
   //background-color: rgba(0, 0, 0, 0.14);

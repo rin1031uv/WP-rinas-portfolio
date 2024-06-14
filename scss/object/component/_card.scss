@@ -23,7 +23,7 @@ archive blog
     border: 0.5px solid rgba(18, 39, 54, 0.5);
     //margin: 7.5px 7.5px;
     box-sizing: content-box;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   @include m.breakpoint(pc) {
     //width: calc((920px - 45px)/3);
     //width: 27%;
@@ -41,6 +41,7 @@ archive works
 */
 .c-card-works {
   &__primary-container {
+  margin-bottom: 20px;
     //カード１枚
   width: 266px;
   box-sizing: border-box;
@@ -92,7 +93,7 @@ front-page
 .p-card {
   &__front-wrapper {
     margin-bottom: 0;
-    >div:last-of-type {
+    > div:last-of-type {
       margin-bottom: 0;
     }
   }

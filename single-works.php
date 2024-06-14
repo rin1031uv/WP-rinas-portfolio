@@ -54,38 +54,51 @@
       <h2 class="p-main__single-blog-archive-title">Related posts</h2>
       <!--▼▼main card▼▼-->
       <article class="l-card l-card-works c-card__wrapper-masonry-works">
-        <!--▼card▼-->
-        <?php
-          $args = array(
-            'post_type' => 'works',//取得したい投稿タイプ
-            'posts_per_page' => 6,//表示したい投稿数
-          );
-          $the_query = new WP_Query($args);//クエリの作成と発行、取得したデータを$the_queryに格納
-          ?>
-          <?php if ($the_query->have_posts()): ?>
-          <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
-          <!--▼投稿カード▼-->
-        <div class="c-card__primary-container c-card-works__primary-container">
+      <!--▼card▼-->
+      <!--▼繰り返しループ開始▼-->
+      <?php
+      $args = array(
+        'post_type' => 'works',
+        'post_per_page' => 6, //取得したい投稿数
+      );
+      $the_query = new WP_Query($args);
+      ?>
+      <?php if($the_query->have_posts()): ?>
+        <ul>
+        <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
+        <li>
+          <a href="<?php the_permalink(); ?>">
+          <!--▼サムネイル取得▼-->
+          <div class="c-card__primary-container c-card-works__primary-container">
+            <?php if(has_post_thumbnail()): ?>
+              <?php the_post_thumbnail(); ?>
+              <?php else: ?>
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/temporary.JPG" alt="仮画像">
+          <?php endif; ?>
+          <!--▲サムネイル取得▲-->
           <div class="c-card-works__secandary-container">
-            <div class="c-card__secondary-container c-card-works__third-container">
-              <!--▼カテゴリ取得▼-->
-              <?php the_category(); ?>
-              <!--▲カテゴリ取得▲-->
-              <!--▼タイトル取得▼-->
-              <h3 class="p-card__title p-card-works__title">
+          <div class="c-card__secondary-container c-card-works__third-container">
+            <!--▼カテゴリ取得▼-->
+            <?php the_category(); ?>
+            <!--▲カテゴリ取得▲-->
+            <!--▼タイトル取得▼-->
+            <h3 class="p-card__title p-card-works__title">
               <?php the_title(); ?>
-              </h3>
-              <!--▲タイトル取得▲-->
-            </div>
-            <p class="p-card__button p-card-works__button"><a href="<?php echo esc_url(get_permalink()); ?>">read more</a></p>
+            </h3>
+            <!--▲タイトル取得▲-->
           </div>
+          <p class="p-card__button p-card-works__button">read more</p>
         </div>
-        <!--▲card▲-->
-        <!--▲投稿カード▲-->
-        <?php endwhile; else: ?>
-            <p>記事はありません</p>
-          <?php endif; wp_reset_postdata(); ?>
+      </div>
+          </a>
+        </li>
+        <?php endwhile; ?>
+        </ul>
+      <?php else: ?>
+        <p>まだ投稿がありません。</p>
+      <?php endif;
+      wp_reset_postdata(); ?>
+      <!--▲card▲-->
           <!--▲繰り返しループ終了/サブループ▲-->
       </article>
 <!--▲▲main card▲▲-->
