@@ -28,6 +28,13 @@ add_action('after_setup_theme', 'custom_theme_support');
 リンク系
 ============================
 */
+add_action( 'wp_enqueue_scripts', function(){
+  // トップページだけ「my-script.js」を読み込む
+  if( is_front_page() ){
+    wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/front-page.js' );
+  }
+} );
+
 function wpbeg_script() {
   //googleフォント読み込み
   wp_enqueue_style('delaney', 'fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap', array(), "");
@@ -40,19 +47,27 @@ function wpbeg_script() {
 add_action('wp_enqueue_scripts', 'wpbeg_script');
 //JavaScript読み込み
 function my_scripts() {
+  //jQuery読み込み
+  wp_enqueue_script('jquery-min-js', 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), '3.7.1', true);
   //GSAP CDN
   wp_enqueue_script('gsap', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js', array(), "", true);
   //GSAP ScrollTrigger
   wp_enqueue_script('gsapscrolltrigger', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js', array(), "", true);
-  //JavaScript読み込み
-  wp_enqueue_script('jquery-min-js', 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), '3.7.1', true);
-  wp_enqueue_script('main-script', get_stylesheet_directory_uri() .'/js/script.js', array('jquery-min-js'), '1.0.0', true);
   //Masonry plugin CDN
   wp_enqueue_script('masonry', '//unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js', array(), "", true);
   //imageLoaded CDN
   wp_enqueue_script('imagesloaded', '//unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js', array(), "", true);
+  //progressbar読み込み
+  wp_enqueue_script('progressbar', get_stylesheet_directory_uri() .'/js/progressbar.js', array(), '1.0.0', true);
+  //front-page.js読み込み
+  wp_enqueue_script('frontpage-script', get_stylesheet_directory_uri() .'/js/front-page.js', array('jquery-min-js'), '1.0.0', true);
+  //JavaScript読み込み
+  wp_enqueue_script('main-script', get_stylesheet_directory_uri() .'/js/script.js', array('jquery-min-js'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'my_scripts');
+
+
+
 
 //WordPressに登録されているjQueryを出力させない
 function my_scripts_method() {
@@ -66,7 +81,7 @@ add_action('wp_enqueue_scripts', 'my_scripts_method');
   //if($handle !== 'FontAwesome') {
     //return $tag;
   //}
-  //return str_replace('></script','crossorigin="anonymous"></script>', $tag);
+  //return str_replace('></scripcdnjs.cloudflare.com','crossorigin="anonymous"></script>', $tag);
 //}
 
 //絶対パス→相対パス

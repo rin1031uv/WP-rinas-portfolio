@@ -2312,6 +2312,37 @@ WordPress化 single.php
 }
 
 /*
+=========================================
+一文字ずつ出現させるための指示 front-page.php
+=========================================
+*/
+.eachTextAnime span {
+  opacity: 0;
+}
+
+.eachTextAnime.appeartext span {
+  -webkit-animation: text_anime_on 1s ease-out forwards;
+          animation: text_anime_on 1s ease-out forwards;
+}
+
+@-webkit-keyframes text_anime_on {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes text_anime_on {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*
 ==================
 archive blog
 ==================
@@ -2979,6 +3010,47 @@ WordPress化 front-page以外
 */
 .single .p-main__border {
   margin-bottom: 120px;
+}
+
+/*
+==============================
+ローディング画面
+==============================
+*/
+#container {
+  width: 100%;
+  height: 0.5px;
+  position: absolute;
+  top: 8.7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (min-width: 834px) {
+  #container {
+    top: 26.5%;
+  }
+}
+
+#splash {
+  /*fixedで全面に固定*/
+  position: absolute;
+  top: -309px;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  text-align: center;
+  color: #fff;
+}
+@media (min-width: 834px) {
+  #splash {
+    top: -468px;
+  }
+}
+@media (min-width: 1194px) {
+  #splash {
+    top: -758px;
+  }
 }
 
 /*

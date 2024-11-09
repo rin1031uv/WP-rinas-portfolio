@@ -36,3 +36,41 @@ WordPress化 front-page以外
     margin-bottom: 120px;
   }
 }
+
+/*
+==============================
+ローディング画面
+==============================
+*/
+#container {
+  //margin: 20px;
+  width: 100%;
+  height: 0.5px;
+  position: absolute;
+  //top: -309px;;
+  top: 8.7%; //線の中央配置
+	left: 50%; //線の中央配置
+  transform: translate(-50%, -50%); //線の中央配置
+  @include m.breakpoint(tablet) {
+    top: 26.5%; //線の中央配置
+  }
+}
+
+#splash {
+/*fixedで全面に固定*/
+//position: fixed;
+position: absolute;
+top: -309px;
+z-index: 999;
+width: 100%;
+height: 100%;
+background:#333;
+text-align:center;
+color:#fff;
+  @include m.breakpoint(tablet) {
+    top: -468px;
+  }
+  @include m.breakpoint(pc) {
+    top: -758px;
+}
+}

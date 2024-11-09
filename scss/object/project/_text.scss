@@ -203,6 +203,8 @@ about
   }
 }
 
+
+
 /*
 =========================================
 WordPress化 single.php
@@ -233,7 +235,17 @@ WordPress化 single.php
 }
 
 
-
+/*
+=========================================
+一文字ずつ出現させるための指示 front-page.php
+=========================================
+*/
+.eachTextAnime span{opacity: 0;}
+.eachTextAnime.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
+@keyframes text_anime_on {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
 
 
 

@@ -29,38 +29,70 @@ jQuery(document).ready(function() {
 
 //動作確認用
 //$(function(){
-  //alert('動いてます。');
+///alert('動いてます。');
 //});
 
-//===英字タイトルが左から右に表示されるアニメーション
-//監視対象が範囲内に現れたら実行する動作
-const showtitle = (entries) => {
- //左から右に出現するタイトル
-  //ふわっと出現
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-    entry.target.animate (
-      {
-        opacity: [0, 1],
-        filter: ['blur(.4rem)', 'blur(0)'],
-        translate: ['0 4rem', 0],
-      },
-      {
-        duration: 2000,
-        easing: 'ease',
-        fill: 'forwards',
-      }
-    );
-  }
-  });
-};
-//監視ロボットの設定
-const titleobserver = new IntersectionObserver (showtitle);
-//p-top__slide-in-titleを監視するように指示
-const titleElememts = document.querySelectorAll('.js__slide-in');
-titleElememts.forEach((titleElement) => {
-  titleobserver.observe(titleElement);
-});
+
+
+
+//動作確認用
+//$(function(){
+  //alert('動いてます。');
+  //});
+
+//文字が一文字ずつ表示されるアニメーション▼▼
+//本参考ここから
+
+// eachTextAnimeにappeartextというクラス名を付ける定義
+function EachTextAnimeControl() {
+	$('.eachTextAnime').each(function () {
+		var elemPos = $(this).offset().top - 50;
+		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		if (scroll >= elemPos - windowHeight) {
+			$(this).addClass("appeartext");
+
+		} else {
+			$(this).removeClass("appeartext");
+		}
+	});
+}
+
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).scroll(function () {
+	EachTextAnimeControl();/* アニメーション用の関数を呼ぶ*/
+});// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+// 画面が読み込まれたらすぐに動かしたい場合の記述
+$(window).on('load', function () {
+	//spanタグを追加する
+	var element = $(".eachTextAnime");
+	element.each(function () {
+		var text = $(this).text();
+		var textbox = "";
+		text.split('').forEach(function (t, i) {
+			if (t !== " ") {
+				if (i < 10) {
+					textbox += '<span style="animation-delay:.' + i + 's;">' + t + '</span>';
+				} else {
+					var n = i / 10;
+					textbox += '<span style="animation-delay:' + n + 's;">' + t + '</span>';
+				}
+
+			} else {
+				textbox += t;
+			}
+		});
+		$(this).html(textbox);
+	});
+
+	EachTextAnimeControl();/* アニメーション用の関数を呼ぶ*/
+});// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+
+//文字が一文字ずつ表示されるアニメーション▲▲
+//本参考ここまで
+
+
 
 
 
@@ -79,6 +111,7 @@ jQuery(function($){
       columnWidth:266,
       fitWidth: true,
       gutter: 24,
+      originLeft: true
       //percentPosition: true,
       //isFitWidth: true
     });
@@ -91,6 +124,7 @@ jQuery(function($){
     //percentPosition: true,
     fitWidth: true,
     resize: true,
+    originLeft: true
   });
 })
 
@@ -281,6 +315,7 @@ const slides = gsap.utils.toArray(".p-about__history-js-wrapper");
 //コンテントの幅を取得
 const wrapperWidth = wrapper.offsetWidth;
 
+
 /*
 ==============================
 page-about.php
@@ -300,7 +335,4 @@ gsap.to(slides, {
     invalidateOnRefresh: true,
   },
 });
-
-
-
 

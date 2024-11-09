@@ -1,8 +1,18 @@
 <!--header.phpを読み込むテンプレートタグ（インクルードタグ）-->
 <?php get_header(); ?>
 
+
+
 <!--▼▼main▼▼-->
+
 <main class="l-main__front-page">
+<!--▼▼プログレスバー▼▼-->
+<div id="splash">
+<div id="container"></div>
+</div>
+<!--▲▲プログレスバー▲▲-->
+
+
   <!--▼▼hero image▼▼-->
   <div class="c-top__hero-wrapper">
     <div class="c-top__hero-container">
@@ -15,7 +25,7 @@
     <!--▼▼about▼▼-->
     <article class="c-top__about-wrapper">
       <div class="js__slide-in">
-        <div class="p-top__title-background">Self Introdution</div>
+        <div class="p-top__title-background eachTextAnime">Self Introdution</div>
       </div>
       <h2 class="p-top__title js__slide-in">About</h2>
       <p class="p-top__text js__slide-in">
@@ -38,8 +48,8 @@
     <!--▼▼works▼▼-->
     <article class="c-top__works-wrapper">
       <div class="p-top__title-background-work-container js__slide-in">
-        <div class="p-top__title-background-work-primary p-top__slide-in-title">Please take a look</div>
-        <div class="p-top__title-background-work-secondary p-top__slide-in-title">at my creation</div>
+        <div class="p-top__title-background-work-primary p-top__slide-in-title eachTextAnime">Please take a look</div>
+        <div class="p-top__title-background-work-secondary p-top__slide-in-title eachTextAnime">at my creation</div>
       </div>
       <div>
         <h2 class="p-top__title js__slide-in">Works</h2>
@@ -59,7 +69,7 @@
     <!--▼▼blog▼▼-->
     <article class="c-top__blog-wrapper">
       <div class="js__slide-in">
-        <div class="p-top__title-background">learn with me</div>
+        <div class="p-top__title-background eachTextAnime">learn with me</div>
       </div>
       <h2 class="p-top__title js__slide-in">Blog</h2>
       <p class="p-top__text js__slide-in">
@@ -119,7 +129,7 @@
     <!--▲▲blog▲▲-->
     <!--▼▼contact▼▼-->
     <article class="c-top__contact-wrapper">
-      <div class="p-top__contact-title-background js__slide-in">Get in Touch</div>
+      <div class="p-top__contact-title-background js__slide-in eachTextAnime">Get in Touch</div>
       <h2 class="p-top__title-contact js__slide-in">Contact</h2>
       <p class="p-top__text-contact js__slide-in">
         ご相談等お気軽にお問い合わせください。
