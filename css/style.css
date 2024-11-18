@@ -3017,7 +3017,7 @@ WordPress化 front-page以外
 ローディング画面
 ==============================
 */
-#container {
+#progress-bar-container {
   width: 100%;
   height: 0.5px;
   position: absolute;
@@ -3026,7 +3026,7 @@ WordPress化 front-page以外
   transform: translate(-50%, -50%);
 }
 @media (min-width: 834px) {
-  #container {
+  #progress-bar-container {
     top: 26.5%;
   }
 }

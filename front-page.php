@@ -8,7 +8,7 @@
 <main class="l-main__front-page">
 <!--▼▼プログレスバー▼▼-->
 <div id="splash">
-<div id="container"></div>
+<div id="progress-bar-container"></div>
 </div>
 <!--▲▲プログレスバー▲▲-->
 

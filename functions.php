@@ -29,9 +29,9 @@ add_action('after_setup_theme', 'custom_theme_support');
 ============================
 */
 add_action( 'wp_enqueue_scripts', function(){
-  // トップページだけ「my-script.js」を読み込む
+  // トップページだけ「front-page.js」を読み込む
   if( is_front_page() ){
-    wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/front-page.js' );
+    wp_enqueue_script( 'frontpage-script', get_template_directory_uri() . '/js/front-page.js' );
   }
 } );
 
@@ -58,7 +58,7 @@ function my_scripts() {
   //imageLoaded CDN
   wp_enqueue_script('imagesloaded', '//unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js', array(), "", true);
   //progressbar読み込み
-  wp_enqueue_script('progressbar', get_stylesheet_directory_uri() .'/js/progressbar.js', array(), '1.0.0', true);
+  wp_enqueue_script('progressbar', get_stylesheet_directory_uri() .'/js/progressbar.js', array(), '1.0.0', false);
   //front-page.js読み込み
   wp_enqueue_script('frontpage-script', get_stylesheet_directory_uri() .'/js/front-page.js', array('jquery-min-js'), '1.0.0', true);
   //JavaScript読み込み
