@@ -854,7 +854,7 @@ hamburger-menu(共通)
 ==================
 */
 .c-header__nav {
-  transform: translateX(100%);
+  left: 100%;
   z-index: 200;
   width: 80%;
   height: 100%;
@@ -1082,7 +1082,7 @@ hamburger-menu(共通)
 }
 
 .p-header__container .c-header__hamburger-background-action {
-  transform: translateX(0);
+  left: 21%;
   pointer-events: auto;
   transition: all 0.5s ease-in-out 0s;
 }

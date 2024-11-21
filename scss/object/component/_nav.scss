@@ -12,7 +12,8 @@ hamburger-menu(共通)
 */
 .c-header { 
   &__nav {
-    transform: translateX(100%); //スマホの時隠す
+    //transform: translateX(100%); //スマホの時隠す
+    left: 100%;
     z-index: 200; //上に来るように
     width: 80%;
     height: 100%;
@@ -241,7 +242,8 @@ hamburger-menu(共通)
 }
 .p-header__container {
   .c-header__hamburger-background-action {
-    transform: translateX(0);
+    //transform: translateX(0);
+    left: 21%;
     //background: rgba(135, 150, 169, 0.75); //薄い黒色に変化
     pointer-events: auto; //クリック・タッチできるように
     transition: all 0.5s ease-in-out 0s;
