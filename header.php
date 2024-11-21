@@ -26,7 +26,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  
+<?php wp_body_open(); ?>
 
   <header class="l-header">
     <div class="l-header__container-primary">

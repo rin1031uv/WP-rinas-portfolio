@@ -49,6 +49,7 @@
               <p class="p-card__button"><a href="<?php the_permalink(); ?><?php echo get_post_field( 'post_name', get_the_ID()); ?>">read more</a></p>
             </div>
           </div>
+          <?php wp_link_pages(); ?>
           <?php endwhile; else: ?>
             <p>検索キーワードに該当する記事がありませんでした。</p>
           <?php endif; ?>

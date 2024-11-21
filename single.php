@@ -5,7 +5,7 @@
 <main>
   <div class="l-main__wrapper">
     <div class="p-main__border"></div>
-    <article class="l-main__single-blog-container">
+    <article <?php post_class('l-main__single-blog-container'); ?>>
     <!--▼記事を呼び出すメインループの開始コード▼-->
     <?php if(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>

@@ -1,4 +1,12 @@
+
+
 <?php
+//フィードリンクの追加（theme-checkエラーで追加）
+function mytheme_setup() {
+  add_theme_support( 'automatic-feed-links' );
+}
+add_action( 'after_setup_theme', 'mytheme_setup' );
+
 function custom_theme_support() {
   add_theme_support('html5', array(
     'search-form',
@@ -8,7 +16,7 @@ function custom_theme_support() {
     'caption'
   ));
 //テーマサポート
-  add_theme_support( 'menus' );
+  //add_theme_support( 'menus' );
   add_theme_support( 'title-tag' );
   register_nav_menus(
     array (
@@ -168,7 +176,7 @@ function create_post_type() {
     'has_archive' => true, //アーカイブの生成
     'hierarchical' => false, //階層構造の有無
     'show_in_rest' => true, //Gutenbergに対応
-    'rewrite' => array('width_front'=>false), //パーマリンクの設定
+    'rewrite' => array('slug' => 'works'), //パーマリンクの設定
     )
   );
   //カスタムタクソノミー(カテゴリ)を追加
@@ -179,8 +187,9 @@ function create_post_type() {
       'label' => 'カテゴリー', //管理画面での表示名
       'hierarchical' => true, //階層構造
       'public' => true, //管理画面に表示するか
+      'show_ui' => true, // 管理画面に表示
       'show_in_rest' => true, //ブロックエディタ―ON
-      //'rewrite' => array('slug' => 'works'),
+      'rewrite' => array('slug' => 'works-category'),
       )
     );
     register_taxonomy(
@@ -233,10 +242,10 @@ add_filter( 'pre_get_posts', 'search_filter' );
 /*==========================
 ウィジェットの登録
 ==========================*/
-function theme_slug_widgets_init() {
-  register_sidebar( array(
-    'name' => 'サイドバー',
-    'id' => 'archive',
-  ));
-}
-add_action('widgets_init', 'theme_slug_widgets_init');
+//function theme_slug_widgets_init() {
+  //register_sidebar( array(
+    //'name' => 'サイドバー',
+    //'id' => 'archive',
+  //));
+//}
+//add_action('widgets_init', 'theme_slug_widgets_init');
