@@ -155,7 +155,26 @@ front-page
   }
 }
 
-
-
-
+/*
+==================
+contact
+==================
+*/
+.p-contact__button-wrapper {
+  p {
+    font-size: 16rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    input {
+      padding: 10px;
+      border: solid c.$color-base 0.2px;
+      //box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+      //5px 5px 9px rgba(18, 39, 54, 0.15);
+      &:hover {
+      box-shadow: -5px -5px 10px inset rgba(255,255,255,1),
+                5px 5px 10px inset rgba(18, 39, 54, 0.23);
+      }
+    }
+  }
+}
 

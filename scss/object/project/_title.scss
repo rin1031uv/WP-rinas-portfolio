@@ -41,6 +41,13 @@ archive blog
     }
   }
 }
+.post-type-archive-works {
+  .p-main {
+    &__title {
+      margin-bottom: 30px;
+    }
+}
+}
 .p-card {
   &__title {
     font-size: 14rem;

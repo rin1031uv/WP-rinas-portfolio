@@ -472,3 +472,23 @@ WordPress化 archive / single 共通
     }
   }
 }
+
+/*
+=========================================
+Contact
+=========================================
+*/
+.p-contact__wrapper {
+  //padding-top: 60px;
+  .required {
+    font-size: 16rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    margin-bottom: 5px;
+  }
+  dd {
+    border: solid c.$color-base 0.2px;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+  }
+}

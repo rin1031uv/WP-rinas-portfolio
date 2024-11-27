@@ -2109,6 +2109,24 @@ front-page
 
 /*
 ==================
+contact
+==================
+*/
+.p-contact__button-wrapper p {
+  font-size: 16rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.p-contact__button-wrapper p input {
+  padding: 10px;
+  border: solid #8796A9 0.2px;
+}
+.p-contact__button-wrapper p input:hover {
+  box-shadow: -5px -5px 10px inset rgb(255, 255, 255), 5px 5px 10px inset rgba(18, 39, 54, 0.23);
+}
+
+/*
+==================
 archive blog
 ==================
 */
@@ -2343,6 +2361,21 @@ WordPress化 single.php
   }
 }
 /*
+=========================================
+contact
+=========================================
+*/
+.page-id-52 .c-main__primary-container div h2 {
+  margin-bottom: 0;
+}
+.page-id-52 .c-main__primary-container div > P {
+  font-size: 16rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  margin-bottom: 45px;
+}
+
+/*
 ==================
 archive blog
 ==================
@@ -2372,6 +2405,10 @@ archive blog
 
 .post-type-archive-post .p-main__title-container > p {
   display: none;
+}
+
+.post-type-archive-works .p-main__title {
+  margin-bottom: 30px;
 }
 
 .p-card__title {
@@ -3481,6 +3518,23 @@ WordPress化 archive / single 共通
   .l-main__list-category .p-main__list-category > ul > li > ul > li > ul > li > a {
     font-size: 16rem;
   }
+}
+
+/*
+=========================================
+Contact
+=========================================
+*/
+.p-contact__wrapper .required {
+  font-size: 16rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  margin-bottom: 5px;
+}
+.p-contact__wrapper dd {
+  border: solid #8796A9 0.2px;
+  padding: 10px 10px;
+  margin-bottom: 30px;
 }
 
 .p-search-form__container {
