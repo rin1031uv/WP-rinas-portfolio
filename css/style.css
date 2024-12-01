@@ -720,7 +720,8 @@ WordPress化 front-page以外
 .single .l-main__single-blog-container p {
   color: #122736;
   font-family: Shippori Mincho B1, serif;
-  font-size: 14rem;
+  font-size: 15rem;
+  margin-bottom: 20px;
 }
 @media (min-width: 1194px) {
   .single .l-main__single-blog-container p {
@@ -874,6 +875,12 @@ hamburger-menu(共通)
     position: relative;
     top: -150px;
   }
+}
+.c-header__nav .menu-gmenu-container ul {
+  list-style: none;
+}
+.c-header__nav .menu-gmenu-container ul li {
+  list-style: none;
 }
 .c-header__nav ul {
   display: flex;
@@ -2910,24 +2917,74 @@ WordPress化 single.php
 .l-main__single-blog-container > h2 {
   font-family: Shippori Mincho B1, serif;
   color: #122736;
-  font-size: 20px;
+  font-size: 32px;
   padding-left: 0;
+  margin-bottom: 9px;
 }
 .l-main__single-blog-container > h3 {
   font-family: Shippori Mincho B1, serif;
   color: #122736;
+  margin-bottom: 9px;
+  font-size: 24rem;
 }
 .l-main__single-blog-container > h4 {
   font-family: Shippori Mincho B1, serif;
   color: #122736;
+  margin-bottom: 20px;
+  border-bottom: 0.2px solid #122736;
 }
 .l-main__single-blog-container > h5 {
   font-family: Shippori Mincho B1, serif;
   color: #122736;
+  margin-bottom: 18px;
 }
 .l-main__single-blog-container > h6 {
   font-family: Shippori Mincho B1, serif;
   color: #122736;
+  margin-bottom: 16px;
+}
+.l-main__single-blog-container p {
+  margin-bottom: 27px;
+}
+
+/*
+=========================================
+WordPress化 single-works.php
+=========================================
+*/
+.single-works > h1 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+}
+.single-works > h2 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  font-size: 20px;
+  padding-left: 0;
+}
+.single-works > h3 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  font-size: 16rem;
+  margin-bottom: 9px;
+}
+.single-works > h4 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  margin-bottom: 9px;
+}
+.single-works > h5 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  margin-bottom: 9px;
+}
+.single-works > h6 {
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  margin-bottom: 9px;
+}
+.single-works p {
+  margin-bottom: 27px;
 }
 
 .p-pagenation__container li {
@@ -3196,6 +3253,9 @@ single blog
 .p-main__category-list {
   margin-bottom: 6px;
 }
+.p-main__category-list > li {
+  list-style: none;
+}
 .p-main__category-list a {
   font-size: 12rem;
   font-family: Shippori Mincho B1, serif;
@@ -3207,6 +3267,9 @@ single blog
 .p-main__tag-list {
   margin-bottom: 9px;
   margin-right: 15px;
+}
+.p-main__tag-list > li {
+  list-style: none;
 }
 .p-main__tag-list a {
   font-size: 12rem;
@@ -3417,23 +3480,53 @@ WordPress化 single.php / single-works.php
   padding-right: 6px;
 }
 
-.p-main__tag-list-container {
+.single-works > main .l-main__wrapper .p-main__category-list {
+  margin-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  list-style: none;
+}
+.single-works > main .l-main__wrapper .p-main__category-list > li {
+  list-style: none;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+.single-works > main .l-main__wrapper .p-main__category-list > li > a {
+  padding: 5px;
+  font-size: 16rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  background-color: #EAF4FC;
+  opacity: 0.8;
+}
+.single-works > main .l-main__wrapper .p-main__category-list > li > a::before {
+  content: "\e185";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  font-size: 16rem;
+  color: #8796A9;
+  padding-right: 6px;
+}
+.single-works > main .l-main__wrapper .p-main__tag-list-container {
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
   margin-bottom: 24px;
+  margin-left: 0;
 }
-.p-main__tag-list-container > li {
+.single-works > main .l-main__wrapper .p-main__tag-list-container > li {
+  list-style: none;
   margin-bottom: 9px;
   margin-right: 15px;
   background-color: #EAF4FC;
   opacity: 0.8;
 }
-.p-main__tag-list-container > li > a {
+.single-works > main .l-main__wrapper .p-main__tag-list-container > li > a {
   font-size: 14rem;
   font-family: Shippori Mincho B1, serif;
   color: #122736;
 }
-.p-main__tag-list-container > li > a::before {
+.single-works > main .l-main__wrapper .p-main__tag-list-container > li > a::before {
   content: "#";
   font-size: 14rem;
   font-family: Shippori Mincho B1, serif;
@@ -3461,6 +3554,9 @@ WordPress化 archive / single 共通
   font-family: delaney, sans-serif;
   color: #122736;
   padding-bottom: 15px;
+}
+.l-main__list-category .p-main__list-category > ul > li {
+  list-style: none;
 }
 .l-main__list-category .p-main__list-category > ul > li > a {
   font-size: 16rem;
@@ -3518,6 +3614,36 @@ WordPress化 archive / single 共通
   .l-main__list-category .p-main__list-category > ul > li > ul > li > ul > li > a {
     font-size: 16rem;
   }
+}
+
+/*
+=========================================
+single-works
+=========================================
+*/
+.single-works ol {
+  list-style: decimal;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.single-works ol li {
+  list-style: decimal;
+  font-size: 14rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  padding-left: 6px;
+}
+.single-works ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.single-works ul li {
+  list-style: disc;
+  font-size: 14rem;
+  font-family: Shippori Mincho B1, serif;
+  color: #122736;
+  padding-left: 6px;
 }
 
 /*

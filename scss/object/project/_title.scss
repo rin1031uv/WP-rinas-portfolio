@@ -550,24 +550,75 @@ WordPress化 single.php
   >h2 {
     font-family: f.$main-font;
     color: c.$color-font-dark;
+    font-size: 32px; //カードのタイトルと投稿のタイトルでフォントサイズ変更するため再設定
+    padding-left: 0; //カードのタイトルに左マージン入ってるのを投稿文では解除する
+    margin-bottom: 9px;
+  }
+  >h3 {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    margin-bottom: 9px;
+    font-size: 24rem;
+  }
+  >h4 {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    margin-bottom: 20px;
+    border-bottom: 0.2px solid #122736;
+  }
+  >h5 {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    margin-bottom: 18px;
+  }
+  >h6 {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    margin-bottom: 16px;
+  }
+  p{
+    margin-bottom: 27px;
+  }
+}
+
+/*
+=========================================
+WordPress化 single-works.php
+=========================================
+*/
+.single-works {
+  >h1 {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+  }
+  >h2 {
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
     font-size: 20px; //カードのタイトルと投稿のタイトルでフォントサイズ変更するため再設定
     padding-left: 0; //カードのタイトルに左マージン入ってるのを投稿文では解除する
   }
   >h3 {
     font-family: f.$main-font;
     color: c.$color-font-dark;
+    font-size: 16rem;
+    margin-bottom: 9px;
   }
   >h4 {
     font-family: f.$main-font;
     color: c.$color-font-dark;
+    margin-bottom: 9px;
   }
   >h5 {
     font-family: f.$main-font;
     color: c.$color-font-dark;
+    margin-bottom: 9px;
   }
   >h6 {
     font-family: f.$main-font;
     color: c.$color-font-dark;
+    margin-bottom: 9px;
+  }
+  p {
+    margin-bottom: 27px;
   }
 }
-

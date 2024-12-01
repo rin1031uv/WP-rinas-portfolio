@@ -116,6 +116,9 @@ single blog
 .p-main {
   &__category-list {
     margin-bottom: 6px;
+    >li {
+      list-style: none;
+    }
     a {
       font-size: 12rem;
       font-family: f.$main-font;
@@ -128,6 +131,9 @@ single blog
   &__tag-list {
     margin-bottom: 9px;
     margin-right: 15px;
+    >li {
+      list-style: none;
+    }
     a {
       font-size: 12rem;
       font-family: f.$main-font;
@@ -365,32 +371,72 @@ WordPress化 single.php / single-works.php
 //タグリストの装飾
 //single.php
 //single-works.php
-.p-main {
-  &__tag-list-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-    >li {
-      //width: 100%;
-      margin-bottom: 9px;
-      margin-right: 15px;
-      background-color: c.$color-font-light;
-      opacity: 0.8;
-      >a {
-        font-size: 14rem;
-        font-family: f.$main-font;
-        color: c.$color-font-dark;
-        &::before {
-          content: '#';
-          font-size: 14rem;
-          font-family: f.$main-font;
-          color: c.$color-font-dark;
-          padding-right: 3px;
+
+.single-works {
+  >main {
+    .l-main__wrapper {
+      .p-main {
+        &__category-list {
+          margin-left: 0;
+          margin-bottom: 0;
+          display: flex;
+          list-style: none;
+          >li {
+            //width: 100%;
+            list-style: none;
+            margin-right: 12px;
+            margin-bottom: 12px;
+            >a {
+              padding: 5px;
+              font-size: 16rem;
+              font-family: f.$main-font;
+              color: c.$color-font-dark;
+              background-color: c.$color-font-light;
+              opacity: 0.8;
+              &::before {
+                content: '\e185';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 400;
+                font-size: 16rem;
+                //vertical-align: middle;
+                color: c.$color-base;
+                padding-right: 6px;
+              }
+            }
+          }
+        }
+        &__tag-list-container {
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          margin-bottom: 24px;
+          margin-left: 0;
+          >li {
+            //width: 100%;
+            list-style: none;
+            margin-bottom: 9px;
+            margin-right: 15px;
+            background-color: c.$color-font-light;
+            opacity: 0.8;
+            >a {
+              font-size: 14rem;
+              font-family: f.$main-font;
+              color: c.$color-font-dark;
+              &::before {
+                content: '#';
+                font-size: 14rem;
+                font-family: f.$main-font;
+                color: c.$color-font-dark;
+                padding-right: 3px;
+              }
+            }
+          }
         }
       }
     }
   }
 }
+
 
 /*
 =========================================
@@ -412,6 +458,7 @@ WordPress化 archive / single 共通
     padding-bottom: 15px;
   }
   >ul >li {
+    list-style: none;
     >a {
       font-size: 16rem;
       font-family: f.$main-font;
@@ -469,6 +516,52 @@ WordPress化 archive / single 共通
           }
         }
       }
+    }
+  }
+}
+
+
+/*
+=========================================
+single-works
+=========================================
+*/
+.single-works {
+  >main {
+    .l-main__wrapper {
+      .wo-block-list {
+
+      }
+    }
+  }
+  ol {
+    list-style: decimal; //base.scssでnoneに指定しているため
+    //padding-left: 25px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    li {
+      //display: block;
+      //margin-left: 25px;
+      list-style: decimal; //base.scssでnoneに指定しているため
+      font-size: 14rem;
+      font-family: f.$main-font;
+      color: c.$color-font-dark;
+      padding-left: 6px;
+    }
+  }
+  ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    li {
+      //display: block;
+      //margin-left: 25px;
+      //list-style: decimal; //base.scssでnoneに指定しているため
+      list-style: disc;
+      font-size: 14rem;
+      font-family: f.$main-font;
+      color: c.$color-font-dark;
+      padding-left: 6px;
     }
   }
 }

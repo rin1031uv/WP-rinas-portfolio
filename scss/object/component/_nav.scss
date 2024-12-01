@@ -31,6 +31,14 @@ hamburger-menu(共通)
       position: relative;
       top: -150px;
   }
+  .menu-gmenu-container {
+    ul {
+      list-style: none;
+      li {
+        list-style: none;
+      }
+    }
+  }
     ul {
       display: flex;
       flex-direction: column;
