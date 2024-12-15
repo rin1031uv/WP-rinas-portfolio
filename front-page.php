@@ -136,9 +136,9 @@
       </p>
       <div class="c-top__button-container p-top__button-container-contact">
           <div class="p-top__button-container-secondary">
-            <a href="#">
-              <p class="p-top__button-icon"><i class="fa-brands fa-x-twitter" style="color: #122736;"></i></p>
-              <p class="p-top__button-title">jump to my tweets</p>
+            <a href="https://www.instagram.com/rina_web.golf.nature/" target="_blank">
+              <p class="p-top__button-icon"><i class="fa-brands fa-instagram" style="color: #122736;"></i></p>
+              <p class="p-top__button-title">jump to my instagram</p>
             </a>
           </div>
           <div class="p-top__button-container-secondary">
