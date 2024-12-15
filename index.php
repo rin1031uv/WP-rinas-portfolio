@@ -2,6 +2,8 @@
 <?php get_header(); ?>
 <!--▼▼main▼▼-->
 <main>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
   <div class="l-main__wrapper">
     <div class="p-main__border"></div>
     <section class="c-main__primary-container">
@@ -19,13 +21,14 @@
       <div  class="c-profile__primary-container">
         <div class="c-profile__secndary-container">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/profile-image.png" alt="自己紹介用の画像" class="p-profile__image">
-          <p class="p-profile__name">表示してほしいな<?php the_author(); ?></p>
+          <p class="p-profile__name"><?php the_author(); ?></p>
         </div>
-        <p class="p-profile__text">表示してくれないかな<?php the_author_meta('user_description'); ?></p>
+        <p class="p-profile__text"><?php the_author_meta('user_description'); ?></p>
       </div>
     </section>
     <!--▲▲main profile▲▲-->
   </div>
+  <?php endwhile; endif; ?>
 </main>
 <!--▲▲main▲▲-->
 <!--footer.phpを読み込むテンプレートタグ（インクルードタグ）-->
