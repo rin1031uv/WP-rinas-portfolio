@@ -576,7 +576,7 @@
         </a>
       </div>
       <div class="p-top__button-container-secondary">
-        <a href="#">
+        <a href="contact">
           <p class="p-top__button-icon"><i class="fas fa-paper-plane" style="color: #122736;"></i></p>
           <p class="p-top__button-title">send a message</p>
         </a>
