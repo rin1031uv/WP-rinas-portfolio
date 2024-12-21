@@ -268,8 +268,34 @@ contact
   }
 }
 
+/*
+=========================================
+works
+=========================================
+*/
+.single-works {
+  >main {
+    .l-main_wrapper {
+      p {
+        a {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
 
 
 
-
-
+.single-works {
+  >main {
+    .l-main__wrapper {
+      p {
+        a {
+          text-decoration: underline;
+          //color: aquamarine;
+        }
+      }
+    }
+  }
+}
