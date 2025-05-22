@@ -107,6 +107,9 @@ front-page
   &__primary-container {
     img {
       width: 100%;
+      height: auto;
+      max-height: 167px;
+      object-fit: cover;
     }
   }
 }
