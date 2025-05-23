@@ -81,6 +81,9 @@
           <!--▼投稿カード▼-->
           <div class="c-card__primary-container">
             <div class="p-card__image-container">
+              <?php if(has_post_thumbnail()): ?>
+                <?php the_post_thumbnail('thumbnail'); ?>
+                <?php else: ?>
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/temporary.JPG" alt="仮画像" class="p-card__img-blog">
               <div class="p-card__list-container-blog">
                 <!--▼カテゴリ取得▼-->
@@ -90,6 +93,7 @@
                 <!--<?php the_tags('<ul class="p-card__tag-blog"><li>', '</li><li>', '</ul>'); ?>-->
                 <!--▲タグ取得▲-->
               </div>
+              <?php endif; ?>
             </div>
             <div class="c-card__secondary-container">
               <!--▼タイトル取得▼-->

@@ -15,11 +15,20 @@ archive blog
 }
 .p-card {
   &__image-container {
+    height: 167px;
+    overflow: hidden;
     background-color: c.$color-base;
     display: inline-block;
     >img {
       opacity: 0.6;
       display: block;
+      width: 100%;
+      //height: auto;
+      //max-height: 167px;
+      object-fit: cover;
+      object-position: center;
+      height: fit-content;
+      
     }
   }
 }
@@ -32,9 +41,18 @@ single blog
 .p-main {
   &__single-blog-image {
     width: 100%;
+    height: 217px;
+    @include m.breakpoint(tablet) {
+      height: 410px;
+    }
+    @include m.breakpoint(pc) {
+      height: 467px;
+    }
     >img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
@@ -107,9 +125,12 @@ front-page
   &__primary-container {
     img {
       width: 100%;
-      height: auto;
-      max-height: 167px;
+      //height: auto;
+      //max-height: 167px;
       object-fit: cover;
+      object-position: center;
+      height: fit-content;
+      display: block;
     }
   }
 }

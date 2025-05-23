@@ -49,7 +49,7 @@ function wpbeg_script() {
   //FontAwesome読み込み
   wp_enqueue_script('FontAwesome', '//kit.fontawesome.com/b5c2f07411.js', array(), "", true);
   //メインのstyleシート読み込み
-  wp_enqueue_style('my-style',get_theme_file_uri('/css/style.css'), array(), '1.0.0');
+  wp_enqueue_style('my-style',get_theme_file_uri('/css/style.css'), array(), filemtime(get_theme_file_path('/css/style.css')));
   wp_enqueue_style('portfolio', get_theme_file_uri('style.css'), array(), '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'wpbeg_script');
