@@ -10,8 +10,12 @@ archive blog
 */
 .c-main {
   &__primary-container {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    @include m.breakpoint(tablet) {
     margin-top: 60px;
     margin-bottom: 45px;
+    };
   }
 }
 

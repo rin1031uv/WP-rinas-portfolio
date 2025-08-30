@@ -1,5 +1,5 @@
 /*$breakpoints: (
-screen01: 'screen and (max-width:393px)',
+screen01: 'screen and (max-width:375px)',
 screen02: 'screen and (max-width:834px)',
 screen03: 'screen and (max-width:1194px)',
 screen04: 'screen and (max-width:1440px)',
@@ -8,7 +8,7 @@ screen04: 'screen and (max-width:1440px)',
 //mixin
 @mixin breakpoint($point) {
     @if $point==phone {
-    @media (min-width: 393px) {
+    @media (min-width: 375px) {
     @content ;
     }
   }

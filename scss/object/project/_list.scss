@@ -127,6 +127,14 @@ single blog
   }
   &__tag-list-container {
     display: flex;
+    li {
+      padding: 5px;
+      border: 0.2px solid;
+      border-color: c.$color-base;
+      a {
+        font-family: f.$main-font;
+      }
+    }
   }
   &__tag-list {
     margin-bottom: 9px;
