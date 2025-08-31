@@ -16,7 +16,7 @@
   <!--▼▼hero image▼▼-->
   <div class="c-top__hero-wrapper">
     <div class="c-top__hero-container">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/hero-3.png" class="p-top__hero-image">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/silvia.png" class="p-top__hero-image">
       <div class="c-top__hero-background"></div>
     </div>
   </div>
@@ -140,7 +140,7 @@
       </p>
       <div class="c-top__button-container p-top__button-container-contact">
           <div class="p-top__button-container-secondary">
-            <a href="https://www.instagram.com/rina_web.golf.nature/" target="_blank">
+            <a href="https://www.instagram.com/rina_neko.lifedesign/" target="_blank">
               <p class="p-top__button-icon"><i class="fa-brands fa-instagram" style="color: #122736;"></i></p>
               <p class="p-top__button-title">jump to my instagram</p>
             </a>
