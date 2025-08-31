@@ -530,7 +530,7 @@ WordPress化 front-page以外
 ==============================
 */
 .archive .l-header {
-  margin-top: 120px;
+  margin-top: 80px;
   margin-bottom: 60px;
 }
 .archive .l-header__container-primary h1 {
@@ -579,7 +579,7 @@ WordPress化 front-page以外
 }
 @media (min-width: 834px) {
   .post-type-archive-post .l-header {
-    margin-top: 120px;
+    margin-top: 60px;
     margin-bottom: 60px;
   }
 }
@@ -590,14 +590,25 @@ WordPress化 front-page以外
   text-align: center;
   margin: 0 auto;
 }
+@media (min-width: 834px) {
+  .post-type-archive-post .l-header__container-primary h1 {
+    margin-top: 45px;
+  }
+}
 .post-type-archive-post .l-header__container-primary h1 a {
   width: 100%;
   height: 50px;
 }
 
 .single .l-header {
-  margin-top: 120px;
-  margin-bottom: 60px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+@media (min-width: 834px) {
+  .single .l-header {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
 }
 .single .l-header__container-primary {
   text-align: center;
@@ -605,6 +616,11 @@ WordPress化 front-page以外
 .single .l-header__container-primary h1 {
   text-align: center;
   margin: 0 auto;
+}
+@media (min-width: 834px) {
+  .single .l-header__container-primary h1 {
+    margin-top: 45px;
+  }
 }
 .single .l-header__container-primary h1 a {
   width: 100%;
@@ -2951,9 +2967,14 @@ WordPress化 single.php
 .l-main__single-blog-container > h2 {
   font-family: Shippori Mincho B1, serif;
   color: #122736;
-  font-size: 5vw;
+  font-size: 24rem;
   padding-left: 0;
   margin-bottom: 9px;
+}
+@media (min-width: 834px) {
+  .l-main__single-blog-container > h2 {
+    font-size: 32rem;
+  }
 }
 .l-main__single-blog-container > h3 {
   font-family: Shippori Mincho B1, serif;

@@ -32,13 +32,13 @@
                 <?php else: ?>
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/temporary.JPG" alt="仮画像" class="p-card__img-blog">
               <?php endif; ?>
-              <div class="p-card__list-container-blog">
-              <!--▼カテゴリ取得▼-->
-              <?php the_category(); ?>
-              <!--▲カテゴリ取得▲-->
-              <!--▼タグ取得▼-->
-              <!--<?php the_tags('<ul class="p-card__tag-blog"><li>', '</li><li>', '</ul>'); ?>-->
-              <!--▲タグ取得▲-->
+                <div class="p-card__list-container-blog">
+                <!--▼カテゴリ取得▼-->
+                <?php the_category(); ?>
+                <!--▲カテゴリ取得▲-->
+                <!--▼タグ取得▼-->
+                <!--<?php the_tags('<ul class="p-card__tag-blog"><li>', '</li><li>', '</ul>'); ?>-->
+                <!--▲タグ取得▲-->
               </div>
             </div>
             <div class="c-card__secondary-container">

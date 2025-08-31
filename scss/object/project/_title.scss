@@ -551,11 +551,11 @@ WordPress化 single.php
     font-family: f.$main-font;
     color: c.$color-font-dark;
     //font-size: 32px; //カードのタイトルと投稿のタイトルでフォントサイズ変更するため再設定
-    font-size: 5vw;
+    font-size: 24rem;
     padding-left: 0; //カードのタイトルに左マージン入ってるのを投稿文では解除する
     margin-bottom: 9px;
-    @include m.breakpoint(PC) {
-      font-size: 32px;
+    @include m.breakpoint(tablet) {
+      font-size: 32rem;
     }
   }
   >h3 {
@@ -584,6 +584,7 @@ WordPress化 single.php
     margin-bottom: 27px;
   }
 }
+
 
 /*
 =========================================

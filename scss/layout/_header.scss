@@ -101,7 +101,7 @@ WordPress化 front-page以外
     //frontpage以外はロゴとナビメニューを詰めて上下のマージンを調整
     margin-top: 80px;
     margin-bottom: 60px;
-    @include M.breakpoint(PC) {
+    @include m.breakpoint(PC) {
       margin-top: 120px;
     }
     &__container-primary {
@@ -157,7 +157,7 @@ WordPress化 front-page以外
       margin-top: 60px;
       margin-bottom: 30px;
     @include m.breakpoint(tablet) {
-      margin-top: 120px;
+      margin-top: 60px;
       margin-bottom: 60px;
     }
     &__container-primary {
@@ -165,6 +165,9 @@ WordPress化 front-page以外
       h1 {
         text-align: center;
         margin: 0 auto;
+        @include m.breakpoint(tablet) {
+          margin-top: 45px;
+        }
         a {
           width: 100%;
           height: 50px;
@@ -176,13 +179,20 @@ WordPress化 front-page以外
 .single {
   .l-header {
     //frontpage以外はロゴとナビメニューを詰めて上下のマージンを調整
-    margin-top: 120px;
-    margin-bottom: 60px;
+      margin-top: 60px;
+      margin-bottom: 30px;
+    @include m.breakpoint(tablet) {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
     &__container-primary {
       text-align: center;
       h1 {
         text-align: center;
         margin: 0 auto;
+        @include m.breakpoint(tablet) {
+          margin-top: 45px;
+        }
         a {
           width: 100%;
           height: 50px;
