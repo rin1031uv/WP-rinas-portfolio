@@ -99,8 +99,11 @@ WordPress化 front-page以外
 .archive {
   .l-header {
     //frontpage以外はロゴとナビメニューを詰めて上下のマージンを調整
-    margin-top: 120px;
+    margin-top: 80px;
     margin-bottom: 60px;
+    @include M.breakpoint(PC) {
+      margin-top: 120px;
+    }
     &__container-primary {
       h1 {
         margin: 0 auto;
