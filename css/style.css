@@ -452,6 +452,7 @@ archive blog
 }
 .l-header__container-primary {
   position: relative;
+  top: 20px;
   display: flex;
   flex-direction: column-reverse;
 }
@@ -501,6 +502,10 @@ WordPress化 front-page
   .home .l-header {
     margin-bottom: 200px;
   }
+}
+.home .l-header__container-primary {
+  bottom: 30PX;
+  top: -45PX;
 }
 .home .l-header__container-primary h1 {
   background-image: url(../image/toplogo_EAF4FC.png);

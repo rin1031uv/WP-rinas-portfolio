@@ -18,7 +18,7 @@ archive blog
   &__container-primary {
     //position: absolute;
     position: relative;
-    //top: -280px;
+    top: 20px;
     //bottom: 30px;
     display: flex;
     flex-direction: column-reverse;
@@ -72,6 +72,8 @@ WordPress化 front-page
       margin-bottom: 200px;
     }
     &__container-primary {
+      bottom: 30PX;
+      top: -45PX;
       h1 {
         background-image: url(../image/toplogo_EAF4FC.png);
         background-size: contain;
