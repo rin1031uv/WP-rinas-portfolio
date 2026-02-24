@@ -14,6 +14,7 @@
 
 
   <!--▼▼hero image▼▼-->
+
   <div class="c-top__hero-wrapper">
     <div class="c-top__hero-container">
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/silvia.png" class="p-top__hero-image">
@@ -29,13 +30,10 @@
       </div>
       <h2 class="p-top__title js__slide-in">About</h2>
       <p class="p-top__text js__slide-in">
-        るんるん × らんらん × こつこつ<br>
-        楽しく、工夫して、何事もチャレンジ。<br>
-        笑顔を生むお仕事を心がけています。<br>
-        バナー、ロゴ、Webサイトを主にデザイン制作しています。<br>
-        好奇心旺盛で、探究心が強く良くすることに対して粘り強くとことん。<br>
-        工夫してものづくりをするのが大好きです。<br>
-        よく聞き、よく考えることでご要望を理解しデザインを制作します。<br>
+        ねこと人が共に笑顔で生きられる<br>
+        美しい共生環境をデザインしています<br>
+        <br>
+        その想いと背景について記しています<br>
       </p>
       <div class="p-top__button-ptimary-container">
         <div class="c-top__button-container p-top__button-container-about">
@@ -73,7 +71,10 @@
       </div>
       <h2 class="p-top__title js__slide-in">Blog</h2>
       <p class="p-top__text js__slide-in">
-        勉強のまとめ、日々の出来事や思ったことを綴っています。
+        猫と暮らす日々の中で見つけた<br>
+        小さな発見と美しさを綴っています<br>
+        <br>
+        共に生きる時間の記録です<br>
       </p>
       <!--▼▼main related posts▼▼-->
     <section class="l-main__single-blog-archive">
@@ -131,6 +132,31 @@
     </div>
     </article>
     <!--▲▲blog▲▲-->
+    <!--▼▼service▼▼-->
+<!--▼▼service▼▼-->
+<article class="c-top__service-wrapper">
+  <div class="js__slide-in">
+    <div class="p-top__title-background eachTextAnime">Services</div>
+  </div>
+  <h2 class="p-top__title js__slide-in">Service</h2>
+  <p class="p-top__text js__slide-in">
+    完全在宅でお受けしている<br>
+    サポートとご相談のメニューです<br>
+    <br>
+    今の私にできる形から、少しずつ育てています<br>
+  </p>
+
+  <div class="p-top__button-ptimary-container">
+    <div class="c-top__button-container p-top__button-container-service">
+      <img class="p-top__button-image" src="<?php echo get_stylesheet_directory_uri(); ?>/image/button_butterfly_left.png" alt="蝶々">
+          <p class="p-top__button">
+        <a href="<?php echo esc_url(home_url('/')); ?>service/">Read more</a>
+      </p>
+    </div>
+  </div>
+</article>
+<!--▲▲service▲▲-->
+    <!--▲▲service▲▲-->
     <!--▼▼contact▼▼-->
     <article class="c-top__contact-wrapper">
       <div class="p-top__contact-title-background js__slide-in eachTextAnime">Get in Touch</div>
