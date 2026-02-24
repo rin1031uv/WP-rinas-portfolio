@@ -10,6 +10,7 @@ single blog
 */
 .c-profile {
   &__secndary-container {
+    padding: 15px;
     text-align: center;
     @include m.breakpoint(tablet) {
       text-align: inherit;
@@ -29,27 +30,30 @@ about
     width: 100%;
     position: absolute;
     //top: 347.33px;
-    top: 248.33px;
+    //top: 248.33px;
+    top: 91px;
     left: 0;
     display: inline-block;
-    padding: 15px;
+    padding: 18px;
     margin-top: 15px;
     border: solid 0.5px #122736; //内側の線
     outline: solid 0.5px #122736; //外側の線
     outline-offset: 3px; //内側と外側の線の間
     @include m.breakpoint(tablet) {
-      width: 400px;
+      width: fit-content;
       position: absolute;
-      top: 200px;
+      top: 54px;
       right: 0;
       margin-top: 30px;
-      left: inherit;
+      //left: inherit;
+      //left: 40px;
     }
     @include m.breakpoint(pc) {
-      width: 560px;
+      width: fit-content;
       position: absolute;
-      top: 215px;
-      left: 76px;  
+      top: 80px;
+      //left: 40px;
+      padding: 34px;
     }
   }
 }

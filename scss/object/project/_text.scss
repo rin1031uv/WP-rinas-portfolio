@@ -234,6 +234,13 @@ WordPress化 single.php
   }
 }
 
+.share {
+  p {
+    font-family: f.$main-font;
+    color: c.$color-base;
+    font-size: 15rem;
+}
+}
 
 /*
 =========================================
@@ -298,4 +305,29 @@ works
       }
     }
   }
+}
+
+/*
+=========================================
+固定ページ(メール相談)
+=========================================
+*/
+.page-id-245 {
+  p {
+    font-family: f.$main-font;
+  }
+}
+
+/*
+=========================================
+cardの日付装飾調整
+=========================================
+*/
+.p-card__date {
+  display: block;
+  font-size: 12rem;
+  font-family: f.$main-font;
+  color: c.$color-font-dark;
+  padding: 0px 15px 18px 15px;
+  text-align: right;
 }

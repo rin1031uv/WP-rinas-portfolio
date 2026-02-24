@@ -138,171 +138,198 @@ jQuery(function($){
 //GSAP
 //強みエリアのアニメーション
 //文字の表示
-let mm = gsap.matchMedia();
 
-  //スマホからPC手前（1440未満）まで
-  mm.add("(min-width: 304px) and (max-width: 1439px)", () => {
-    gsap.to(".p-about__circle-title", {
-      scrollTrigger: {
-        trigger: ".c-about__strength-wrapper",
-        toggleActions: "play none reverse none"
-      },
-      delay: 2,
-      opacity: 0
-    })
-    
-    gsap.to(".p-about__circle-content-container", {
-      scrollTrigger: {
-        trigger: ".p-about__circle-primary-container",
-        toggleActions: "play none reverse none"
-      },
-      delay: 2,
-      opacity: 1
-    })
-    
-    gsap.to(".circle-in-title", {
-      scrollTrigger: {
-        trigger: ".p-about__circle-primary-container",
-        toggleActions: "play none reverse none"
-      },
-      delay: 2,
-      opacity: 1
-    })
-    //強みエリアくるくる
-    gsap.to(".p-about__circle-first", {
-      scrollTrigger: {
-        trigger: ".p-about__circle-first",
-        start: "top top",
-        toggleActions: "play none reverse none"
-      },
-      x:80,
-      y:80,
-      rotation: 90,
-      duration: 3,
-      scale: 0.559
-    });
-    
-    gsap.to(".p-about__circle-second", {
-      scrollTrigger: {
-        trigger: ".p-about__circle-second",
-        start: "top top",
-        toggleActions: "play none reverse none"
-      },
-      x:-80,
-      y:-80,
-      rotation: 90,
-      duration: 3,
-      scale: 0.678
-    });
-    
-    gsap.to(".p-about__circle-third", {
-      scrollTrigger: {
-        trigger: ".p-about__circle-third",
-        start: "top top",
-        toggleActions: "play none reverse none"
-      },
-      x:80,
-      y:-80,
-      rotation: 90,
-      duration: 3,
-      scale: 0.870
-    });
-    
-    gsap.to(".p-about__circle-fourth", {
-      scrollTrigger: {
-        trigger: ".p-about__circle-fourth",
-        start: "top top",
-        toggleActions: "play none reverse none"
-      },
-      x:-80,
-      y:80,
-      rotation: 90,
-      duration: 3,
-      scale: 1.253
+gsap.registerPlugin(ScrollTrigger);
+
+const mm = gsap.matchMedia();
+
+function setupStrengthAnim({ radius, scaleList }) {
+  const triggerSel = ".c-about__strength-wrapper";
+
+  const circles = gsap.utils.toArray([
+    ".p-about__circle-first",
+    ".p-about__circle-second",
+    ".p-about__circle-third",
+    ".p-about__circle-fourth",
+    ".p-about__circle-fifth",
+  ]);
+
+  const titles = gsap.utils.toArray([
+    ".circle-title-first",
+    ".circle-title-second",
+    ".circle-title-third",
+    ".circle-title-fourth",
+    ".circle-title-fifth",
+  ]);
+
+  // 梅の5枚配置：上から時計回り（72°刻み）
+  const anglesDeg = [-90, -18, 54, 126, 198];
+
+  // ★ここが超重要：あなたの「円弧SVGの切れ目」が向いている基準角度
+  // 例）SVGの切れ目が「右（0°）」を向いているなら 0
+  //     「上（-90°）」を向いているなら -90
+  // ここは1回合わせればOK！
+  const BASE_GAP_DEG = -90; // ★切れ目が「上」のSVG
+  const initialRots = [-30, 50, 140, -120, 95]; // 好みで微調整OK（安定する）
+
+
+// ★強みエリア内だけから取る（混ざり防止）
+const root = document.querySelector(triggerSel);
+const q = gsap.utils.selector(root);
+
+// h4+pのボックス（section）取得（5個だけ）
+const textBlocks = q(".p-about__circle-content-container section").slice(0, 5);
+
+// 初期状態：非表示＋少し下
+gsap.set(textBlocks, { opacity: 0, y: 12 });
+
+
+  // 初期：波紋（全て中心）
+  gsap.set(circles, {
+  x: 0,
+  y: 0,
+  rotation: (i) => initialRots[i], // ★中央はバラバラ向き
+  transformOrigin: "50% 50%"
+  });
+
+  gsap.set(titles,  { x: 0, y: 0, rotation: 0, opacity: 0, transformOrigin: "50% 50%" });
+
+  // テキスト表示（いまのロジックを踏襲）
+  gsap.set(".p-about__circle-title", { opacity: 1 });
+  gsap.set(".p-about__circle-content-container", { opacity: 0 });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: triggerSel,
+      start: "top center",
+      toggleActions: "play none reverse none",
+    }
+  });
+
+
+  // ① 波紋：中心でサイズだけ違う同心円に（ふわっと出る）
+  tl.to(".p-about__circle-title", { opacity: 0, duration: 0.6 }, 0.2)
+    .to(".p-about__circle-content-container", { opacity: 1, duration: 0.6 }, 0.2);
+
+  circles.forEach((el, i) => {
+    const s = scaleList?.[i] ?? 1;
+    tl.fromTo(el,
+      { scale: 0.2, opacity: 0 },
+      { scale: s, opacity: 0.2, duration: 0.9, ease: "power2.out" },
+      0.0
+    );
+  });
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★ ここに追加する！！！（回転の収束ステップ）
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+circles.forEach((el, i) => {
+  const outwardDeg = anglesDeg[i];
+  const rot = outwardDeg - BASE_GAP_DEG;
+
+  tl.to(el, {
+    rotation: rot,     // まず外向きに向けて“収束”
+    scale: 0.8,          // ★全員同じ大きさに収束（ここが今回の肝！）
+    opacity: 0.35,  // 薄くする
+    duration: 0.6,
+    ease: "power2.out",
+  }, 0.8);
+});
+
+  // ② 梅：くるくるしながら広がる + 切れ目を外側へ
+  circles.forEach((el, i) => {
+    const rad = anglesDeg[i] * Math.PI / 180;
+    const x = Math.cos(rad) * radius;
+    const y = Math.sin(rad) * radius;
+
+    // 外側方向は「中心→配置先」の向き = anglesDeg[i]
+    // 切れ目(=SVGのgap方向)を外へ向けたいので
+    // rotation = 外向き角 - BASE_GAP_DEG
+    const outwardDeg = anglesDeg[i];
+    const rot = outwardDeg - BASE_GAP_DEG;
+
+    tl.to(el, {
+      x, y,
+      rotation: rot + 360, // 回転しながら広がる演出（+360は好みで増減OK）
+      opacity: 0.3,   // 薄く
+      duration: 1.6,
+      ease: "power2.inOut",
+    }, 1.0); // 1秒後に開始
+  });
+
+// ③ h5タイトル
+const titleOffset = 40;
+const titleRadius = radius + titleOffset;
+
+titles.forEach((el, i) => {
+  const rad = anglesDeg[i] * Math.PI / 180;
+  const x = Math.cos(rad) * titleRadius;
+  const y = Math.sin(rad) * titleRadius;
+
+  tl.to(el, {
+    x, y,
+    xPercent: -50,
+    yPercent: -50,
+    opacity: 1,
+    duration: 1.0,
+    ease: "power2.out",
+    rotation: 0,
+  }, 1.3);
+});
+
+// ===== 梅＆h5 →（待つ）→ 消える → h4+p 出現 =====
+const bloomStart = 1.0;
+const bloomDur   = 1.6;
+const bloomEnd   = bloomStart + bloomDur;
+
+// ★h4+p だけ外側にしたいならここを増やす
+const textRadius = radius + 110;
+
+tl.to({}, { duration: 1.5 }, bloomEnd);
+
+tl.to(circles, { opacity: 0, duration: 0.9, ease: "power2.out" }, ">");
+tl.to(titles,  { opacity: 0, duration: 0.9, ease: "power2.out" }, "<");
+
+tl.set(textBlocks, {
+  x: (i) => Math.cos((anglesDeg[i] * Math.PI) / 180) * textRadius,
+  y: (i) => Math.sin((anglesDeg[i] * Math.PI) / 180) * textRadius,
+  xPercent: -50,
+  yPercent: -50,
+  opacity: 0,
+}, ">");
+
+tl.to(textBlocks, {
+  opacity: 1,
+  y: (i) => Math.sin((anglesDeg[i] * Math.PI) / 180) * textRadius,
+  duration: 1.0,
+  stagger: 0.12,
+  ease: "power2.out",
+}, "<");
+
+  return tl;
+}
+
+// -----------------------
+// 304〜1439px
+// -----------------------
+mm.add("(min-width: 304px) and (max-width: 1439px)", () => {
+  setupStrengthAnim({
+    radius: 95,
+    scaleList: [1.000, 0.824, 0.643, 0.446, 0.536],
   });
 });
-//===PC 1440px以上の時===
+
+
+// -----------------------
+// 1440px以上
+// -----------------------
 mm.add("(min-width: 1440px)", () => {
-  gsap.to(".p-about__circle-title", {
-    scrollTrigger: {
-      trigger: ".c-about__strength-wrapper",
-      toggleActions: "play none reverse none"
-    },
-    delay: 2,
-    opacity: 0
-  })
-  
-  gsap.to(".p-about__circle-content-container", {
-    scrollTrigger: {
-      trigger: ".c-about__strength-wrapper",
-      toggleActions: "play none reverse none"
-    },
-    delay: 2,
-    opacity: 1
-  })
-  
-  gsap.to(".circle-in-title", {
-    scrollTrigger: {
-      trigger: ".c-about__strength-wrapper",
-      toggleActions: "play none reverse none"
-    },
-    delay: 2,
-    opacity: 1
-  })
-  
-  //強みエリアくるくる
-  gsap.to(".p-about__circle-first", {
-    scrollTrigger: {
-      trigger: ".p-about__circle-first",
-      start: "top top",
-      toggleActions: "play none reverse none"
-    },
-    x:100,
-    y:100,
-    rotation: 90,
-    duration: 3,
-    scale: 0.699
-  });
-  
-  gsap.to(".p-about__circle-second", {
-    scrollTrigger: {
-      trigger: ".p-about__circle-second",
-      start: "top top",
-      toggleActions: "play none reverse none"
-    },
-    x:-100,
-    y:-100,
-    rotation: 90,
-    duration: 3,
-    scale: 0.848
-  });
-  
-  gsap.to(".p-about__circle-third", {
-    scrollTrigger: {
-      trigger: ".p-about__circle-third",
-      start: "top top",
-      toggleActions: "play none reverse none"
-    },
-    x:100,
-    y:-100,
-    rotation: 90,
-    duration: 3,
-    scale: 1.087
-  });
-  
-  gsap.to(".p-about__circle-fourth", {
-    scrollTrigger: {
-      trigger: ".p-about__circle-fourth",
-      start: "top top",
-      toggleActions: "play none reverse none"
-    },
-    x:-100,
-    y:100,
-    rotation: 90,
-    duration: 3,
-    scale: 1.566
+  setupStrengthAnim({
+    radius: 125,
+    scaleList: [1.05, 0.865, 0.675, 0.468, 0.563],
   });
 });
+
 
 //動作確認用
 //$(function(){

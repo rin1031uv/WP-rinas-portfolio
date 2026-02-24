@@ -50,18 +50,25 @@ about
     min-width: 325px;
     display: inline-block;
     position: absolute;
-    top: 91px;
+    //top: 91px;
+    top: 446px;
     left: 0;
     padding: 15px;
     //margin-top: 15px;
     border: 0.5px solid #122736;
     @include m.breakpoint(tablet) {
       position: absolute;
-      top: 80px;
+      top: 370px;
       //right: 20px;
-      left: 40px;
+      left: 295px;
+      padding-top: 30px;
       //margin-top: 30px;
     }
+    @include m.breakpoint(pc) {
+      top: 636px;
+      left: 515px;
+    }
+
   }
   &__carrer-primary-container {
     margin-bottom: 36px;
@@ -109,5 +116,14 @@ about
   }
 }
 
-
-
+.post-245 {
+  h2 {
+    padding-bottom: 51px;
+  }
+  h3 {
+    padding-bottom: 45px;
+  }
+  .wp-block-spacer {
+    //height: 30px;
+  }
+}

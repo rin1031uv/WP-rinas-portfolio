@@ -12,6 +12,34 @@
 }
 //上記をWordPress化時に書き換え
 .wp-pagenavi {
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;      // 画面狭いときは折り返しても崩れにくく
+  gap: 10px;            // marginより安定
+}
+
+.wp-pagenavi span,
+.wp-pagenavi a {
+  margin: 0 !important; // 既存の左右marginを無効化（gapで管理）
+}
+
+/* 「Page 1 of 7」表示（pages）は幅固定しない */
+.wp-pagenavi span.pages {
+  width: auto;
+  white-space: nowrap;
+}
+
+
+.pagenavi--pc {
+  display: none;
+}
+
+@include m.breakpoint(tablet) {
+  .pagenavi--sp {
+    display: none;
+  }
+  .pagenavi--pc {
+    display: block;
+  }
 }

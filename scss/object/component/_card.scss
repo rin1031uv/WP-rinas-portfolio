@@ -31,6 +31,10 @@ archive blog
   }
   &__secondary-container {
     width: 100%;
+    .wpulike {
+      display: none;
+
+    }
   }
 }
 

@@ -77,11 +77,31 @@ front-page
         }
       }
     }
-
   }
  //blog
   &__blog-wrapper {
     margin-bottom: 180px;
+  }
+//service
+  &__service-wrapper {
+    margin-bottom: 180px;
+    @include m.breakpoint(tablet) {
+      max-width: 500px;
+      height: 100%;
+      margin-left: auto; //右寄せ
+      margin-right: 0; //右寄せ
+      >div {
+        max-width: 500px;
+      }
+      @include m.breakpoint(pc) {
+        max-width: 420px;
+        margin-left: auto; //右寄せ
+        margin-right: 0; //右寄せ
+        >div {
+          max-width: 650px;
+        }
+      }
+    }
   }
  //contact
   &__contact-wrapper {

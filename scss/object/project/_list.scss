@@ -72,7 +72,7 @@ archive blog
     //.post_categories
     //タグも同じでいける？
     >ul {
-      display: flex;
+      //display: flex;
       > li {
         width: 100%;
         margin-right: 5px;
@@ -80,7 +80,11 @@ archive blog
         display: inline-block;
       }
       > li > a {
-        padding: 5px;
+        //padding: 5px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        padding-left: 12px;
+        padding-right: 12px;
         font-size: 12rem;
         font-family: f.$main-font;
         color: c.$color-font-dark;
@@ -129,7 +133,7 @@ single blog
     display: flex;
     li {
       padding: 5px;
-      border: 0.2px solid;
+      //border: 0.2px solid;
       border-color: c.$color-base;
       a {
         font-family: f.$main-font;
@@ -162,7 +166,7 @@ single blog
     left: 15px;
   }
   &__category-blog {
-    display: flex;
+    //display: flex;
     > li {
       width: 100%;
       margin-right: 5px;
@@ -326,13 +330,17 @@ WordPress化 single.php / single-works.php
 //カテゴリリストの装飾
 //single.php
 .p-main__category-container {
-  display: flex;
+  //display: flex;
   >li {
     //width: 100%;
     margin-right: 12px;
     margin-bottom: 12px;
     >a {
-      padding: 5px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 15px;
+      padding-right: 15px;
+      //padding: 12px;
       font-size: 16rem;
       font-family: f.$main-font;
       color: c.$color-font-dark;
@@ -527,21 +535,51 @@ WordPress化 archive / single 共通
     }
   }
 }
-
-
+//下部のタグの装飾
+.p-main__tag-list-container {
+  >li {
+    list-style: none;
+    >a {
+      font-size: 16rem;
+      font-family: f.$main-font;
+      color: c.$color-font-dark;
+      padding-left: 9px;
+      padding-bottom: 18px;
+      padding-right: 9px;
+      padding-top: 18px;
+      &::before {
+        content: '\f02b';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 16rem;
+        //vertical-align: middle;
+        color: c.$color-base;
+        padding-right: 6px;
+      }
+    }
+  }
+}
+//文中のリスト装飾
+.wp-block-list {
+  margin-left: 25px;
+    font-size: 14rem;
+    font-family: f.$main-font;
+    color: c.$color-font-dark;
+    margin-bottom: 20px;
+    @include m.breakpoint(tablet) {
+    font-size: 16rem;
+    }
+    li {
+      list-style: decimal; //base.scssでnoneに指定しているため
+      padding-left: 6px;
+    }
+}
 /*
 =========================================
 single-works
 =========================================
 */
 .single-works {
-  >main {
-    .l-main__wrapper {
-      .wo-block-list {
-
-      }
-    }
-  }
   ol {
     list-style: decimal; //base.scssでnoneに指定しているため
     //padding-left: 25px;
@@ -592,4 +630,87 @@ Contact
     padding: 10px 10px;
     margin-bottom: 30px;
   }
+}
+
+/*
+=========================================
+single
+=========================================
+*/
+//shareボタンの装飾
+.share {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 3em;
+}
+
+.share ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.share ul:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.share li {
+    float: left;
+    width: 25%;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.share li a {
+    font-size: 14px;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.share li a:hover {
+    opacity: .8;
+}
+
+.share li a:visited {
+    color: #fff;
+}
+
+.tweet a {
+    background-color: #55acee;
+}
+
+.facebooklink a {
+    background-color: c.$color-base;
+    font-family: f.$main-font;
+}
+
+.line a {
+    background-color: #00b900;
+}
+
+.hatena a {
+    background-color: #008fde;
+}
+
+@media screen and (max-width:768px){
+    .share li {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 3px;
+    }
+    
+    .share li i {
+        font-size: 1.3em;
+        padding-top: 3px;
+    }
+    
+    .facebooklink i, .tweet i, .hatena i {
+        display: none;
+    }
 }
