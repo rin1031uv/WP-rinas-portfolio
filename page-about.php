@@ -7,7 +7,32 @@
   <article class="c-about__self-introduction-wrapper">
     <section class="c-about__self-introduction">
       <h2 class="p-about__title-self-introduction">I am Rina</h2>
-      <div class="c-about__primary-container-self-introduction p-about__text-self-introduction">
+        <div class="c-about__secondary-container-self-introduction p-about__text-self-introduction">
+        <p>
+          Cat Life Designer｜猫のライフデザイナー<br>
+          <br>
+          幼い頃から私のそばにはいつもねこがいました<br>
+          静かに寄り添い  同じ時間を生きてくれる存在<br>
+          その美しい佇まいとしなやかに生きる姿は<br>
+          私にとってかけがえのないものです<br>
+          <br>
+          －大切な存在がその命を最大限に輝かせて生きられるように－<br>
+          <br>
+          その想いからねこと共に生きる環境を整え  美しい共生のかたちを日々探求しています<br>
+          植物を育て  光や風の流れを意識し  自然の気配を暮らしの中に取り戻すこと<br>
+          それはねこのQOLを高めるだけでなく<br>
+          共に生きる私自身の在り方を整えることでもあると感じています<br>
+          私はねこを中心とした暮らしの環境を「デザイン」し<br>
+          その中で生まれる共生の美しさを記録し続けています<br>
+          <br>
+          環境を整えること<br>
+          そしてその価値を伝えること<br>
+          Cat Life Designerとして<br>
+          ねこと人が共に笑顔で生きられる<br>
+          美しい共生環境を提案していきます。
+        </p>
+      </div>
+      <!--<div class="c-about__primary-container-self-introduction p-about__text-self-introduction">
         <p>経験してきた職種</p>
         <p>
           ハウスメーカー営業事務<br>
@@ -16,38 +41,10 @@
           輸送機器メーカーのモデル作成（3DCAD）<br>
           など…
         </p>
-      </div>
-      <div class="c-about__secondary-container-self-introduction p-about__text-self-introduction">
-        <p>多くの職種にチャレンジして気付いたこと。</p>
-        <p>「ものづくり」が好き。と</p>
-        <p>
-          インテリアも車も作る人の想い、使う人の想い。<br>
-          いろんな人の想いが繋がって出来上がっていると感じます。<br>
-        </p>
-        <p>
-          自分自身を見つめて問いかけたとき、もっと自分の力で創り出してみたいと強く思うようになりました。<br>
-          この気持ちを軸に行動していた時、Webデザインに出逢いました。<br>
-          デザインを通して<br>
-          ”携わった多くの方に「笑顔」と「勇気」を届けられる仕事をすること。”
-        </p>
-        <p>を常に意識し取り組んでいます。</p>
-      </div>
+      </div>-->
+
       <div><img class="p-top__image-self-introduction" src="<?php echo get_stylesheet_directory_uri(); ?>/image/about_profile_image.png"></div>
-      <div class="p-top__list-favolite">
-        <dl>
-          <dt>my favorite things</dt>
-          <dd>船・コンテナ船</dd>
-          <dd>自動車・働く車</dd>
-          <dd>鉄塔</dd>
-          <dd>言語習得</dd>
-          <dd>動植物（特に猫・海洋生物）</dd>
-          <dd>音楽（聴く・歌う・演奏）</dd>
-          <dd>食べること</dd>
-          <dd>写真を撮ること</dd>
-          <dd>ゴルフをすること/観戦</dd>
-          <dd>アニメ(デジモン・十二国記等々)</dd>
-        </dl>
-      </div>
+
     </section>
   </article>
 <!--▲▲introduce▲▲-->
@@ -428,23 +425,35 @@
   <section class="c-about__reason-primary-container">
     <div class="c-about__reason-secondary-container">
       <h3 class="p-about__reason-title">
-        <div>The reason</div>
-        <div> why I started studying</div>
-        <div> Web design</div>
+        <div>Why i came to </div>
+        <div>think this way</div>
+        <div>about my life.</div>
       </h3>
-      <p class="p-about__reason-sub-title">Webデザインを始めたきっかけ</p>
+      <p class="p-about__reason-sub-title">心地よいくらしを考えるようになった理由</p>
     </div>
     <div class="c-about__reason-third-container">
-      <h4>自分らしさとは</h4>
+      <h4>安心できるくらし</h4>
       <p>
-        ふと、”自分らしい”とは何かを考えるようになり自分を見つめ直す時間が増えました。<br>
-        どんな人生を送りたい？<br>
-        どんな人になりたい？<br>
-        今後の目標やチャレンジしてみたいことは？<br>
-        自分自身に問いかけた時<br>
-        「自分で何かを創造し携わる多くの人々の「笑顔」を引き出してみたい。」と思いました。<br>
-        自分の存在意義を考え価値を高めたい。<br>
-        Webデザインに出逢い私の想いはさらに強くなり、日々進化し続けています。
+        自分らしさとは何か<br>
+        ふと立ち止まり、自分に問いかけた時期がありました<br>
+        <br>
+        どんなくらしを送りたいのか<br>
+        どんな在り方でいたいのか<br>
+        その答えは愛猫との日々の中にありました<br>
+        <br>
+        もっと、すこやかに<br>
+        もっと、おだやかに<br>
+        もっと、心地よく<br>
+        <br>
+        この３つを見つめていくうちに<br>
+        暮らしは整えられるのだと気が付きました<br>
+        <br>
+        すこやかであるために、清潔を<br>
+        おだやかであるために、安心を<br>
+        心地よくあるために、環境を<br>
+        <br>
+        日々のくらしの中で<br>
+        その積み重ねの大切さを知りました<br>
       </p>
     </div>
   </section>
@@ -454,24 +463,31 @@
 <article class="c-about__help-wrapper">
   <section class="c-about__help-primary-container">
     <div class="c-about__help-secondary-container">
-      <h3 class="p-about__help-title">I can help you create the design</h3>
+      <h3 class="p-about__help-title">Finding comfort, together.</h3>
       <p class="p-about__help-sub-title">私がお手伝いできること</p>
     </div>
     <div class="c-about__help-third-container">
-      <h4>Web Design</h4>
+      <h4>すこやかに</h4>
+      <h5>キャットグルーミング</h5>
       <p>
-        Webサイトのデザイン・バナー・ロゴ等を制作します。<br>
-        新しい一歩を踏み出すために必要となるプロモーションとしての活用やお悩み解決のために真の問題点を洗い出し改善を尽くします。<br>
-        日々の生活でアンテナを張り巡らせ、様々なデザインに触れることで柔軟な提案が可能になると考えています。<br>
+        清潔は安心の土台。<br>
+        ねこの身体を守るためのケアを学び、実践していきます
       </p>
     </div>
     <div class="c-about__help-third-container">
-      <h4>Web Development</h4>
+      <h4>おだやかに</h4>
+      <h5>ナチュラルクリーニング</h5>
       <p>
-        HTML・CSS・Javascript・PHPを使用し、デザインに忠実なWebサイトを再現します。<br>
-        静的サイトはもちろん、WordPress化も可能です。<br>
-        使いやすさ、コードの可読性、改修のしやすさ、セキュリティーを常に意識して制作します。<br>
-        進化し続けるプログラミング技術と共に自身も成長し続ける姿勢を忘れません。<br>
+        ねこにも人にもやさしい方法で<br>
+        くらしを整えるお掃除の提案を行います
+      </p>
+    </div>
+      <div class="c-about__help-third-container">
+      <h4>心地よく</h4>
+      <h5>空間設計・くらしのご相談</h5>
+      <p>
+        ねこと人がともに安心できる空間づくりを考えます<br>
+        インテリアや家具配置のご相談も承ります
       </p>
     </div>
   </section>
@@ -491,10 +507,18 @@
       <!--▼circle▼-->
       <div class="p-about__circle-primary-container">
         <div class="p-about__circle-secondary-container">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/re_tsuyomi_SB.svg" class="p-about__circle-first">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/re_tsuyomi_B.svg" class="p-about__circle-second">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/re_tsuyomi_M.svg" class="p-about__circle-third">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/re_tsuyomi-S.svg" class="p-about__circle-fourth">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/re_tsuyomi_normal.svg" class="p-about__circle-first">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/re_tsuyomi_normal.svg" class="p-about__circle-second">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/re_tsuyomi_normal.svg" class="p-about__circle-third">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/re_tsuyomi_normal.svg" class="p-about__circle-fourth">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/re_tsuyomi_normal.svg" class="p-about__circle-fifth">
+          <!--▼circle-title▼-->
+          <h5 class="circle-in-title circle-title-first">着想</h5>
+          <h5 class="circle-in-title circle-title-second">個別化</h5>
+          <h5 class="circle-in-title circle-title-third">学習欲</h5>
+          <h5 class="circle-in-title circle-title-fourth">未来志向</h5>
+          <h5 class="circle-in-title circle-title-fifth">収集心</h5>
+      <!--▲circle-title▲-->
         </div>
       </div>
       <!--▲circle▲-->
@@ -502,41 +526,42 @@
       <div class="p-about__circle-content-wrapper">
         <article class="p-about__circle-content-container">
           <section>
-            <h4>粘り強さ</h4>
+            <h4>着想</h4>
             <p>
-              どんなに困難な状況でも打開策を見出すことを諦めません。<br>
-              妥協せず、最善を尽くします。
+              点と点をつなぎ、くらしの中にある小さな違和感から<br>
+              整えのヒントを見つけます
             </p>
           </section>
           <section>
-            <h4>向上心</h4>
+            <h4>個別化</h4>
             <p>
-              新しいことを学び続け、自身をアップデートし続けます。<br>
-              果敢にチャレンジし、知見を広げていきます。
+              ねこそれぞれ、くらしそれぞれ<br>
+              ひとつの正解に当てはめるのではなく、その子に合う形を探します
             </p>
           </section>
           <section>
-            <h4>感受性豊か</h4>
+            <h4>学習欲</h4>
             <p>
-              感受性の豊かさと自由な創造力を最大限活かし、使う人の気持ちを汲み取りデザインへ落とし込むことを意識しています。
+              安心につながる方法を学び続けています<br>
+              知識を積み重ね、日々の暮らしに活かします
             </p>
           </section>
           <section>
-            <h4>探究心</h4>
+            <h4>未来志向</h4>
             <p>
-              常に疑問を持ち、改善案を考えます。<br>
-              創意工夫の心を忘れません。
+              今だけでなく、これからのくらしも見据えて考えます
+            </p>
+          </section>
+          <section>
+            <h4>収集心</h4>
+            <p>
+              気付きや情報を集め、整えに必要な材料として蓄えています
             </p>
           </section>
         </article>
       </div>
       <!--▲circle-content▲-->
-      <!--▼circle-title▼-->
-        <h5 class="circle-in-title">粘り強さ</h5>
-        <h5 class="circle-in-title">向上心</h5>
-        <h5 class="circle-in-title">感受性豊か</h5>
-        <h5 class="circle-in-title">探究心</h5>
-      <!--▲circle-title▲-->
+
     </div>
   </div>
 </article>

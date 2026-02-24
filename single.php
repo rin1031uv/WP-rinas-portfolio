@@ -22,6 +22,28 @@
       </ul>
       <?php endif; ?>
       <!--▲カテゴリの取得▲-->
+      <!--▼タイトルの取得▼-->
+      <h2 class="p-card__title">
+        <?php the_title(); ?>
+      </h2>
+      <!--▲タイトルの取得▲-->
+      <!--▼投稿日表示▼-->
+      <p class="p-card__date">
+        <?php echo get_the_date('Y/n/j'); ?>
+      </p>
+      <!--▲投稿日表示▲-->
+      <!--▼サムネイルの取得▼-->
+      <?php if (has_post_thumbnail()): ?>
+        <div class="p-main__single-blog-image">
+        <?php the_post_thumbnail('medium'); ?>
+        </div>
+      <?php endif; ?>
+      <!--▲サムネイルの取得▲-->
+      <!--▼本文の取得▼-->
+      <p class="p-main__single-blog-text">
+        <?php the_content(); ?>
+      </p>
+      <!--▲本文の取得▲-->
       <!--▼タグの取得▼-->
       <ul class="p-main__tag-list-container">
       <?php
@@ -38,23 +60,9 @@
       ?>
       </ul>
       <!--▲タグの取得▲-->
-      <!--▼タイトルの取得▼-->
-      <h2 class="p-card__title">
-        <?php the_title(); ?>
-      </h2>
-      <!--▲タイトルの取得▲-->
-      <!--▼サムネイルの取得▼-->
-      <?php if (has_post_thumbnail()): ?>
-        <div class="p-main__single-blog-image">
-        <?php the_post_thumbnail('medium'); ?>
-        </div>
-      <?php endif; ?>
-      <!--▲サムネイルの取得▲-->
-      <!--▼本文の取得▼-->
-      <p class="p-main__single-blog-text">
-        <?php the_content(); ?>
-      </p>
-      <!--▲本文の取得▲-->
+      <!--▼SNS Shareボタン▼-->
+      <?php get_template_part( 'sns' ); ?>
+      <!--▲SNS Shareボタン▲-->
       <!--▼記事を呼び出すメインループの終了コード▼-->
       <?php endwhile; ?>
       <?php endif; ?>
@@ -104,6 +112,11 @@
               <!--▼抜粋取得▼-->
               <?php the_excerpt(); ?>
               <!--▲抜粋取得▲-->
+              <!--▼投稿日表示▼-->
+              <p class="p-card__date">
+                <?php echo get_the_date('Y/n/j'); ?>
+              </p>
+              <!--▲投稿日表示▲-->
               <p class="p-card__button"><a href="<?php echo esc_url(get_permalink()); ?>">read more</a></p>
             </div>
           </div>
