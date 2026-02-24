@@ -67,7 +67,7 @@ $("#splash").delay(500).fadeOut(800);//アニメーションが終わったら#s
 } else {
 	// 2回目アクセスの処理
 	// 読み込ませないようにすぐ要素を取り除く
-	splashloader.remove();
+	if (splashloader) splashloader.remove();
   // スクロールを元に戻す
   document.body.style.position = ''; // positionを元に戻す（staticにする）
   document.body.style.overflow = ''; // スクロールを元に戻す
