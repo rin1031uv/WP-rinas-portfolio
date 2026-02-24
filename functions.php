@@ -249,3 +249,10 @@ add_filter( 'pre_get_posts', 'search_filter' );
   //));
 //}
 //add_action('widgets_init', 'theme_slug_widgets_init');
+
+/*==========================
+ファイルサイズの設定
+==========================*/
+@ini_set( 'upload_max_size' , '350M' );
+@ini_set( 'post_max_size', '256M');
+@ini_set( 'max_execution_time', '300' );
