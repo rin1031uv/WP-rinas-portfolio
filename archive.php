@@ -10,11 +10,19 @@
       <h2 class="p-main__title js__slide-in">Blog</h2>
       <p><?php single_cat_title(); ?></p>
       </div>
-      <p class="p-main__text">
-        Web制作で学んだことのアウトプットはもちろん。<br>
-        日々感じたこと、好きなこと。<br>
-        素敵だなと感じたことを発信しています。
-      </p>
+
+<div class="p-main__text">
+  <?php 
+    if (is_category()) {
+      echo wpautop(category_description());
+    } else {
+      echo '<p>
+        ねことの暮らしの中で見つけた<br>
+        すこやかに、おだやかに、心地よく過ごすための小さな整えを綴っています
+            </p>';
+    }
+  ?>
+</div>
     </section>
 <!--▼▼main related posts▼▼-->
     <section class="l-main__single-blog-archive">
@@ -50,6 +58,11 @@
               <!--▼抜粋取得▼-->
               <?php the_excerpt(); ?>
               <!--▲抜粋取得▲-->
+              <!--▼投稿日表示▼-->
+              <p class="p-card__date">
+                <?php echo get_the_date('Y/n/j'); ?>
+              </p>
+              <!--▲投稿日表示▲-->
               <p class="p-card__button"><a href="<?php the_permalink(); ?><?php echo get_post_field( 'post_name', get_the_ID()); ?>">read more</a></p>
             </div>
           </div>
@@ -64,11 +77,29 @@
     </section>
 <!--▲▲main related posts▲▲-->
 <!--▼▼main pagenation▼▼-->
-<?php
-  if(function_exists('wp_pagenavi')):
-    wp_pagenavi();
-  endif;
-  ?>
+<?php if (function_exists('wp_pagenavi')) : ?>
+
+  <div class="pagenavi pagenavi--sp">
+    <?php wp_pagenavi([
+      'pages_to_show' => 3,
+      'larger_page_numbers' => 0,
+      'first_text' => '',
+      'last_text'  => '',
+    ]); ?>
+  </div>
+
+  <div class="pagenavi pagenavi--pc">
+    <?php wp_pagenavi([
+      'pages_to_show' => 6,
+      'larger_page_numbers' => 0,
+      'first_text' => '',
+      'last_text'  => '',
+    ]); ?>
+  </div>
+
+<?php endif; ?>
+
+
   <!--▲▲main pagenation▲▲-->
     <div class="p-main__border"></div>
 <!--▼▼main category▼▼-->
